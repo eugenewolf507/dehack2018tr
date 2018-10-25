@@ -1,0 +1,32 @@
+/* Utils */
+@import 'utils/visually-hidden';
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+
+/* Base */
+@import 'base/normalize';
+@import 'base/fonts';
+@import 'base/base';
+@import 'base/animate';
+
+/* Components */
+@import 'components/bg-text';
+@import 'components/burger';
+@import 'components/logo';
+@import 'components/main-button';
+@import 'components/social-link';
+
+/* Layout */
+@import 'layout/mapmain-section';
+@import 'layout/menu-section';
+@import 'layout/routmap-section';
+@import 'layout/routaudioguide-section';
+@import 'layout/routstreetview-section';
+@import 'layout/routothercyclists-section';
+@import 'layout/routreviews-section';
+@import 'layout/routsharing-section';
+@import 'layout/proposerout-section';
+@import 'layout/traficcontrol-section';
+@import 'layout/traficaccident-section';
+@import 'layout/school-section';

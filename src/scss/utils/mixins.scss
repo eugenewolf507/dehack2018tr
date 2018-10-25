@@ -1,0 +1,48 @@
+@mixin mobile-big{
+  @media (min-width: $phone-big-break-point){
+    @content;
+  }
+}
+
+@mixin tablet-small{
+  @media (min-width: $tablet-small-break-point){
+    @content;
+  }
+}
+
+@mixin tablet-big{
+  @media (min-width: $tablet-big-break-point){
+    @content;
+  }
+}
+
+@mixin desktop-small{
+  @media (min-width: $desktop-small-break-point){
+    @content;
+  }
+}
+
+@mixin desktop-big{
+  @media (min-width: $desktop-big-break-point){
+    @content;
+  }
+}
+
+@mixin flex($jc: space-between) {
+  display: flex;
+  justify-content: $jc;
+  flex-wrap: wrap;
+}
+
+@mixin flex-list($jc: space-between) {
+  display: flex;
+  justify-content: $jc;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+@mixin inverted-colors($color: $title-dark-color, $bgcolor: $mark-cold-color) {
+  color: $color;
+  background-color: $bgcolor;
+}
+

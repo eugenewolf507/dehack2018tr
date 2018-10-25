@@ -1,0 +1,16 @@
+.bg-text{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-family: 'Acrom';
+  font-weight: 900;
+  font-size: 182px;
+  width: 180px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  // writing-mode: vertical-rl;
+  // writing-mode: tb-rl;
+  white-space: nowrap;
+  z-index: -1;
+  transform: rotate(90deg);
+}

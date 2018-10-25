@@ -1,0 +1,14 @@
+.main-button{
+  display: block;
+  border: none;
+  border-radius: 0;
+  //min-height: 37.5px;
+  background-color: $mark-warm-color;
+  font-family: $main-font;
+  //font-size: $mobile-font-size;
+  font-weight: $bold;
+  color: $title-light-color;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}

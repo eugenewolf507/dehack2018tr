@@ -1,0 +1,37 @@
+{
+  "name": "dehack-18-trostjanets-cycle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "gulp start",
+    "template-gulp": "gulp gulp-template"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmytroIE/JS_Homework_12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmytroIE/JS_Homework_12/issues"
+  },
+  "homepage": "https://github.com/DmytroIE/JS_Homework_12#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "browser-sync": "^2.26.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.1",
+    "gulp-shell": "^0.6.5",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.12"
+  }
+}
