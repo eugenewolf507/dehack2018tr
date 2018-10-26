@@ -13,12 +13,34 @@
 <body>
 
     <!DOCTYPE html>
-    <section class="mapmain-section">
-        mapmain-section
+    <section class="mapmain-section js-mapmain-section">   
+    <div class="mapmain-section__control-container">
+        <div class="mapmain-section__control-item control-item__zoomin js-zoomin"></div>
+        <div class="mapmain-section__control-item control-item__zoomout js-zoomout"></div>
+        <div class="mapmain-section__control-item control-item__geotag js-geotag"></div>
+    </div>
     </section>
     <!DOCTYPE html>
     <section class="menu-section">
-        menu-section
+        <nav class="menu-section__nav">
+            <div class="menu-section__nav-item nav-item__burger">
+                <svg width="26px" height="26px">
+                    <use href="img/sprite.svg#menu"></use>
+                </svg>
+            </div>
+                <ul class="burger-list">
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">куди їдемо</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">рекреаційні маршрути</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">магістральні маршрути</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">туристичні маршрути</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">ПДР для велосипедистів</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">що робити при ДТП</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">велосипедом до школи</a></li>
+                    <li class="burger-list__item"><a href="#" class="burger-list__link">налаштування</a></li>
+                </ul>
+            <div class="menu-section__nav-item nav-item__pdd">ПДД</div>
+            <div class="menu-section__nav-item nav-item__dtp">ДТП</div>
+        </nav> 
     </section>
     <!DOCTYPE html>
     <section class="routmap-section">

@@ -1,3 +1,9 @@
 .mapmain-section {
-  color: crimson;
+  height: 100vh;
+  background-image: url(../image/bgr-test.png);
+  &__control-container {
+    position: absolute;
+  bottom: 140px;
+  right: 40px;
+  }
 }

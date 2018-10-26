@@ -846,8 +846,8 @@ time, mark, audio, video, input, button {
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
-    transform: skewX(0.39063deg) skewY(0.39063deg); }
+    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
+    transform: skewX(0.39062deg) skewY(0.39062deg); }
   88.8% {
     -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
@@ -874,8 +874,8 @@ time, mark, audio, video, input, button {
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
-    transform: skewX(0.39063deg) skewY(0.39063deg); }
+    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
+    transform: skewX(0.39062deg) skewY(0.39062deg); }
   88.8% {
     -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
@@ -2978,10 +2978,51 @@ time, mark, audio, video, input, button {
 
 /* Layout */
 .mapmain-section {
-  color: crimson; }
+  height: 100vh;
+  background-image: url(../image/bgr-test.png); }
+  .mapmain-section__control-container {
+    position: absolute;
+    bottom: 140px;
+    right: 40px; }
 
 .menu-section {
-  color: crimson; }
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: #3f4144;
+  width: 100%; }
+  .menu-section__nav {
+    width: 98%;
+    font-family: Gilroy, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .menu-section__nav-item {
+    height: 50px;
+    width: 60px;
+    font-size: 23px;
+    margin: 0 5px; }
+
+.burger-list {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  list-style: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fac720), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(#fac720, rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(#fac720, rgba(255, 255, 255, 0));
+  background: linear-gradient(#fac720, rgba(255, 255, 255, 0)); }
+  .burger-list__item {
+    padding: 10px 8px; }
+  .burger-list__item:hover {
+    background-color: rgba(190, 179, 151, 0.65); }
+  .burger-list__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3f4144; }
 
 .routmap-section {
   color: crimson; }
