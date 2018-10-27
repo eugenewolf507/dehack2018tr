@@ -765,7 +765,12 @@ var cafe = new Cafe(cafeDiv, map);
 
 var sightDiv = document.createElement('div');
 var sight = new Sight(sightDiv, map);
-   
-  
-   
 };
+
+// const itemTrafic = document.querySelector('.trafic-section__title2--expended');
+// console.log(showTraficText);
+// itemTrafic.addEventListener('click', showTraficText);
+// function showTraficText () {
+//   console.log('ff');
+//   itemTrafic.nextElementSibling.classList.remove('.visually-hidden');
+// }
