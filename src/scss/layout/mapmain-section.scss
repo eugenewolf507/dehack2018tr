@@ -1,41 +1,12 @@
-// .mapmain-section {
-  // height: 100vh;
-  // background-image: url(../img/bgr-test.png);
-  // &__control-container {
-  //   width: 50px;
-  //   height: 150px;
-  //   position: absolute;
-  //   bottom: 60px;
-  //   right: 40px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   animation: bounceInRight 1.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-  // }
-  // &__control-item {
-  //   width: 40px;
-  //   height: 40px;
-  //   padding: 10px;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   background-color: rgba(227, 173, 62, 0.8);
-  //   border-radius: 8px;
-  //   border: 5px solid transparent;
-  //   &:hover {
-  //     background-color: rgba(253, 215, 138, 0.9);
-  //   }
-    // &--zoomin {
-    //   background-image: url(../img/plus.svg);
-    // }
-    // &--zoomout {
-    //   background-image: url(../img/minus.svg);
-    // }
-    // &--geotag {
-    //   background-image: url(../img/location.svg);
-    // }
-  // }
-// }
+.mapmain-section {
+  height: 100vh;
+}
+
+.map{
+  width: 100%;
+  height: 100%;
+}
+
 
 .btn-zoom-plus {
   position: absolute;
@@ -83,15 +54,15 @@
 }
 
 .map{
-  width: 400px;
-  height: 600px;
+  width: 100%;
+    height: 100%;
 }
-.box {
-  position: relative;
-    margin: 0 auto;
-    max-width: 320px;
-    outline: 1px solid red;
-}
+// .box {
+//   position: relative;
+//     margin: 0 auto;
+//     max-width: 320px;
+//     outline: 1px solid red;
+// }
 
 
 

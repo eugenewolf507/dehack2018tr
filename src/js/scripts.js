@@ -1,10 +1,10 @@
-const menuButton = document.querySelector('.js-burger');
-const menu = document.querySelector('.burger-list');
+// const menuButton = document.querySelector('.js-burger');
+// const menu = document.querySelector('.burger-list');
 
-function menuButtonClickHandler() {
-    menu.classList.toggle('hidden')
-};
-menuButton.addEventListener('click', menuButtonClickHandler);
+// function menuButtonClickHandler() {
+//     menu.classList.toggle('hidden')
+// };
+// menuButton.addEventListener('click', menuButtonClickHandler);
 
 
 // -------------------
@@ -21,9 +21,27 @@ function addMarker(location, arrayMarkers) {
         arrayMarkers.push(marker);
       }
       
-var markersParking = [{lat: 50.481979, lng: 34.968266},{lat:50.473136,lng:34.957649}];
-var markersCafe = [{lat: 50.478797, lng: 34.966238},{lat: 50.475005, lng: 34.961555},{lat: 50.469273, lng: 34.959724},{lat: 50.481247, lng: 34.964483}];
-var markersSight = [{lat:50.481962,lng:34.972028},{lat:50.475454,lng:34.957193}];
+      var markersParking = [{lat: 50.35741736, lng:33.26821771},];
+
+      var markersCafe = [
+      {lat: 50.36136372, lng: 33.27227418},
+      {lat: 50.35961153, lng: 33.27658718},
+      ];
+      
+      var markersSight = [
+      {lat:50.35958415,  lng:33.2721669},
+      {lat:50.35731167,  lng:33.2637984},
+      {lat:50.35999483,  lng:33.26744621},
+      {lat:50.35095911,  lng:33.26538627},
+      {lat:50.38446476,  lng:33.28152244},
+      {lat:50.32647189,  lng:33.22792118},
+      {lat:50.28744158,  lng:33.22174137},
+      {lat:50.25068435,  lng:33.14037387},
+      {lat:50.36218504,  lng:33.27109401},
+      {lat:50.35810869,  lng:33.28208473},
+      {lat:50.36211447,  lng:33.2846553},
+      {lat:50.3529033,  lng:33.25626676}
+      ];
   
 function delateMarkers(array){
 for (var i = 0; i < array.length; i++) {
@@ -710,16 +728,16 @@ function showAllPolylines() {
     })
 }
 //---------------------Функция для тестирования------------------------------------
-      document.getElementById('hide').addEventListener('click', () => {
-        if (polylinesHidden) {
-          showAllPolylines();
-          polylinesHidden = false;
-        } else {
-          removeAllButOnePolyline('arterialRoutes', 2);
-          polylinesHidden = true;
-        }
+      // document.getElementById('hide').addEventListener('click', () => {
+      //   if (polylinesHidden) {
+      //     showAllPolylines();
+      //     polylinesHidden = false;
+      //   } else {
+      //     removeAllButOnePolyline('arterialRoutes', 2);
+      //     polylinesHidden = true;
+      //   }
 
-      })
+      // })
 
 
 //------------------------------------CURRENT GEOLOCATION START---------------------------------------------
