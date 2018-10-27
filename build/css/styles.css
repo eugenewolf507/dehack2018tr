@@ -378,6 +378,9 @@ html {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
+.wrapper {
+  width: 100vw; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -3001,50 +3004,101 @@ time, mark, audio, video, input, button {
 .traficcontrol-section {
   color: crimson; }
 
-.traficaccident-section {
-  padding: 10px 5px;
+.trafic-section {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E3AD3E), to(rgba(255, 255, 105, 0)));
+  background: -webkit-linear-gradient(#E3AD3E, rgba(255, 255, 105, 0));
+  background: -o-linear-gradient(#E3AD3E, rgba(255, 255, 105, 0));
+  background: linear-gradient(#E3AD3E, rgba(255, 255, 105, 0));
+  padding: 2rem 2.1% 2.6%;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  font-family: "Open Sans", sans-serif; }
-  .traficaccident-section a {
+  line-height: 1.5; }
+  .trafic-section a {
     text-decoration: none; }
-  .traficaccident-section__inner {
-    margin-bottom: 25px;
-    padding: 10px 0; }
-    .traficaccident-section__inner:last-of-type {
+  .trafic-section__inner {
+    margin-bottom: 0.5rem;
+    padding: 0 0 2.6%; }
+    .trafic-section__inner:last-of-type {
       margin-bottom: 0; }
-    .traficaccident-section__inner p,
-    .traficaccident-section__inner i {
-      position: relative;
-      margin-bottom: 4px;
-      padding-left: 10px; }
-    .traficaccident-section__inner p:last-of-type {
+    .trafic-section__inner p:last-of-type {
       margin-bottom: 0; }
-    .traficaccident-section__inner p:before {
-      content: "+";
-      position: absolute;
-      left: 0; }
-  .traficaccident-section__title {
+  .trafic-section__title {
+    padding-bottom: 1rem;
     font-family: "PT Mono", monospace;
-    padding: 0 10px; }
-  .traficaccident-section__title2 {
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline; }
+  .trafic-section__title2 {
+    font-size: 22px;
     font-family: "PT Mono", monospace;
-    padding: 0 5px;
-    text-transform: uppercase; }
-    .traficaccident-section__title2 span {
-      text-transform: lowercase; }
-  .traficaccident-section__button {
-    outline: none;
-    cursor: pointer; }
-    .traficaccident-section__button--fb {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url(../img/facebook.svg);
-      background-repeat: no-repeat; }
-    .traficaccident-section__button--contacts {
-      text-transform: uppercase; }
+    padding: 0 1.3% 5%;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 400; }
+  .trafic-section span {
+    text-transform: lowercase; }
+  .trafic-section--expended {
+    padding-bottom: 0; }
+
+.title2__button {
+  background-image: url(../img/text_vniz.svg);
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  right: 1.5rem;
+  top: 0.3rem; }
+
+.section-whatDo li {
+  position: relative;
+  margin-bottom: 0.3rem;
+  padding-left: 2rem; }
+
+.section-whatDo li::before {
+  content: url(../img/checkbox.svg);
+  position: absolute;
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem; }
+
+.section-help__button {
+  display: block;
+  width: 50%;
+  height: 2.2rem;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-family: "PT Mono", monospace;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.3rem; }
+  .section-help__button:active {
+    border: 1px solid #fff; }
+  .section-help__button--fb {
+    background-color: #E3AD3E;
+    color: #fff; }
+    .section-help__button--fb:active {
+      border: 1px solid #000;
+      color: #000; }
+  .section-help__button a {
+    color: #000; }
+
+.section-whatDo__list p {
+  position: relative; }
+
+.section-whatDo__list p::before {
+  content: url(../img/point.svg);
+  position: absolute;
+  left: -1.5rem;
+  bottom: -0.45rem;
+  width: 2.2rem;
+  height: 2.2rem; }
 
 .school-section {
   color: violet; }
