@@ -9,6 +9,10 @@
     padding: 2rem 2.1% 2.6%;
   }
 
+  &-wrapper {
+    padding: 2rem 2.1% 2.6%;
+  }
+
   & a {
     text-decoration: none;
   }
@@ -43,6 +47,23 @@
     text-transform: uppercase;
     line-height: 1.2;
     font-weight: $regular;
+
+    &--expended {
+      padding-bottom: 0;
+      cursor: pointer;
+      position: relative;
+
+      // &::after {
+      //   content: url(../img/text_vniz.svg);
+      //   display: block;
+      //   position: absolute;
+      //   width: 1.5rem;
+      //   height: 1.5rem;
+      //   right: 1.5rem;
+      //   top: 0rem;
+      //   cursor: pointer;
+      // }
+    }
   }
 
   &__title3 {
@@ -53,22 +74,19 @@
   & span {
     text-transform: lowercase;
   }
-
-  &--expended {
-    padding-bottom: 0;
-  }
 }
 
-.title2__button {
-  background-image: url(../img/text_vniz.svg);
-  width: 1rem;
-  height: 1rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  right: 1.5rem;
-  top: 0.3rem;
-}
+// .title2__button {
+//   background-image: url(../img/text_vniz.svg);
+//   width: 1rem;
+//   height: 1rem;
+//   border: none;
+//   outline: none;
+//   background-color: transparent;
+//   right: 1.5rem;
+//   top: 0.3rem;
+//   cursor: pointer;
+// }
 
 .section-whatDo {
   & li {
@@ -141,7 +159,7 @@
   }
 
   & p::before {
-      left: -1.5rem;
-      top: -0.4rem;
-    }
+    left: -1.5rem;
+    top: -0.4rem;
+  }
 }
