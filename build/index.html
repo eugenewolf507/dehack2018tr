@@ -14,30 +14,29 @@
 
     <!DOCTYPE html>
     <section class="mapmain-section js-mapmain-section">  
-        ТУТ ДОЛЖНА БЫТЬ КАРТА, НО ПОСКОЛЬКУ У НАС В ПАПКЕ BUILD НЕ СОБИРАЕТСЯ НОРМАЛЬНО СБОРКА И НЕ СОЗДАЕТСЯ ПАПОК IMG И FONTS, ТО ЕЕ НЕТ И КНОПОЧЕК ЗУМ ИН/АУТ НЕ ВИДНО ХОТЯ ОНИ УЖЕ ЕСТЬ 
     <div class="mapmain-section__control-container">
-        <div class="mapmain-section__control-item control-item__zoomin js-zoomin"></div>
-        <div class="mapmain-section__control-item control-item__zoomout js-zoomout"></div>
-        <div class="mapmain-section__control-item control-item__geotag js-geotag"></div>
+        <div class="mapmain-section__control-item mapmain-section__control-item--zoomin js-zoomin"></div>
+        <div class="mapmain-section__control-item mapmain-section__control-item--zoomout js-zoomout"></div>
+        <div class="mapmain-section__control-item mapmain-section__control-item--geotag js-geotag"></div>
     </div>
     </section>
     <!DOCTYPE html>
     <section class="menu-section">
-        <nav class="menu-section__nav">
-            <div class="menu-section__nav-item nav-item__burger">
+        <nav class="menu-section__nav js-nav">
+            <div class="menu-section__nav-item nav-item__burger js-burger">
                 <svg width="26px" height="26px">
                     <use href="img/sprite.svg#menu"></use>
                 </svg>
             </div>
                 <ul class="burger-list">
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">куди їдемо</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">рекреаційні маршрути</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">магістральні маршрути</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">туристичні маршрути</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">ПДР для велосипедистів</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">що робити при ДТП</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">велосипедом до школи</a></li>
-                    <li class="burger-list__item"><a href="#" class="burger-list__link">налаштування</a></li>
+                    <li class="burger-list__item burger-list__item--where"><a href="#" class="burger-list__link">куди їдемо</a></li>
+                    <li class="burger-list__item burger-list__item--recreation"><a href="#" class="burger-list__link">рекреаційні маршрути</a></li>
+                    <li class="burger-list__item burger-list__item--magistral"><a href="#" class="burger-list__link">магістральні маршрути</a></li>
+                    <li class="burger-list__item burger-list__item--touristic"><a href="#" class="burger-list__link">туристичні маршрути</a></li>
+                    <li class="burger-list__item burger-list__item--pdr"><a href="#" class="burger-list__link">ПДР для велосипедистів</a></li>
+                    <li class="burger-list__item burger-list__item--dtp"><a href="#" class="burger-list__link">що робити при ДТП</a></li>
+                    <li class="burger-list__item burger-list__item--toschool"><a href="#" class="burger-list__link">велосипедом до школи</a></li>
+                    <li class="burger-list__item burger-list__item--settigs"><a href="#" class="burger-list__link">налаштування</a></li>
                 </ul>
             <div class="menu-section__nav-item nav-item__pdd">ПДД</div>
             <div class="menu-section__nav-item nav-item__dtp">ДТП</div>
