@@ -1,4 +1,5 @@
 'use strict';
+
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
@@ -15,6 +16,18 @@ gulp.task('html', () =>
     .src('./src/index.html')
     .pipe(rigger())//add!!!
     .pipe(gulp.dest('./build'))
+);
+
+gulp.task('img', () =>
+  gulp
+    .src('./src/img/*.*')
+    .pipe(gulp.dest('./build/img'))
+);
+
+gulp.task('fonts', () =>
+  gulp
+    .src('./src/fonts/*.*')
+    .pipe(gulp.dest('./build/fonts'))
 );
 
 gulp.task('sass', function(){
@@ -64,4 +77,4 @@ gulp.task('build', cb =>
 );
 
 
-gulp.task('start', cb => sequence('build', 'serve', 'watch'));
+gulp.task('start', cb => sequence('img', 'fonts', 'build', 'serve', 'watch'));
