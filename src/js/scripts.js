@@ -454,7 +454,7 @@ var mapControl = new MapControl(mapControlDiv, map);
         //-----------------------------------------------------------------------------------------------
 
         arterialRoutes: {
-          color: '#CCFF00',
+          color: '#6fc66b',
           coords: [[
             { lat: 50.3503076, lng: 33.2508945 },
             { lat: 50.3513756, lng: 33.2528901 },
@@ -743,7 +743,7 @@ var mapControl = new MapControl(mapControlDiv, map);
             path: item,
             strokeColor: routes[key].color,
             strokeOpacity: 0.7,
-            strokeWeight: 3,
+            strokeWeight: 4,
             map: map
           });
           const obj = {type: key, index: idx, poly};

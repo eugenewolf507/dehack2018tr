@@ -18,11 +18,11 @@
       background-color: rgba(253, 215, 138, 0.9); }
 
     &--zoomin {
-      background-image: url(../img/plus.svg); 
+      background-image: url(../img/minus.svg); 
       top: 10px;
     }
     &--zoomout {
-      background-image: url(../img/minus.svg); 
+      background-image: url(../img/plus.svg); 
       top: 60px;
     }
     &--geotag {
