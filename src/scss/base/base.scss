@@ -1,5 +1,15 @@
 html {
   box-sizing: border-box;
+  // overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100%; 
+  // width: 100%;
+  overflow-x: hidden;
+  // margin: 0;
+  // padding: 0;
 }
 
 *,
@@ -8,38 +18,20 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  font-family: $main-font;
-  font-size: $mobile-font-size;
-  font-weight: $regular;
-  line-height: 13px;
-
-  @include mobile-big{
-    font-size: 13.5px;
-    line-height: 19.5px;
-  }
-
-  @include tablet-small{
-    font-size: 9px;
-    line-height: 13.5px;
-  }
-
-  @include tablet-big{
-    font-size: 9.8px;
-    line-height: 16.8px;
-  }
-
-  @include desktop-small{
-    font-size: 8.75px;
-    line-height: 15px;
-  }
-
-  @include desktop-big{
-    font-size: 10.5px;
-    line-height: 18px;
-  }
-
+.wrapper {
+  width: 100vw;
 }
+// body {
+//   font-family: $main-font;
+//   font-size: $mobile-font-size;
+//   font-weight: $regular;
+//   line-height: 13px;
+
+//   @include mobile-big{
+//     font-size: ;
+//     line-height: ;
+//   }
+// }
 
 // img {
 //   display: block;
@@ -63,19 +55,3 @@ time, mark, audio, video, input, button {
   margin: 0;
   padding: 0;
 }
-
-// .wrapper{
-//   position: relative;
-//   max-width: 848px;
-//   margin: 0 auto;
-//   padding-top: 32px;
-//   padding-bottom: 40px;
-
-//   @include tablet{
-//     width: 100%;
-//   }
-
-//   @include mobile{
-//     min-width: 290px;
-//   }
-// }

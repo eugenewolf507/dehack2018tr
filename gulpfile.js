@@ -18,6 +18,18 @@ gulp.task('html', () =>
     .pipe(gulp.dest('./build'))
 );
 
+gulp.task('img', () =>
+  gulp
+    .src('./src/img/*.*')
+    .pipe(gulp.dest('./build/img'))
+);
+
+gulp.task('fonts', () =>
+  gulp
+    .src('./src/fonts/*.*')
+    .pipe(gulp.dest('./build/fonts'))
+);
+
 gulp.task('sass', function(){
   return gulp.src('./src/scss/styles.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
@@ -65,4 +77,4 @@ gulp.task('build', cb =>
 );
 
 
-gulp.task('start', cb => sequence('build', 'serve', 'watch'));
+gulp.task('start', cb => sequence('img', 'fonts', 'build', 'serve', 'watch'));
