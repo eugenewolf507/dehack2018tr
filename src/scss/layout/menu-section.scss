@@ -2,19 +2,19 @@
   position: absolute;
   top: 40px;
   left: 40px;
-  color: $text-color;
+  color: $black-color;
   width: 100%;
   &__nav {
     width: 98%;
-    font-family: $bottomfooter-font;
+    font-family: $title-font;
     font-weight: $regular;
-    font-size: $title-small-font-size;
+    // font-size: $title-small-font-size;
     display: flex;
   }
   &__nav-item {
     height: 50px;
     width: 60px;
-    font-size: $count-font-size;
+    // font-size: $count-font-size;
     margin: 0 5px;
   }
 }
@@ -24,7 +24,7 @@
   left: 0;
   width: 200px;
   list-style: none;
-  background: linear-gradient(rgb(250, 199, 32), rgba(255, 255, 255, 0));
+  background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
   &__item {
     padding: 10px 8px;
   }
@@ -34,6 +34,6 @@
   &__link {
     text-transform: uppercase;
     text-decoration: none;
-    color: $text-color;
+    color: $black-color;
   }
 }

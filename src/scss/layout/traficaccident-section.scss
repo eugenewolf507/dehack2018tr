@@ -1,3 +1,70 @@
 .traficaccident-section {
-  color: crimson;
+  padding: 10px 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  // color: red;
+  font-family: $text-font;
+
+  & a {
+    text-decoration: none;
+  }
+
+  &__inner {
+    margin-bottom: 25px;
+    padding: 10px 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    & p,
+    i {
+      position: relative;
+      margin-bottom: 4px;
+      padding-left: 10px;
+    }
+
+    & p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    & p:before {
+      content: "+";
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__title {
+    font-family: $title-font;
+    padding: 0 10px;
+  }
+
+  &__title2 {
+    font-family: $title-font;
+    padding: 0 5px;
+    text-transform: uppercase;
+
+    & span {
+      text-transform: lowercase;
+    }
+  }
+
+  &__button {
+    outline: none;
+    cursor: pointer;
+
+    &--fb {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/facebook.svg);
+      background-repeat: no-repeat;
+    }
+
+    &--contacts {
+      text-transform: uppercase;
+    }
+  }
 }
