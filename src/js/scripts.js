@@ -1,22 +1,24 @@
-// const menuButton = document.querySelector('.js-burger');
-// const menu = document.querySelector('.burger-list');
+const menuButton = document.querySelector('.js-burger');
+const menu = document.querySelector('.burger-list');
 
-// function menuButtonClickHandler() {
-//     menu.classList.toggle('hidden')
-// };
-// menuButton.addEventListener('click', menuButtonClickHandler);
+function menuButtonClickHandler() {
+    menu.classList.toggle('hidden')
+};
+menuButton.addEventListener('click', menuButtonClickHandler);
 
 
 // -------------------
 let parkingMarkers=[];
  let cafeMarkers=[];
  let sightMarkers=[];
+ let geotagMarkers=[];
  
 
-function addMarker(location, arrayMarkers) {
+function addMarker(location, arrayMarkers, icon) {
         var marker = new google.maps.Marker({
           position: location,
-          map: map
+          map: map,
+          icon: icon,
         });
         arrayMarkers.push(marker);
       }
@@ -54,7 +56,11 @@ let parkingHandle = false;
 function Parking(controlDiv, map) {
         google.maps.event.addDomListener(parking, 'click', function() {
             if(!parkingHandle){
-                markersParking.map(parking => addMarker(parking, parkingMarkers));
+                const icon = {
+                          scaledSize: new google.maps.Size(33, 33), // scaled size
+                          url: "./img/bikeparking_on_map.svg"
+                        };
+                markersParking.map(parking => addMarker(parking, parkingMarkers, icon));
                 parkingHandle = true;
             } else {
             delateMarkers(parkingMarkers);
@@ -67,7 +73,11 @@ let cafeHandle = false;
 function Cafe(controlDiv, map) {
         google.maps.event.addDomListener(cafe, 'click', function() {
             if(!cafeHandle){
-                markersCafe.map(cafe => addMarker(cafe, cafeMarkers));
+              const icon = {
+                scaledSize: new google.maps.Size(33, 33), // scaled size
+                url: "./img/cafe_on_map.svg"
+              };
+                markersCafe.map(cafe => addMarker(cafe, cafeMarkers, icon));
                 cafeHandle = true;
             } else {
             delateMarkers(cafeMarkers);
@@ -80,7 +90,11 @@ let sightHandle = false;
 function Sight(controlDiv, map) {
         google.maps.event.addDomListener(sight, 'click', function() {
             if(!sightHandle){
-                markersSight.map(sight => addMarker(sight, sightMarkers));
+              const icon = {
+                scaledSize: new google.maps.Size(33, 33), // scaled size 
+                url: "./img/tourist_points_on_map.svg"
+              };
+                markersSight.map(sight => addMarker(sight, sightMarkers, icon));
                 sightHandle = true;
             } else {
             delateMarkers(sightMarkers);
@@ -103,6 +117,33 @@ function MapControl(controlDiv, map) {
   });
 
 }
+
+
+let geotagHandle = false;
+function Geotag(controlDiv, map) {
+        google.maps.event.addDomListener(geotag, 'click', function() {
+            if(!geotagHandle){
+                const icon = {
+                          scaledSize: new google.maps.Size(30, 30), // scaled size
+                          url: "../img/your location_on_map.svg"
+                        };
+                addMarker({ lat: 50.3574885, lng: 33.2762039 }, geotagMarkers, icon);
+                geotagHandle = true;
+            } else {
+            delateMarkers(geotagMarkers);
+            geotagHandle = false;
+            }
+  });
+} 
+
+      // markerPosition = new google.maps.Marker(
+      //   {position: { lat: 50.3574885, lng: 33.2762039 }, 
+      //     map: map,
+      //     icon: 'https://pbs.twimg.com/profile_images/707025898222936064/hs3oOROZ_bigger.jpg',
+      //   }); 
+
+
+//-------------------------------------------------------------------------
 
 var map;
       function initMap() {
@@ -413,7 +454,7 @@ var mapControl = new MapControl(mapControlDiv, map);
         //-----------------------------------------------------------------------------------------------
 
         arterialRoutes: {
-          color: '#CCFF00',
+          color: '#6fc66b',
           coords: [[
             { lat: 50.3503076, lng: 33.2508945 },
             { lat: 50.3513756, lng: 33.2528901 },
@@ -702,7 +743,7 @@ var mapControl = new MapControl(mapControlDiv, map);
             path: item,
             strokeColor: routes[key].color,
             strokeOpacity: 0.7,
-            strokeWeight: 3,
+            strokeWeight: 4,
             map: map
           });
           const obj = {type: key, index: idx, poly};
@@ -765,6 +806,7 @@ var cafe = new Cafe(cafeDiv, map);
 
 var sightDiv = document.createElement('div');
 var sight = new Sight(sightDiv, map);
+
 };
 
 // const itemTrafic = document.querySelector('.trafic-section__title2--expended');
@@ -774,3 +816,12 @@ var sight = new Sight(sightDiv, map);
 //   console.log('ff');
 //   itemTrafic.nextElementSibling.classList.remove('.visually-hidden');
 // }
+
+
+var geotagDiv = document.createElement('div');
+var geotag = new Geotag(geotagDiv, map);
+   
+  
+   
+};
+

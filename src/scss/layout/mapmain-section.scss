@@ -1,5 +1,50 @@
 .mapmain-section {
   height: 100vh;
+  position: relative;
+
+  &__control-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(227, 173, 62, 0.8);
+    border-radius: 8px;
+    border: 5px solid transparent; 
+    right: 10px;
+    
+    &:hover {
+      background-color: rgba(253, 215, 138, 0.9); }
+
+    &--zoomin {
+      background-image: url(../img/minus.svg); 
+      top: 10px;
+    }
+    &--zoomout {
+      background-image: url(../img/plus.svg); 
+      top: 60px;
+    }
+    &--geotag {
+      background-image: url(../img/location.svg); 
+      top: 110px;
+    }
+
+    &--parking {
+      background-image: url(../img/parking.svg); 
+      top: 160px;
+    }
+    &--cafe {
+      background-image: url(../img/cafe.svg); 
+      top: 210px;
+    }
+    &--sight {
+      background-image: url(../img/sight.svg); 
+      top: 260px;
+    }
+
+  }
+
 }
 
 .map{
