@@ -456,7 +456,7 @@ var mapControl = new MapControl(mapControlDiv, map);
         //-----------------------------------------------------------------------------------------------
 
         arterialRoutes: {
-          color: '#CCFF00',
+          color: '#6fc66b',
           coords: [[
             { lat: 50.3503076, lng: 33.2508945 },
             { lat: 50.3513756, lng: 33.2528901 },
