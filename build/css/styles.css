@@ -374,6 +374,7 @@ html {
 
 html,
 body {
+  position: relative;
   height: 100%;
   overflow-x: hidden; }
 
@@ -827,8 +828,8 @@ time, mark, audio, video, input, button {
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
-    transform: skewX(0.39062deg) skewY(0.39062deg); }
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% {
     -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
@@ -855,8 +856,8 @@ time, mark, audio, video, input, button {
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
-    transform: skewX(0.39062deg) skewY(0.39062deg); }
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% {
     -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
@@ -3220,6 +3221,9 @@ time, mark, audio, video, input, button {
   color: crimson; }
 
 .trafic-section {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#E3AD3E), to(rgba(255, 255, 105, 0)));
   background: -webkit-linear-gradient(#E3AD3E, rgba(255, 255, 105, 0));
@@ -3234,6 +3238,8 @@ time, mark, audio, video, input, button {
     padding: 2rem 2.1% 2.6%; }
   .trafic-section a {
     text-decoration: none; }
+  .trafic-section__img {
+    width: 100vw; }
   .trafic-section__inner {
     margin-bottom: 0.5rem;
     padding: 0 0 2.6%; }
@@ -3260,6 +3266,15 @@ time, mark, audio, video, input, button {
       padding-bottom: 0;
       cursor: pointer;
       position: relative; }
+      .trafic-section__title2--expended::after {
+        content: url(../img/text_vniz.svg);
+        display: block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        right: 1.1rem;
+        top: 0rem;
+        cursor: pointer; }
   .trafic-section__title3 {
     font-size: 16px;
     font-family: "PT Mono", monospace; }

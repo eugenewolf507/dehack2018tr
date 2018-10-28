@@ -1,4 +1,7 @@
 .trafic-section {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
   font-family: $text-font;
@@ -15,6 +18,10 @@
 
   & a {
     text-decoration: none;
+  }
+
+  &__img {
+    width: 100vw;
   }
 
   &__inner {
@@ -53,16 +60,16 @@
       cursor: pointer;
       position: relative;
 
-      // &::after {
-      //   content: url(../img/text_vniz.svg);
-      //   display: block;
-      //   position: absolute;
-      //   width: 1.5rem;
-      //   height: 1.5rem;
-      //   right: 1.5rem;
-      //   top: 0rem;
-      //   cursor: pointer;
-      // }
+      &::after {
+        content: url(../img/text_vniz.svg);
+        display: block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        right: 1.1rem;
+        top: 0rem;
+        cursor: pointer;
+      }
     }
   }
 
@@ -121,6 +128,7 @@
 
   &:active {
     border: 1px solid $white-color;
+
   }
 
   &--fb {
