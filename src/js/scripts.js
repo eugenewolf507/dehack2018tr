@@ -1,24 +1,22 @@
 const menuButton = document.querySelector('.js-burger');
 const menu = document.querySelector('.burger-list');
 
-function menuButtonClickHandler() {
-    menu.classList.toggle('hidden')
-};
-menuButton.addEventListener('click', menuButtonClickHandler);
+// function menuButtonClickHandler() {
+//     menu.classList.toggle('hidden')
+// };
+// menuButton.addEventListener('click', menuButtonClickHandler);
 
 
 // -------------------
 let parkingMarkers=[];
  let cafeMarkers=[];
  let sightMarkers=[];
- let geotagMarkers=[];
  
 
-function addMarker(location, arrayMarkers, icon) {
+function addMarker(location, arrayMarkers) {
         var marker = new google.maps.Marker({
           position: location,
-          map: map,
-          icon: icon,
+          map: map
         });
         arrayMarkers.push(marker);
       }
@@ -56,11 +54,7 @@ let parkingHandle = false;
 function Parking(controlDiv, map) {
         google.maps.event.addDomListener(parking, 'click', function() {
             if(!parkingHandle){
-                const icon = {
-                          scaledSize: new google.maps.Size(33, 33), // scaled size
-                          url: "./img/bikeparking_on_map.svg"
-                        };
-                markersParking.map(parking => addMarker(parking, parkingMarkers, icon));
+                markersParking.map(parking => addMarker(parking, parkingMarkers));
                 parkingHandle = true;
             } else {
             delateMarkers(parkingMarkers);
@@ -73,11 +67,7 @@ let cafeHandle = false;
 function Cafe(controlDiv, map) {
         google.maps.event.addDomListener(cafe, 'click', function() {
             if(!cafeHandle){
-              const icon = {
-                scaledSize: new google.maps.Size(33, 33), // scaled size
-                url: "./img/cafe_on_map.svg"
-              };
-                markersCafe.map(cafe => addMarker(cafe, cafeMarkers, icon));
+                markersCafe.map(cafe => addMarker(cafe, cafeMarkers));
                 cafeHandle = true;
             } else {
             delateMarkers(cafeMarkers);
@@ -90,11 +80,7 @@ let sightHandle = false;
 function Sight(controlDiv, map) {
         google.maps.event.addDomListener(sight, 'click', function() {
             if(!sightHandle){
-              const icon = {
-                scaledSize: new google.maps.Size(33, 33), // scaled size 
-                url: "./img/tourist_points_on_map.svg"
-              };
-                markersSight.map(sight => addMarker(sight, sightMarkers, icon));
+                markersSight.map(sight => addMarker(sight, sightMarkers));
                 sightHandle = true;
             } else {
             delateMarkers(sightMarkers);
@@ -117,33 +103,6 @@ function MapControl(controlDiv, map) {
   });
 
 }
-
-
-let geotagHandle = false;
-function Geotag(controlDiv, map) {
-        google.maps.event.addDomListener(geotag, 'click', function() {
-            if(!geotagHandle){
-                const icon = {
-                          scaledSize: new google.maps.Size(30, 30), // scaled size
-                          url: "../img/your location_on_map.svg"
-                        };
-                addMarker({ lat: 50.3574885, lng: 33.2762039 }, geotagMarkers, icon);
-                geotagHandle = true;
-            } else {
-            delateMarkers(geotagMarkers);
-            geotagHandle = false;
-            }
-  });
-} 
-
-      // markerPosition = new google.maps.Marker(
-      //   {position: { lat: 50.3574885, lng: 33.2762039 }, 
-      //     map: map,
-      //     icon: 'https://pbs.twimg.com/profile_images/707025898222936064/hs3oOROZ_bigger.jpg',
-      //   }); 
-
-
-//-------------------------------------------------------------------------
 
 var map;
       function initMap() {
@@ -454,7 +413,7 @@ var mapControl = new MapControl(mapControlDiv, map);
         //-----------------------------------------------------------------------------------------------
 
         arterialRoutes: {
-          color: '#6fc66b',
+          color: '#CCFF00',
           coords: [[
             { lat: 50.3503076, lng: 33.2508945 },
             { lat: 50.3513756, lng: 33.2528901 },
@@ -743,7 +702,7 @@ var mapControl = new MapControl(mapControlDiv, map);
             path: item,
             strokeColor: routes[key].color,
             strokeOpacity: 0.7,
-            strokeWeight: 4,
+            strokeWeight: 3,
             map: map
           });
           const obj = {type: key, index: idx, poly};
@@ -808,24 +767,19 @@ var sightDiv = document.createElement('div');
 var sight = new Sight(sightDiv, map);
 
 var geotagDiv = document.createElement('div');
-var geotag = new Geotag(geotagDiv, map);
-
+var geotag = new Geotag(geotagDiv, map);  
 };
 
-const itemTrafic = document.querySelectorAll('.trafic-section__title2--expended');
-console.log(itemTrafic);
-itemTrafic.forEach(title => title.addEventListener('click', showTraficText))
-function showTraficText (e) {
-
-  console.log(e);
-  
-  // itemTrafic.ParentNode.classList.remove('.visually-hidden');
-}
-
+// const itemTrafic = document.querySelectorAll('.trafic-section__title2--expended');
+// console.log(showTraficText);
+// map
+// itemTrafic.addEventListener('click', showTraficText);
+// function showTraficText () {
+//   console.log('ff');
+//   itemTrafic.nextElementSibling.classList.remove('.visually-hidden');
+// }
 
 
-   
-  
-   
+
 
 
