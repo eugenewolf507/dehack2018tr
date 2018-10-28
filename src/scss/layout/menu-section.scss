@@ -1,15 +1,19 @@
 .box-shadow-menu {
   position: relative;
   background-color: $main-worm-color;
-  width: 240px;
-  height: 60px;
-  // outline: 2px solid #000; /* Чёрная рамка */
-
+    cursor: pointer;
+  
+  
+  
+  margin-left: 10px;
 }
+
+
+
 .box-shadow-menu:before {
   content: "";
   position: absolute;
-  left: 25px;
+  left: 14px;
   top: 1.5em;
   width: 2.5em;
   height: 0.2em;
@@ -17,6 +21,19 @@
   box-shadow: 
     0 0.65em 0 0 black,
     0 1.3em 0 0 black;
+}
+
+.box-shadow-menu--closed {
+  width: 51px;
+  height: 51px;
+  opacity: 0.7;
+  padding-left: 20px;
+  border-radius: 35px;
+}
+
+.box-shadow-menu--open {
+  width: 240px;
+  height: 60px;
 }
 
 .menu-section {
@@ -61,9 +78,9 @@
 .burger-list {
   font-family: $title-font;
   // font-size: $mainmenu-font-size;
-  
-  // display: none;  // UNCOMMIT
-  position: absolute;
+  display: none;  // UNCOMMIT
+  height: 600px;
+   position: absolute;
   top: 60px;
   left: 0;
   width: 240px;
@@ -72,18 +89,20 @@
   list-style: none;
   background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
   // animation: fadeInLeft 0.34s cubic-bezier(0.215, 0.610, 0.355, 1);
-  &__background {
-    // width: 250px;
-  }
+  
   &__item {
     text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
     font-size: $mainmenu-font-size;
 
-    // background-color: red;
-    padding: 4px 28px;
+    background-color: $white-color;
+    // padding: 2px 28px 12px;
+    padding: 1px;
+    padding-left: 4px;
+    margin: 0px 24px 12px;
     position: relative;
+    border-radius: 4px;
     cursor: pointer;
     &--recreation::after {
       background-color: $rout-arterial;
@@ -98,10 +117,11 @@
   // &__item:first-child {
   //   padding: 0px 28px 8px;
   // }
+  
   &__item::after {
     display: block;
     position: absolute;
-    right: 30px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     content: "";
@@ -120,6 +140,22 @@
   //   font-size: $mainmenu-font-size;
   // }
 }
+
+.subrotes {
+  list-style: none;
+  
+}
+
+// ask Volkov
+.subrotes--clean {
+  margin-left: 40px;
+  background-color: none;
+}
+
+.subrotes__item {
+  margin-bottom: 10px;
+}
+
 .hidden {
   display: block;
 }
