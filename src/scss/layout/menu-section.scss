@@ -2,18 +2,12 @@
   position: relative;
   background-color: $main-worm-color;
     cursor: pointer;
-  
-  
-  
-  margin-left: 10px;
 }
-
-
 
 .box-shadow-menu:before {
   content: "";
   position: absolute;
-  left: 14px;
+  left: 24px;
   top: 1.5em;
   width: 2.5em;
   height: 0.2em;
@@ -24,17 +18,27 @@
 }
 
 .box-shadow-menu--closed {
+  position: absolute;
+  background-color: $main-worm-color;
+  cursor: pointer;
+  top: 11px;
+  left: 18px;
   width: 51px;
   height: 51px;
-  opacity: 0.7;
-  padding-left: 20px;
   border-radius: 35px;
+  opacity: 0.7;
+  padding-left: 30px;
+  
 }
 
-.box-shadow-menu--open {
-  width: 240px;
-  height: 60px;
-}
+// .box-shadow-menu--open {
+//   position: absolute;
+//   background-color: $main-worm-color;
+//   cursor: pointer;
+//   content: "";
+//   width: 240px;
+//   height: 60px;
+// }
 
 .menu-section {
   position: absolute;
@@ -81,21 +85,22 @@
   display: none;  // UNCOMMIT
   height: 600px;
    position: absolute;
-  top: 60px;
+  // top: 60px;
+  
+  padding-top: 63px;
   left: 0;
   width: 240px;
   // min-height: 500px;
   font-size: $button-font-size;
   list-style: none;
   background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
-  // animation: fadeInLeft 0.34s cubic-bezier(0.215, 0.610, 0.355, 1);
+  animation: fadeInLeft 1.0s cubic-bezier(0.215, 0.610, 0.355, 1);
   
   &__item {
     text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
     font-size: $mainmenu-font-size;
-
     background-color: $white-color;
     // padding: 2px 28px 12px;
     padding: 1px;
@@ -114,9 +119,15 @@
       background-color: $rout-recreation;
     }
   }
-  // &__item:first-child {
-  //   padding: 0px 28px 8px;
-  // }
+  &__item:first-child {
+    margin-bottom: 5px;
+  }
+  &__item:nth-child(3) {
+    margin-bottom: 5px;
+  }
+  &__item:nth-child(5) {
+    margin-bottom: 5px;
+  }
   
   &__item::after {
     display: block;
@@ -130,9 +141,9 @@
     border-radius: 7px;
     // background-color: #00ffff;
   }
-  &__item:hover {
-    background-color: rgba(255, 251, 0, 0.65);
-  }
+  // &__item:hover {
+    // background-color: rgba(255, 251, 0, 0.65);
+  // }
   // &__link {
   //   text-transform: uppercase;
   //   text-decoration: none;
@@ -142,18 +153,21 @@
 }
 
 .subrotes {
-  list-style: none;
-  
+  list-style: none; 
 }
 
 // ask Volkov
 .subrotes--clean {
   margin-left: 40px;
-  background-color: none;
+  margin-bottom: 7px;
+  background: none;
 }
 
 .subrotes__item {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  background-color: $white-color;
+  border-radius: 4px;
+  padding: 1px;
 }
 
 .hidden {
