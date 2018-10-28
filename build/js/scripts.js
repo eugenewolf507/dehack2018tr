@@ -1,6 +1,7 @@
 "use strict";
 
-var menuButton = document.querySelector('.js-burger');
+// const menuButton = document.querySelector('.js-burger');
+var menuButton = document.querySelector('.box-shadow-menu--closed');
 var menu = document.querySelector('.burger-list');
 
 function menuButtonClickHandler() {
@@ -997,7 +998,7 @@ function initMap() {
     },
     //-----------------------------------------------------------------------------------------------
     arterialRoutes: {
-      color: '#CCFF00',
+      color: '#6fc66b',
       coords: [[{
         lat: 50.3503076,
         lng: 33.2508945
