@@ -129,6 +129,7 @@ function Geotag(controlDiv, map) {
                         };
                 addMarker({ lat: 50.3574885, lng: 33.2762039 }, geotagMarkers, icon);
                 geotagHandle = true;
+                map.panTo({ lat: 50.3574885, lng: 33.2762039 });
             } else {
             delateMarkers(geotagMarkers);
             geotagHandle = false;
@@ -836,5 +837,7 @@ document.getElementById('accident-close').addEventListener('click', () => {
 document.getElementById('control-close').addEventListener('click', () => {
   document.getElementById('control-section').classList.add('trafic-section--hidden');
 });
+
+//----------------------
 
   
