@@ -8,4 +8,10 @@
   background-image: url('./../img/X.svg');
   background-position: cover;
   background-color: none;
+
+  &:hover{
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+  }
 }
+

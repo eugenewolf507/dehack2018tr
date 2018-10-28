@@ -109,6 +109,11 @@
     position: relative;
     border-radius: 4px;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
     &--recreation::after {
       background-color: $rout-arterial;
     }
@@ -319,9 +324,3 @@
   }
 }
 
-
-@media (min-width: $desktop-big-break-point) {
-  .burger-list {
-    width: 30%;
-  }
-}

@@ -3,9 +3,22 @@ const menuButton = document.querySelector('.box-shadow-menu--closed');
 const menu = document.querySelector('.burger-list');
 
 function menuButtonClickHandler() {
-    menu.classList.toggle('hidden')
+    menu.classList.toggle('hidden');
 };
 menuButton.addEventListener('click', menuButtonClickHandler);
+
+// document.body.addEventListener('click', evt => {
+//   alert('body');
+//   if (!evt.target.matches('#burger-list')) {
+//     menu.classList.add('hidden');
+//   }
+// });
+
+// document.body.onclick = function(evt) {
+  
+//   if (!evt.target.matches('#burger-list')) {
+//    menu.classList.add('hidden');
+// }}
 
 
 // -------------------
@@ -840,5 +853,19 @@ document.getElementById('control-close').addEventListener('click', () => {
 });
 
 //----------------------
-
+document.getElementById('burger-list').addEventListener('click', (event) => {
+  // if(event.target.nodeName !== 'li') {
+  //   return;
+  // }
+  // alert('li')
+  console.log(event.target);
+  if(event.target.matches('#traficcontrol')) {
+    document.getElementById('control-section').classList.remove('trafic-section--hidden');
+    return;
+  }
+  if(event.target.matches('#traficaccident')) {
+    document.getElementById('accident-section').classList.remove('trafic-section--hidden');
+    return;
+  }
+});
   
