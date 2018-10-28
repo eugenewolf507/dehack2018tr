@@ -402,6 +402,11 @@ time, mark, audio, video, input, button {
   margin: 0;
   padding: 0; }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.6.0
@@ -3204,8 +3209,8 @@ time, mark, audio, video, input, button {
 .routstreetview-section {
   color: crimson; }
 
-.routothercyclists-section {
-  color: crimson; }
+.routothercyclists-section__photo {
+  max-width: 800px; }
 
 .routreviews-section {
   color: crimson; }
