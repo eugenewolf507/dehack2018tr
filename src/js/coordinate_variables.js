@@ -1,12 +1,13 @@
+// "use strict";
 // Coordinates markers START
-const markersParking = [{ lat: 50.35741736, lng: 33.26821771 }];
+const coordinatesParkingMarkers = [{ lat: 50.35741736, lng: 33.26821771 }];
 
-const markersCafe = [
+const coordinatesCafeMarkers = [
   { lat: 50.36136372, lng: 33.27227418 },
   { lat: 50.35961153, lng: 33.27658718 }
 ];
 
-const markersSight = [
+const coordinatesSightMarkers = [
   { lat: 50.35958415, lng: 33.2721669 },
   { lat: 50.35731167, lng: 33.2637984 },
   { lat: 50.35999483, lng: 33.26744621 },
@@ -24,7 +25,7 @@ const markersSight = [
 
 // Coordinates routes START
 const routes = {
-  // recreation routes START
+  // coordinates recreation routes START
   recreationRoutes: {
     color: "#336600",
     coords: [
@@ -74,9 +75,9 @@ const routes = {
       ]
     ]
   },
-  // recreation routes END
+  // coordinates recreation routes END
 
-  // highway routes START
+  // coordinates highway routes START
   highwayRoutes: {
     color: "#88A80D",
     coords: [
@@ -310,9 +311,9 @@ const routes = {
       ]
     ]
   },
-  // highway routes END
+  // coordinates highway routes END
 
-  // tourist routes START
+  // coordinates tourist routes START
   touristRoutes: {
     color: "#6fc66b",
     coords: [
@@ -594,6 +595,6 @@ const routes = {
       ]
     ]
   }
-  // tourist routes END
+  // coordinates tourist routes END
 };
 // Coordinates routes END
