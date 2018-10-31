@@ -1,5 +1,3 @@
-// "use strict";
-// -------------------
 const parkingMarkers = [];
 const cafeMarkers = [];
 const sightMarkers = [];
@@ -28,7 +26,9 @@ function Parking(controlDiv, map) {
         scaledSize: new google.maps.Size(33, 33), // scaled size
         url: "./img/bikeparking_on_map.svg"
       };
-      coordinatesParkingMarkers.map(parking => addMarker(parking, parkingMarkers, icon));
+      coordinatesParkingMarkers.map(parking =>
+        addMarker(parking, parkingMarkers, icon)
+      );
       parkingHandle = true;
     } else {
       delateMarkers(parkingMarkers);
@@ -62,7 +62,9 @@ function Sight(controlDiv, map) {
         scaledSize: new google.maps.Size(33, 33), // scaled size
         url: "./img/tourist_points_on_map.svg"
       };
-      coordinatesSightMarkers.map(sight => addMarker(sight, sightMarkers, icon));
+      coordinatesSightMarkers.map(sight =>
+        addMarker(sight, sightMarkers, icon)
+      );
       sightHandle = true;
     } else {
       delateMarkers(sightMarkers);
@@ -180,31 +182,4 @@ function initMap() {
   var geotag = new Geotag(geotagDiv, map);
 }
 
-//--------------------------TRAFFIC SECTIONS---------------------------------
-document.getElementById("accident-close").addEventListener("click", () => {
-  document
-    .getElementById("accident-section")
-    .classList.add("trafic-section--hidden");
-});
 
-document.getElementById("control-close").addEventListener("click", () => {
-  document
-    .getElementById("control-section")
-    .classList.add("trafic-section--hidden");
-});
-
-//----------------------
-document.getElementById("burger-list").addEventListener("click", event => {
-  if (event.target.matches("#traficcontrol")) {
-    document
-      .getElementById("control-section")
-      .classList.remove("trafic-section--hidden");
-    return;
-  }
-  if (event.target.matches("#traficaccident")) {
-    document
-      .getElementById("accident-section")
-      .classList.remove("trafic-section--hidden");
-    return;
-  }
-});
