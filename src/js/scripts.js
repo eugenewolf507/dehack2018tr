@@ -14,6 +14,7 @@ menuButton.addEventListener('click', menuButtonClickHandler);
 //   }
 // });
 
+
 // document.body.onclick = function(evt) {
   
 //   if (!evt.target.matches('#burger-list')) {
