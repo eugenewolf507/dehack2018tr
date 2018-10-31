@@ -1,12 +1,12 @@
 // Coordinates markers START
-var markersParking = [{ lat: 50.35741736, lng: 33.26821771 }];
+const markersParking = [{ lat: 50.35741736, lng: 33.26821771 }];
 
-var markersCafe = [
+const markersCafe = [
   { lat: 50.36136372, lng: 33.27227418 },
   { lat: 50.35961153, lng: 33.27658718 }
 ];
 
-var markersSight = [
+const markersSight = [
   { lat: 50.35958415, lng: 33.2721669 },
   { lat: 50.35731167, lng: 33.2637984 },
   { lat: 50.35999483, lng: 33.26744621 },
@@ -24,7 +24,8 @@ var markersSight = [
 
 // Coordinates routes START
 const routes = {
-  accessRoutes: {
+  // recreation routes START
+  recreationRoutes: {
     color: "#336600",
     coords: [
       [
@@ -73,9 +74,10 @@ const routes = {
       ]
     ]
   },
+  // recreation routes END
 
-  //----------------------------------------------------------
-  recrRoutes: {
+  // highway routes START
+  highwayRoutes: {
     color: "#88A80D",
     coords: [
       [
@@ -308,10 +310,10 @@ const routes = {
       ]
     ]
   },
+  // highway routes END
 
-  //-----------------------------------------------------------------------------------------------
-
-  arterialRoutes: {
+  // tourist routes START
+  touristRoutes: {
     color: "#6fc66b",
     coords: [
       [
@@ -592,5 +594,6 @@ const routes = {
       ]
     ]
   }
+  // tourist routes END
 };
 // Coordinates routes END
