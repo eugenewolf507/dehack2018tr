@@ -4,7 +4,7 @@ const sightMarkers = [];
 const geotagMarkers = [];
 
 function addMarker(location, arrayMarkers, icon) {
-  var marker = new google.maps.Marker({
+  const marker = new google.maps.Marker({
     position: location,
     map: map,
     icon: icon
@@ -74,14 +74,14 @@ function Sight(controlDiv, map) {
 }
 function MapControl(controlDiv, map) {
   google.maps.event.addDomListener(zoomin, "click", function() {
-    var currentZoomLevel = map.getZoom();
+    let currentZoomLevel = map.getZoom();
     if (currentZoomLevel != 0) {
       map.setZoom(currentZoomLevel - 1);
     }
   });
 
   google.maps.event.addDomListener(zoomout, "click", function() {
-    var currentZoomLevel = map.getZoom();
+    let currentZoomLevel = map.getZoom();
     if (currentZoomLevel != 21) {
       map.setZoom(currentZoomLevel + 1);
     }
@@ -106,7 +106,7 @@ function Geotag(controlDiv, map) {
   });
 }
 
-var map;
+let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 50.3574885, lng: 33.2762039 },
@@ -120,8 +120,8 @@ function initMap() {
     ]
   });
 
-  var mapControlDiv = document.createElement("div");
-  var mapControl = new MapControl(mapControlDiv, map);
+  const mapControlDiv = document.createElement("div");
+  const mapControl = new MapControl(mapControlDiv, map);
 
   //----------------------Добавление полилиний в самом начале----------------------------
   const polylines = [];
@@ -169,17 +169,17 @@ function initMap() {
 
   // })
 
-  var parkingDiv = document.createElement("div");
-  var parking = new Parking(parkingDiv, map);
+  const parkingDiv = document.createElement("div");
+  const parking = new Parking(parkingDiv, map);
 
-  var cafeDiv = document.createElement("div");
-  var cafe = new Cafe(cafeDiv, map);
+  const cafeDiv = document.createElement("div");
+  const cafe = new Cafe(cafeDiv, map);
 
-  var sightDiv = document.createElement("div");
-  var sight = new Sight(sightDiv, map);
+  const sightDiv = document.createElement("div");
+  const sight = new Sight(sightDiv, map);
 
-  var geotagDiv = document.createElement("div");
-  var geotag = new Geotag(geotagDiv, map);
+  const geotagDiv = document.createElement("div");
+  const geotag = new Geotag(geotagDiv, map);
 }
 
 
