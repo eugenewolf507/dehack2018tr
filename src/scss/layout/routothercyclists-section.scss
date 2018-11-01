@@ -1,10 +1,23 @@
 .routothercyclists-section {
-  // color: crimson;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #ffffff;
+
+  &__closebutton {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    @extend %cls-button;
+    border: none;
+    outline: none;
+  }
 }
 
 .routothercyclists-section__photo {
   width: 100%;
   max-width: 800px;
-  // margin: 0 auto;
 }
 
