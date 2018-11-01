@@ -1,23 +1,27 @@
-const parkingMarkers = [];
-const cafeMarkers = [];
-const sightMarkers = [];
-const geotagMarkers = [];
+  //---------------------Create empty array markers--------------------
+const arrayParkingMarkers = [];
+const arrayCafeMarkers = [];
+const arraySightMarkers = [];
+const arrayGeotagMarkers = [];
 
-function addMarker(location, arrayMarkers, icon) {
+  //---------------------Function add markers on map--------------------
+function addMarker(coordinate, arrayMarkers, icon) {
   const marker = new google.maps.Marker({
-    position: location,
+    position: coordinate,
     map: map,
     icon: icon
   });
   arrayMarkers.push(marker);
 }
 
+  //---------------------Function delete markers from map--------------------
 function delateMarkers(array) {
   for (let i = 0; i < array.length; i++) {
     array[i].setMap(null);
   }
 }
 
+  //---------------------Init map--------------------
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -32,7 +36,7 @@ function initMap() {
     ]
   });
 
-  // click listeners START
+  //---------------------Click listeners START--------------------
   google.maps.event.addDomListener(zoomin, "click", function() {
     let currentZoomLevel = map.getZoom();
     if (currentZoomLevel != 0) {
@@ -54,11 +58,11 @@ function initMap() {
         scaledSize: new google.maps.Size(30, 30), // scaled size
         url: "../img/your location_on_map.svg"
       };
-      addMarker({ lat: 50.3574885, lng: 33.2762039 }, geotagMarkers, icon);
+      addMarker({ lat: 50.3574885, lng: 33.2762039 }, arrayGeotagMarkers, icon);
       geotagHandle = true;
       map.panTo({ lat: 50.3574885, lng: 33.2762039 });
     } else {
-      delateMarkers(geotagMarkers);
+      delateMarkers(arrayGeotagMarkers);
       geotagHandle = false;
     }
   });
@@ -70,12 +74,12 @@ function initMap() {
         scaledSize: new google.maps.Size(33, 33), // scaled size icon
         url: "./img/bikeparking_on_map.svg"
       };
-      coordinatesParkingMarkers.map(parking =>
-        addMarker(parking, parkingMarkers, icon)
+      coordinatesParkingMarkers.map(coordinate =>
+        addMarker(coordinate, arrayParkingMarkers, icon)
       );
       parkingHandle = true;
     } else {
-      delateMarkers(parkingMarkers);
+      delateMarkers(arrayParkingMarkers);
       parkingHandle = false;
     }
   });
@@ -87,10 +91,12 @@ function initMap() {
         scaledSize: new google.maps.Size(33, 33), // scaled size icon
         url: "./img/cafe_on_map.svg"
       };
-      coordinatesCafeMarkers.map(cafe => addMarker(cafe, cafeMarkers, icon));
+      coordinatesCafeMarkers.map(coordinate =>
+        addMarker(coordinate, arrayCafeMarkers, icon)
+      );
       cafeHandle = true;
     } else {
-      delateMarkers(cafeMarkers);
+      delateMarkers(arrayCafeMarkers);
       cafeHandle = false;
     }
   });
@@ -102,18 +108,19 @@ function initMap() {
         scaledSize: new google.maps.Size(33, 33), // scaled size icon
         url: "./img/tourist_points_on_map.svg"
       };
-      coordinatesSightMarkers.map(sight =>
-        addMarker(sight, sightMarkers, icon)
+      coordinatesSightMarkers.map(coordinate =>
+        addMarker(coordinate, arraySightMarkers, icon)
       );
       sightHandle = true;
     } else {
-      delateMarkers(sightMarkers);
+      delateMarkers(arraySightMarkers);
       sightHandle = false;
     }
   });
-  // click listeners END
+  //---------------------Click listeners END--------------------
 
-  //----------------------Добавление полилиний в самом начале----------------------------
+
+  //---------------------Added polylines--------------------
   const polylines = [];
 
   for (let key in routes) {
@@ -130,8 +137,8 @@ function initMap() {
     });
   }
   let polylinesHidden = false;
-  //---------------------Убрать все полилинии кроме одной--------------------
 
+  //---------------------Remove all polylines except one--------------------
   function removeAllButOnePolyline(type, idx) {
     polylines.forEach(item => {
       if (!(item.type === type && item.index === idx)) {
@@ -140,14 +147,14 @@ function initMap() {
     });
   }
 
-  //----------------------Восстановить отображение всех линий----------------------
-
+  //----------------------Restore display of all polylines----------------------
   function showAllPolylines() {
     polylines.forEach(item => {
       item.poly.setMap(map);
     });
   }
-  //---------------------Функция для тестирования------------------------------------
+
+  //---------------------function for test------------------------------------
   // document.getElementById('hide').addEventListener('click', () => {
   //   if (polylinesHidden) {
   //     showAllPolylines();

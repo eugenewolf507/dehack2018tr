@@ -90,7 +90,7 @@
   // min-height: 500px;
   font-size: $button-font-size;
   list-style: none;
-  background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
+  background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
   animation: fadeInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &__item {
