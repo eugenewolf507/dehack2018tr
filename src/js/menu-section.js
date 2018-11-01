@@ -19,9 +19,7 @@ menuButton.addEventListener("click", menuButtonClickHandler);
 //---------------------Remove the menu when clicking on the map START--------------------
 function mapClickHandlerRemoveMenu() {
   menu.classList.remove("hidden");
-  if (!menuHandle) {
-    menuHandle = true;
-  } else {
+  if (menuHandle) {
     menuButton.style.backgroundImage = "url('../img/menu.svg')";
     menuHandle = false;
   }
