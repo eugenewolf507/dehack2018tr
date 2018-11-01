@@ -1,4 +1,4 @@
-Won 2 place <br>
+Won 2 place in Dehack2018<br>
 <a href="https://eugenewolf507.github.io/dehack2018tr/build/">Our work on Dehack2018 in Trostjanets with AVK</a><br>
 <a href="https://dehack.today/">Dehack2018 site</a><br>
 <a href="https://www.facebook.com/dehackukraine/">Dehack facebook group</a><br>
