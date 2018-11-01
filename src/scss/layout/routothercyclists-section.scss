@@ -5,6 +5,7 @@
   right: 0;
   width: 100%;
   background-color: #ffffff;
+  padding: 3px;
 
   &__closebutton {
     position: absolute;
@@ -13,6 +14,10 @@
     @extend %cls-button;
     border: none;
     outline: none;
+  }
+
+  &__main-title{
+    padding-top: 40px;
   }
 }
 
