@@ -18,3 +18,9 @@ document.getElementById("control-close").addEventListener("click", () => {
     .getElementById("control-section")
     .classList.add("traffic-section--hidden");
 });
+
+document.getElementById("accident-close").addEventListener("click", () => {
+  document
+    .getElementById("accident-section")
+    .classList.add("traffic-section--hidden");
+});

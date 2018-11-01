@@ -1,4 +1,3 @@
-// "use strict";
 // Coordinates markers START
 const coordinatesParkingMarkers = [{ lat: 50.35741736, lng: 33.26821771 }];
 
