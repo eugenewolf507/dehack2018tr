@@ -1,10 +1,10 @@
-  //---------------------Create empty array markers--------------------
+//---------------------Create empty array markers--------------------
 const arrayParkingMarkers = [];
 const arrayCafeMarkers = [];
 const arraySightMarkers = [];
 const arrayGeotagMarkers = [];
 
-  //---------------------Function add markers on map--------------------
+//---------------------Function add markers on map--------------------
 function addMarker(coordinate, arrayMarkers, icon) {
   const marker = new google.maps.Marker({
     position: coordinate,
@@ -14,18 +14,18 @@ function addMarker(coordinate, arrayMarkers, icon) {
   arrayMarkers.push(marker);
 }
 
-  //---------------------Function delete markers from map--------------------
-function delateMarkers(array) {
-  for (let i = 0; i < array.length; i++) {
-    array[i].setMap(null);
+//---------------------Function delete markers from map--------------------
+function delateMarkers(arrayMarkers) {
+  for (let i = 0; i < arrayMarkers.length; i++) {
+    arrayMarkers[i].setMap(null);
   }
 }
 
-  //---------------------Init map--------------------
+//---------------------Init map--------------------
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 50.3574885, lng: 33.2762039 },
+    center: { lat: 50.3574885, lng: 33.2762039 }, // center of map
     zoom: 12,
     disableDefaultUI: true,
     styles: [
@@ -55,7 +55,7 @@ function initMap() {
   google.maps.event.addDomListener(geotag, "click", function() {
     if (!geotagHandle) {
       const icon = {
-        scaledSize: new google.maps.Size(30, 30), // scaled size
+        scaledSize: new google.maps.Size(30, 30), // scaled size icon
         url: "../img/your location_on_map.svg"
       };
       addMarker({ lat: 50.3574885, lng: 33.2762039 }, arrayGeotagMarkers, icon);
@@ -118,7 +118,6 @@ function initMap() {
     }
   });
   //---------------------Click listeners END--------------------
-
 
   //---------------------Added polylines--------------------
   const polylines = [];
