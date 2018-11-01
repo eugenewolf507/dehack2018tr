@@ -2,7 +2,6 @@
   position: relative;
   background-color: $main-worm-color;
   cursor: pointer;
-
 }
 
 // .box-shadow-menu:before {
@@ -20,24 +19,20 @@
 // -----------------------
 .box-shadow-menu--closed {
   position: absolute;
-  // background-color: $main-worm-color;
-  background-color: rgba(227,173,62,.8);
+  background-color: rgba(227, 173, 62, 0.8);
   cursor: pointer;
   top: 10px;
   left: 18px;
   width: 50px;
   height: 50px;
   border-radius: 35px;
-  // opacity: 0.7;
   padding-left: 30px;
   background-image: url(../img/menu.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 // -----------------------
-
 
 // .box-shadow-menu--open {
 //   position: absolute;
@@ -227,7 +222,7 @@
     -webkit-transform: translate3d(0, -20%, 0);
     transform: translate3d(0, -20%, 0);
   }
-  
+
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
