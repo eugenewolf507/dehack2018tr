@@ -3,8 +3,13 @@ const menuButton = document.querySelector('.box-shadow-menu--closed');
 const menu = document.querySelector('.burger-list');
 
 function menuButtonClickHandler() {
+  menuButton.classList.add('zero-opacity');
     menu.classList.toggle('hidden');
+    
 };
+function mapMainClickHandler() {
+  menu.classList.toggle('hidden');
+}
 menuButton.addEventListener('click', menuButtonClickHandler);
 
 // document.body.addEventListener('click', evt => {
@@ -869,3 +874,5 @@ document.getElementById('burger-list').addEventListener('click', (event) => {
   }
 });
   
+// const mapMainSection = document.querySelector('.gm-style');
+// console.log(mapMainSection);

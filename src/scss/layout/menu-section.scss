@@ -1,34 +1,73 @@
 .box-shadow-menu {
   position: relative;
-  background-color: $main-worm-color;
+  // background-color: $main-worm-color;
     cursor: pointer;
 }
 
-.box-shadow-menu:before {
-  content: "";
+.ham {
   position: absolute;
-  left: 24px;
-  top: 1.5em;
-  width: 2.5em;
-  height: 0.2em;
-  background: black;
-  box-shadow: 
-    0 0.65em 0 0 black,
-    0 1.3em 0 0 black;
+  top: -10px;
+  left: -10px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+/* .hamRotate180.active {
+  transform: rotate(180deg);
+} */
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+// .box-shadow-menu:before {
+//   content: "";
+//   position: absolute;
+//   left: 24px;
+//   top: 1.5em;
+//   width: 2.5em;
+//   height: 0.2em;
+//   background: black;
+//   box-shadow: 
+//     0 0.65em 0 0 black,
+//     0 1.3em 0 0 black;
+// }
 
 .box-shadow-menu--closed {
   position: absolute;
-  background-color: $main-worm-color;
+  top: 10px;
+  left: 12px;
   cursor: pointer;
-  top: 11px;
-  left: 18px;
-  width: 51px;
-  height: 51px;
-  border-radius: 35px;
+  width: 61px;
+  height: 61px;
   opacity: 0.7;
-  padding-left: 30px;
-  
+  // padding-left: 30px;
+  background-color: $main-worm-color;
+  border-radius: 35px;
+  z-index: 0;
 }
 
 // .box-shadow-menu--open {
@@ -87,7 +126,7 @@
    position: absolute;
   // top: 60px;
   
-  padding-top: 63px;
+  padding-top: 75px;
   left: 0;
   width: 240px;
   // min-height: 500px;
@@ -137,7 +176,7 @@
   &__item::after {
     display: block;
     position: absolute;
-    right: 10px;
+    right: 4px;
     top: 50%;
     transform: translateY(-50%);
     content: "";
@@ -177,6 +216,9 @@
 
 .hidden {
   display: block;
+}
+.zero-opacity {
+background-color: transparent;
 }
 // .active {
 //   background: $main-worm-color;
