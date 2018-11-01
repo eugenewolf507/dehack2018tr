@@ -1,4 +1,3 @@
-Dehack2018 https://dehack.today/
-https://www.facebook.com/dehackukraine/
-
-Dehack in Trostjanets with AVK https://eugenewolf507.github.io/dehack2018tr/build/
+Dehack2018 site: https://dehack.today/ <br>
+Facebook group: https://www.facebook.com/dehackukraine/ <br>
+Dehack in Trostjanets with AVK https://eugenewolf507.github.io/dehack2018tr/build/ <br>
