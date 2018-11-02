@@ -56,7 +56,7 @@ function initMap() {
     if (!geotagHandle) {
       const icon = {
         scaledSize: new google.maps.Size(30, 30), // scaled size icon
-        url: "./build/img/yourlocation_on_map.svg"
+        url: "./img/yourlocation_on_map.svg"
       };
       addMarker({ lat: 50.3574885, lng: 33.2762039 }, arrayGeotagMarkers, icon);
       geotagHandle = true;
