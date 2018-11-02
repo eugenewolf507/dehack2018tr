@@ -1,43 +1,26 @@
 <section class="menu-section">
     <nav class=" js-nav">
-        <!-- <nav class="menu-section__nav js-nav"> -->
-        <!-- <div class="menu-section__nav-item nav-item__burger js-burger">
-            <svg width="26px" height="26px">
-                <use href="img/sprite.svg#menu"></use>
-            </svg>
-        </div> -->
-
-        <!-- <div class="menu-section__nav-item nav-item__burger js-burger" id="lines"> -->
-
-        
-
- 
             <ul class="burger-list" id="burger-list">
-                <!-- <li class="burger-list__item burger-list__item--where" id="where">куди їдемо</li> -->
-                <li class="burger-list__item burger-list__item--recreation" id="recreation">рекреаційні маршрути</li>
-                <li class="burger-list__item subrotes--clean">
-                    <ul class="subrotes">
-                        <li class="subrotes__item" id="pinePark">Сосновий парк</li>
-                    </ul>
-                    <!-- <ul class="subrotes">
-                        <li class="subrotes__item">Водоспад "Бобер"</li>
-                    </ul>
-                    <ul class="subrotes">
-                        <li class="subrotes__item">Старовинний замок</li>
-                    </ul> -->
-                </li>
-                <li class="burger-list__item burger-list__item--magistral" id="arterial">магістральні маршрути</li>
-                <li class="burger-list__item subrotes--clean">
-                    <ul class="subrotes">
-                        <!-- <li class="subrotes__item">Березова алея</li> -->
-                        <!-- <li class="subrotes__item">Липова алея</li> -->
+                <li class="burger-list__item burger-list__item--recreation" id="recreation">рекреаційні маршрути
+                <!-- <li class="burger-list__item subrotes--clean"> -->
+                    <ul class="subrotes" hidden>
+                        <li class="subrotes__item recreation-subrotes" id="pinePark">Сосновий парк</li>
+                        <li class="subrotes__item recreation-subrotes" id="waterfall">Водоспад "Бобер"</li>
+                        <li class="subrotes__item recreation-subrotes" id="oldCastle">Старовинний замок</li>
                     </ul>
                 </li>
-                <li class="burger-list__item burger-list__item--touristic" id="access">туристичні маршрути</li>
-                <li class="burger-list__item  subrotes--clean">
-                    <ul class="subrotes">
-                        <!-- <li class="subrotes__item">Чорний камінь</li> -->
-                        <!-- <li class="subrotes__item">Зелений камінь</li> -->
+                <li class="burger-list__item burger-list__item--magistral" id="arterial">магістральні маршрути
+                <!-- <li class="burger-list__item subrotes--clean"> -->
+                    <ul class="subrotes" hidden>
+                        <li class="subrotes__item magistral-subrotes">Березова алея</li>
+                        <li class="subrotes__item magistral-subrotes">Липова алея</li>
+                    </ul>
+                </li>
+                <li class="burger-list__item burger-list__item--touristic" id="access">туристичні маршрути
+                <!-- <li class="burger-list__item  subrotes--clean"> -->
+                    <ul class="subrotes" hidden>
+                        <li class="subrotes__item touristic-subrotes">Чорний камінь</li>
+                        <li class="subrotes__item touristic-subrotes">Зелений камінь</li>
                     </ul>
                 </li>
                 <li class="burger-list__item burger-list__item--pdr" id="trafficcontrol">ПДР для велосипедистів</li>
@@ -47,7 +30,6 @@
             </ul>
  
 
-        <!-- <div class="box-shadow-menu--open"></div> -->
         <div class="box-shadow-menu--closed">
             <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
                 <path
@@ -61,8 +43,5 @@
                       d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
               </svg>
         </div>
-        <!-- <div class="box-shadow-menu js-burger"></div> -->
-        <!-- <div class="menu-section__nav-item nav-item__pdd">ПДД</div> -->
-        <!-- <div class="menu-section__nav-item nav-item__dtp">ДТП</div> -->
-    </nav>
+        </nav>
 </section>

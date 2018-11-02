@@ -3,19 +3,6 @@
   background-color: $main-worm-color;
   cursor: pointer;
 }
-
-// .box-shadow-menu:before {
-//   content: '';
-//   position: absolute;
-//   width: 21px;
-//   height: 21px;
-//   // left: 24px;
-//   // top: 1.5em;
-//   // width: 2.5em;
-//   // height: 0.2em;
-//   // background: black;
-//   // box-shadow: 0 0.65em 0 0 black, 0 1.3em 0 0 black;
-// }
 // -----------------------
 .box-shadow-menu--closed {
   position: absolute;
@@ -73,66 +60,23 @@
   stroke-dashoffset: -138px;
 }
 // -----------------------
-// .box-shadow-menu--open {
-//   position: absolute;
-//   background-color: $main-worm-color;
-//   cursor: pointer;
-//   content: "";
-//   width: 240px;
-//   height: 60px;
-// }
 
 .menu-section {
   position: absolute;
   top: 0px;
   left: 0px;
-  // color: $black-color;
-  // width: 100%;
   animation: bounceInDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  // outline: 2px solid #000; /* Чёрная рамка */
-  //   &__nav {
-  //     // width: 100px;
-  //     // height: 40px;
-  //     font-family: $title-font;
-  //     font-weight: $regular;
-  //     font-size: $mainmenu-font-size;
-  //     display: flex;
-  //     justify-content: space-between;
-  //     outline: 2px solid #000; /* Чёрная рамка */
-  //   }
-  //   &__nav-item {
-  //     // text-align: center;
-  //     // height: 45px;
-  //     flex-grow: 1;
-  //     padding-bottom: 5px;
-  //     border: 5px solid transparent;
-  //     cursor: pointer;
-  //     outline: 2px solid #000; /* Чёрная рамка */
-  //     &:hover {
-  //       background-color: $main-worm-color;
-  //     }
-  //   }
 }
-// .nav-item {
-//   &__burger {
-//     // width: 40px;
-//     background-image: url(../img/menu.svg);
-//     background-repeat: no-repeat;
-//     background-position: center;
-//   }
-// }
+
 .burger-list {
   font-family: $title-font;
-  // font-size: $mainmenu-font-size;
-  display: none; // UNCOMMIT
+  display: none;
   height: 600px;
   position: absolute;
-  // top: 60px;
-
-  padding-top: 68px;
+  padding-top: 72px;
   left: 0;
+  z-index: 9;
   width: 240px;
-  // min-height: 500px;
   font-size: $title-middle-font-size;
   list-style: none;
   background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
@@ -142,17 +86,20 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
-    font-size: $mainmenu-font-size;
+    font-size: $button-font-size;
     background-color: $white-color;
     // padding: 2px 28px 12px;
     padding: 4px 21px 4px 4px;
     margin: 0px 24px 12px;
     position: relative;
     border-radius: 4px;
+    transition-duration: 200ms;
     cursor: pointer;
 
     &:hover {
-      transform: scale(1.08);
+      transform: scale(1.04);
+      box-shadow: 2px 2px 6px 5px rgba(0, 0, 0, 0.25);
+      transition-duration: 200ms;
     }
 
     &--recreation::after {
@@ -168,17 +115,17 @@
     }
   }
 
-  &__item:first-child {
-    margin-bottom: 5px;
-  }
+  // &__item:first-child {
+  //   margin-bottom: 5px;
+  // }
 
-  &__item:nth-child(3) {
-    margin-bottom: 5px;
-  }
+  // &__item:nth-child(3) {
+  //   margin-bottom: 5px;
+  // }
 
-  &__item:nth-child(5) {
-    margin-bottom: 5px;
-  }
+  // &__item:nth-child(5) {
+  //   margin-bottom: 5px;
+  // }
 
   &__item::after {
     display: block;
@@ -190,21 +137,24 @@
     width: 12px;
     height: 12px;
     border-radius: 7px;
-    // background-color: #00ffff;
   }
-  // &__item:hover {
-  // background-color: rgba(255, 251, 0, 0.65);
-  // }
-  // &__link {
-  //   text-transform: uppercase;
-  //   text-decoration: none;
-  //   color: $black-color;
-  //   font-size: $mainmenu-font-size;
-  // }
 }
 
 .subrotes {
   list-style: none;
+  position: absolute;
+  z-index: 8;
+  left: 104%;
+  top: -5px;
+  padding: 6px 6px;
+  width: 240px;
+  max-height: 600px;
+  background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
+  animation: fadeInLeft 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  
+  &__item {
+    margin: 0 0 15px;
+  }
 }
 
 // ask Volkov
@@ -224,10 +174,7 @@
 .hidden {
   display: block;
 }
-// .active {
-//   background: $main-worm-color;
-// }
-
+//-------animation keyframes---------
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
@@ -369,5 +316,12 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+//------Media querry----
+
+@media(min-width: 1169px) {
+  .burger-list {
+    width: 330px;
   }
 }
