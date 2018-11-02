@@ -1647,7 +1647,7 @@ function initMap() {
       var icon = {
         scaledSize: new google.maps.Size(30, 30),
         // scaled size icon
-        url: "../img/yourlocation_on_map.svg"
+        url: "./build/img/yourlocation_on_map.svg"
       };
       addMarker({
         lat: 50.3574885,
@@ -1778,10 +1778,10 @@ function menuButtonClickHandler() {
   menu.classList.toggle("hidden");
 
   if (!menuHandle) {
-    menuButton.style.backgroundImage = "url('../img/X.svg')";
+    menuButton.style.backgroundImage = "url('./build/img/X.svg')";
     menuHandle = true;
   } else {
-    menuButton.style.backgroundImage = "url('../img/menu.svg')";
+    menuButton.style.backgroundImage = "url('./build/img/menu.svg')";
     menuHandle = false;
   }
 }
@@ -1793,7 +1793,7 @@ function mapClickHandlerRemoveMenu() {
   menu.classList.remove("hidden");
 
   if (menuHandle) {
-    menuButton.style.backgroundImage = "url('../img/menu.svg')";
+    menuButton.style.backgroundImage = "url('./build/img/menu.svg')";
     menuHandle = false;
   }
 }
