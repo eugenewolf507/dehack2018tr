@@ -1,5 +1,8 @@
 //---------------------Click open traffic-section listeners--------------------
+const menuSvg = document.querySelector(".ham");
+
 document.getElementById("burger-list").addEventListener("click", event => {
+  
   if (event.target.matches("#trafficcontrol")) {
     document
       .getElementById("control-section")
