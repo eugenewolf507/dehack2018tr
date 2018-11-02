@@ -23,17 +23,56 @@
   cursor: pointer;
   top: 10px;
   left: 18px;
-  width: 50px;
-  height: 50px;
+  width: 57px;
+  height: 57px;
   border-radius: 35px;
-  padding-left: 30px;
-  background-image: url(../img/menu.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
 }
-// -----------------------
+// ---------Menu button animation-------
+.ham {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+// -----------------------
 // .box-shadow-menu--open {
 //   position: absolute;
 //   background-color: $main-worm-color;
@@ -90,11 +129,11 @@
   position: absolute;
   // top: 60px;
 
-  padding-top: 63px;
+  padding-top: 68px;
   left: 0;
   width: 240px;
   // min-height: 500px;
-  font-size: $button-font-size;
+  font-size: $title-middle-font-size;
   list-style: none;
   background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
   animation: fadeInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -106,8 +145,7 @@
     font-size: $mainmenu-font-size;
     background-color: $white-color;
     // padding: 2px 28px 12px;
-    padding: 1px;
-    padding-left: 4px;
+    padding: 4px 21px 4px 4px;
     margin: 0px 24px 12px;
     position: relative;
     border-radius: 4px;
