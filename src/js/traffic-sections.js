@@ -3,21 +3,21 @@ document.getElementById("burger-list").addEventListener("click", event => {
   if (event.target.matches("#trafficcontrol")) {
     document
       .getElementById("control-section")
-      .classList.remove("traffic-section--hidden");
+      .classList.remove("traffic--hidden");
     return;
   }
 
   if (event.target.matches("#trafficaccident")) {
     document
       .getElementById("accident-section")
-      .classList.remove("traffic-section--hidden");
+      .classList.remove("traffic--hidden");
     return;
   }
 
   if (event.target.matches("#pinePark")) {
     document
       .getElementById("routothercyclists-section")
-      .classList.remove("traffic-section--hidden");
+      .classList.remove("traffic--hidden");
     return;
   }
 });
@@ -26,17 +26,39 @@ document.getElementById("burger-list").addEventListener("click", event => {
 document.getElementById("control-close").addEventListener("click", () => {
   document
     .getElementById("control-section")
-    .classList.add("traffic-section--hidden");
+    .classList.add("traffic--hidden");
 });
 
 document.getElementById("accident-close").addEventListener("click", () => {
   document
     .getElementById("accident-section")
-    .classList.add("traffic-section--hidden");
+    .classList.add("traffic--hidden");
 });
 
 document.querySelector(".routothercyclists-section__closebutton").addEventListener("click", () => {
   document
     .getElementById("routothercyclists-section")
-    .classList.add("traffic-section--hidden");
+    .classList.add("traffic--hidden");
 });
+//---------------------Click open traffic listeners--------------------
+
+const titleBtns = document.querySelectorAll('.expanded__button--js');
+titleBtns.forEach(btn => btn.addEventListener('click', showText));
+
+
+
+function showText () {
+  console.log(event.target.parentNode.nextSibling);
+  event.target.parentNode.nextSibling.classList.toggle('hidden');
+  event.target.classList.toggle('expanded__button--active');
+}
+//---------------------Click open traffic--inner listeners--------------------
+const innerBtns = document.querySelectorAll('.expanded__button--inner');
+innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
+
+console.log()
+
+function showInnerText () {/////
+  event.target.nextSibling.classList.toggle('hidden');
+  event.target.classList.toggle('expanded__button--active');
+}

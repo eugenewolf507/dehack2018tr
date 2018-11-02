@@ -1,51 +1,36 @@
-.traffic-section {
+.traffic {
   position: absolute;
   display: block;
   top: 0;
   right: 0;
   width: 100%;
-  // background: linear-gradient($main-worm-color, rgba(255, 255, 105, 0));
-  background-color: #ffffff;
+  padding: 50px 2.1% 10px;
+  background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
   font-family: $text-font;
   font-size: $text-font-size;
   line-height: 1.5;
 
-  &--accident {
-    padding: 2rem 2.1% 2.6%;
-  }
-
-  &--hidden {
-    display: none;
-  }
-
-  &-wrapper {
-    padding: 2rem 2.1% 2.6%;
-  }
-
   &__cls-btn {
     @extend %cls-button;
-    // display: block;
     position: absolute;
     top: 10px;
-    right: 5px;
-    // width: 40px;
-    // height: 40px;
-    // background-image: url('./../img/X.svg');
-    // background-position: cover;
-    // background-color: none;
+    right: 10px;
   }
 
   & a {
     text-decoration: none;
   }
 
-  &__img {
-    width: 100vw;
+  & ul {
+    list-style: none;
   }
+
+  &--expanded {
+    text-indent: 1rem;
+    }
 
   &__inner {
     margin-bottom: 0.5rem;
-    padding: 0 0 2.6%;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -54,86 +39,92 @@
     & p:last-of-type {
       margin-bottom: 0;
     }
+
+    &--whatDo {
+      & li {
+        position: relative;
+        margin-bottom: 0.3rem;
+        padding-left: 1.9rem;
+
+        & i {
+          display: block;
+        }
+      }
+    
+      & li::before {
+        content: url(../img/checkbox.svg);
+        position: absolute;
+        left: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
   }
 
   &__title {
     padding-bottom: 1rem;
+    position: relative;
     font-family: $title-font;
     font-size: $title-big-font-size;
     font-weight: $regular;
     text-transform: uppercase;
-    text-decoration: underline;
-    line-height: 1.2;
+    // line-height: 1.2;
+
+    &::after {
+      content: '';
+      width: 99%;
+      height: 2px;
+      position: absolute;
+      bottom: 1rem;
+      left: 0rem;
+      background-color: $black-color;
+    }
   }
 
   &__title2 {
     font-size: $title-middle-font-size;
     font-family: $title-font;
-    padding: 0 1.3% 0.3rem;
+    padding-bottom: 0.3rem;
     text-transform: uppercase;
-    line-height: 1.2;
     font-weight: $regular;
 
-    &--expended {
+    &--expanded {
       padding-bottom: 0;
       cursor: pointer;
-      position: relative;
-
-      &::after {
-        content: url(../img/text_vniz.svg);
-        display: block;
-        position: absolute;
-        width: 1.5rem;
-        height: 1.5rem;
-        right: 1.1rem;
-        top: 0rem;
-        cursor: pointer;
-      }
     }
   }
 
-  &__title3 {
-    font-size: $text-font-size;
-    font-family: $title-font;
-  }
+  // &__title3 {
+  //   font-size: $text-font-size;
+  //   font-family: $title-font;
+  // }
 
   & span {
     text-transform: lowercase;
   }
 }
 
-// .title2__button {
-//   background-image: url(../img/text_vniz.svg);
-//   width: 1rem;
-//   height: 1rem;
-//   border: none;
-//   outline: none;
-//   background-color: transparent;
-//   right: 1.5rem;
-//   top: 0.3rem;
-//   cursor: pointer;
-// }
+.expanded__button {
+  background-image: url(../img/text_vniz.svg);
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  right: 1.5rem;
+  top: 0.3rem;
+  cursor: pointer;
 
-.section-whatDo {
-  & li {
-    position: relative;
-    margin-bottom: 0.3rem;
-    padding-left: 2rem;
-  }
-
-  & li::before {
-    content: url(../img/checkbox.svg);
-    position: absolute;
-    left: 0;
-    width: 1.2rem;
-    height: 1.2rem;
+  &--active {
+    background-image: url(../img/text_vverh.svg);
   }
 }
 
 .help-button {
   display: block;
-  width: 50%;
-  height: 2.2rem;
+  width: 10rem;
+  padding: 0.2rem 0.2rem;
+  box-sizing: border-box;
   outline: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -142,11 +133,11 @@
   font-family: $title-font;
   font-weight: $bold;
   background-color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.3rem;
 
   &:active {
-    border: 1px solid $white-color;
+    border: 1px solid $black-color;
 
   }
 
@@ -165,7 +156,7 @@
   }
 }
 
-.inner-list > p {
+.inner__list > p {
   position: relative;
 
   &::before {
@@ -178,15 +169,18 @@
   }
 }
 
-.inner-list--traffic {
-  padding: 0 2.1% 2.6%;
+// .inner__list--trafic {
+//   padding: 0 2.1% 2.6%;
 
-  & p {
-    text-indent: 1rem;
-  }
+//   & p {
+//     text-indent: 1rem;
+//   }
 
-  & p::before {
-    left: -1.5rem;
-    top: -0.4rem;
-  }
+//   & p::before {
+//     left: -1.5rem;
+//     top: -0.4rem;
+//   }
+// }
+.hidden {
+  display: none;
 }
