@@ -43,6 +43,15 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
     .getElementById("routothercyclists-section")
     .classList.add("traffic--hidden");
 });
+
+//
+document.getElementById("burger-list").addEventListener("click", event => {
+  console.log(event.target.id);
+});
+
+//
+
+
 //---------------------Click open traffic TITLE listeners--------------------
 
 const titleBtns = document.querySelectorAll('.expanded__button--js');
