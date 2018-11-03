@@ -43,7 +43,14 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
     .getElementById("routothercyclists-section")
     .classList.add("traffic--hidden");
 });
-//---------------------Click open traffic listeners--------------------
+
+//
+document.getElementById("burger-list").addEventListener("click", event => {
+  console.log(event.target.id);
+});
+//
+
+//---------------------Click open traffic TITLE listeners--------------------
 
 const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
 titleBtns.forEach(btn => btn.addEventListener('click', showText));

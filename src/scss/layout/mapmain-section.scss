@@ -145,3 +145,19 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+.rout-footer {
+  font-family: $title-font;
+  // display: none;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding-top: 10px;
+  z-index: 9;
+  width: 100%;
+  font-size: $title-middle-font-size;
+  text-transform: uppercase;
+  background: $main-worm-color--09;
+  animation: fadeInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
