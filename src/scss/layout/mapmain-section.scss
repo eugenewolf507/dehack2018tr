@@ -9,13 +9,13 @@
     padding: 10px;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(227, 173, 62, 0.8);
+    background-color: $main-worm-color--08;
     border-radius: 8px;
     border: 5px solid transparent;
     right: 10px;
 
     &:hover {
-      background-color: rgba(253, 215, 138, 0.9);
+      background-color: $main-worm-color--09;
     }
 
     &--zoomin {
