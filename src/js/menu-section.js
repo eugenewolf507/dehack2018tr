@@ -28,7 +28,7 @@ map.addEventListener("click", mapClickHandlerRemoveMenu);
 //-------------------The appearance and disappearance submenu----------
 
 function menuItemClickHandler({target}) {
-console.log(target);
+// console.log(target);
 
   if (target.matches(".subrotes__item")) {
     return;
