@@ -48,27 +48,27 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
 document.getElementById("burger-list").addEventListener("click", event => {
   console.log(event.target.id);
 });
-
 //
-
 
 //---------------------Click open traffic TITLE listeners--------------------
 
-const titleBtns = document.querySelectorAll('.expanded__button--js');
+const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
 titleBtns.forEach(btn => btn.addEventListener('click', showText));
+
+
 
 function showText () {
   console.log(event.target.parentNode.nextSibling);
   event.target.parentNode.nextSibling.classList.toggle('text--hidden');
-  event.target.classList.toggle('expanded__button--active');
+  event.target.classList.toggle('traffic__expanded-button--active');
 }
-//---------------------Click open traffic--INNER listeners--------------------
-const innerBtns = document.querySelectorAll('.expanded__button--inner');
+//---------------------Click open traffic--inner listeners--------------------
+const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
 innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 
-console.log()
+console.log(innerBtns)
 
 function showInnerText () {
   event.target.nextSibling.classList.toggle('text--hidden');
-  event.target.classList.toggle('expanded__button--active');
+  event.target.classList.toggle('traffic__expanded-button--active');
 }

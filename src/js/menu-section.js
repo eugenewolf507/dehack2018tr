@@ -28,11 +28,16 @@ map.addEventListener("click", mapClickHandlerRemoveMenu);
 //-------------------The appearance and disappearance submenu----------
 
 function menuItemClickHandler({target}) {
-  subMenusArr.forEach(elem => elem.setAttribute('hidden', true));
-  if (target.firstElementChild.hasAttribute('hidden')) {
-      target.firstElementChild.removeAttribute('hidden');
+  if (!target.firstElementChild.hasAttribute('hidden')) {
+    subMenusArr.forEach(elem => elem.setAttribute('hidden', true))
   }
-  else {target.firstElementChild.setAttribute('hidden', true)}
+  else {
+    subMenusArr.forEach(elem => elem.setAttribute('hidden', true));
+    target.firstElementChild.removeAttribute('hidden')
+  };
+  if (target.matches("#burger-list")) {
+    return;
+  }
 };
 
 menu.addEventListener("click", menuItemClickHandler);

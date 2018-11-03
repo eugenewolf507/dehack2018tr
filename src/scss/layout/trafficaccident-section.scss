@@ -1,3 +1,4 @@
+//===PAGE====
 .traffic {
   position: absolute;
   display: block;
@@ -10,34 +11,31 @@
   font-family: $text-font;
   font-size: $text-font-size;
   line-height: 1.5;
-
-  // @mixin tablet-small{
-  //   @media (min-width: $tablet-small-break-point){
-  //     padding: 60px 3% 20px;
-  //     color: red;
-  //   }
-  // }
-
+  
+  @include tablet-small{
+    padding: 60px 3% 40px;
+  }
+//===CLOSE-BUTTON====
   &__cls-btn {
     @extend %cls-button;
     position: absolute;
     top: 10px;
     right: 10px;
   }
-
+//===A====
   & a {
     text-decoration: none;
   }
-
+//===UL=====
   & ul {
     list-style: none;
   }
-
+//====EXPANDED TEXT====
   &--expanded {
     text-indent: 1rem;
     // height: 100%;
     }
-
+//====inner sections====
   &__inner {
     margin-bottom: 0.5rem;
 
@@ -49,7 +47,7 @@
     & p:last-of-type {
       margin-bottom: 0;
     }
-
+//===WHAT DO SECTION====
     &--whatDo {
       & > ul > li {
         position: relative;
@@ -70,9 +68,70 @@
       }
     }
   }
+//===HELP BUTTON=====
+  &__help-button {
+    display: block;
+    width: 10rem;
+    padding: 0.2rem 0.2rem;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: $button-font-size;
+    font-family: $title-font;
+    font-weight: $bold;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+  
+    @include tablet-small{
+      margin: 0 auto;
+    }
+  
+    &:active {
+      border: 1px solid $black-color;
+  
+    }
+  
+    &--fb {
+      background-color: $main-worm-color;
+      color: $white-color;
+  
+      &:active {
+        border: 1px solid $black-color;
+        color: $black-color;
+      }
+    }
+  
+    & a {
+      color: $black-color;
+    }
+  }
+//====EXPANDED BUTTON=====
+  &__expanded-button {
+    background-image: url(../img/text_vniz.svg);
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    right: 1.5rem;
+    top: 0.3rem;
+    cursor: pointer;
+  
+    &--active {
+      background-image: url(../img/text_vverh.svg);
+    }
+  }
 
+//=====TITLE MAIN=======
   &__title {
     padding-bottom: 1rem;
+
+    @include tablet-small{
+      text-align: center;
+    }
 
     &--underline {
     position: relative;
@@ -92,7 +151,7 @@
       }
     }
   }
-
+//====TITLE 2=====
   &__title2 {
     font-size: $title-middle-font-size;
     font-family: $title-font;
@@ -108,6 +167,12 @@
     &--lowercase {
       text-transform: lowercase;
     }
+
+    &--help {
+      @include tablet-small{
+        text-align: center;
+      }
+    }
   }
 
   // &__title3 {
@@ -116,61 +181,14 @@
   // }  
 }
 
-.expanded__button {
-  background-image: url(../img/text_vniz.svg);
-  width: 1rem;
-  height: 1rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  right: 1.5rem;
-  top: 0.3rem;
-  cursor: pointer;
-
-  &--active {
-    background-image: url(../img/text_vverh.svg);
-  }
-}
-
-.help-button {
-  display: block;
-  width: 10rem;
-  padding: 0.2rem 0.2rem;
-  box-sizing: border-box;
-  outline: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-size: $button-font-size;
-  font-family: $title-font;
-  font-weight: $bold;
-  background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 0.3rem;
-
-  &:active {
-    border: 1px solid $black-color;
-
-  }
-
-  &--fb {
-    background-color: $main-worm-color;
-    color: $white-color;
-
-    &:active {
-      border: 1px solid $black-color;
-      color: $black-color;
-    }
-  }
-
-  & a {
-    color: $black-color;
-  }
-}
-
-.inner__list > ul {
+.inner__list {
+  & > ul {
   list-style-type: square;
   list-style-position: inside;
+}
+  &--small-text {
+    font-size: $text-font-size-small;
+  }
 }
 
 
@@ -186,6 +204,7 @@
   display: none;
 }
 
+//=============ANIMATION=================
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
