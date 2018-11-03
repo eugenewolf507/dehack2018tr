@@ -8,14 +8,14 @@ const subMenusArr = document.querySelectorAll(".subrotes");
 
 let menuHandle = false;
 function menuButtonClickHandler() {
-  menu.classList.toggle("hidden");
+  menu.classList.toggle("hidden-menu");
 }
 menuButton.addEventListener("click", menuButtonClickHandler);
 //---------------------The appearance and disappearance of the menu when you click menu button END--------------------
 
 //---------------------Remove the menu when clicking on the map START--------------------
 function mapClickHandlerRemoveMenu() {
-  menu.classList.remove("hidden");
+  menu.classList.remove("hidden-menu");
   subMenusArr.forEach(elem => elem.setAttribute('hidden', true));
   if (menuSvg.classList.contains("active")) {
     menuSvg.classList.remove("active");
