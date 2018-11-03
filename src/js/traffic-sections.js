@@ -28,7 +28,7 @@ document.getElementById("burger-list").addEventListener("click", event => {
 //---------------------Click close traffic-section listeners--------------------
 document.getElementById("control-close").addEventListener("click", () => {
   document
-    .getElementById("control-section")
+    .getElementById("co ntrol-section")
     .classList.add("traffic--hidden");
 });
 
@@ -44,11 +44,22 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
     .classList.add("traffic--hidden");
 });
 
-//
+//---------------------Get subrotes__item id START--------------------
 document.getElementById("burger-list").addEventListener("click", event => {
-  console.log(event.target.id);
+  if (event.target.parentNode.classList.contains("subrotes")) {
+    // console.log('event.target.id', event.target.id);  
+    return event.target.id;
+  }
 });
-//
+
+
+// document.getElementById("burger-list").addEventListener("click", getSubrotesId());
+
+// function getSubrotesId (event) {
+// console.log(event.target.id);
+// }
+
+//---------------------Get subrotes__item id END--------------------
 
 //---------------------Click open traffic TITLE listeners--------------------
 
