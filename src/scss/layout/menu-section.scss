@@ -6,7 +6,8 @@
 // -----------------------
 .box-shadow-menu--closed {
   position: absolute;
-  background-color: rgba(227, 173, 62, 0.8);
+  // background-color: rgba(227, 173, 62, 0.8);
+  background-color: $main-worm-color--08;
   cursor: pointer;
   top: 10px;
   left: 18px;
@@ -39,7 +40,7 @@
 .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #000;
+  stroke: $black-color;
   stroke-width: 3;
   stroke-linecap: round;
 }
