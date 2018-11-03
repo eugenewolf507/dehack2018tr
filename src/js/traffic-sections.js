@@ -49,7 +49,7 @@ titleBtns.forEach(btn => btn.addEventListener('click', showText));
 
 function showText () {
   console.log(event.target.parentNode.nextSibling);
-  event.target.parentNode.nextSibling.classList.toggle('hidden');
+  event.target.parentNode.nextSibling.classList.toggle('text--hidden');
   event.target.classList.toggle('expanded__button--active');
 }
 //---------------------Click open traffic--inner listeners--------------------
@@ -59,6 +59,6 @@ innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 console.log()
 
 function showInnerText () {/////
-  event.target.nextSibling.classList.toggle('hidden');
+  event.target.nextSibling.classList.toggle('text--hidden');
   event.target.classList.toggle('expanded__button--active');
 }
