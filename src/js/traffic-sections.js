@@ -43,25 +43,23 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
     .getElementById("routothercyclists-section")
     .classList.add("traffic--hidden");
 });
-//---------------------Click open traffic listeners--------------------
+//---------------------Click open traffic TITLE listeners--------------------
 
 const titleBtns = document.querySelectorAll('.expanded__button--js');
 titleBtns.forEach(btn => btn.addEventListener('click', showText));
-
-
 
 function showText () {
   console.log(event.target.parentNode.nextSibling);
   event.target.parentNode.nextSibling.classList.toggle('text--hidden');
   event.target.classList.toggle('expanded__button--active');
 }
-//---------------------Click open traffic--inner listeners--------------------
+//---------------------Click open traffic--INNER listeners--------------------
 const innerBtns = document.querySelectorAll('.expanded__button--inner');
 innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 
 console.log()
 
-function showInnerText () {/////
+function showInnerText () {
   event.target.nextSibling.classList.toggle('text--hidden');
   event.target.classList.toggle('expanded__button--active');
 }
