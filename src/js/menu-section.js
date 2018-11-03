@@ -5,6 +5,7 @@ const menuSvg = document.querySelector(".ham");
 const menuItem = document.querySelector(".burger-list__item");
 const subMenu = document.querySelector(".subrotes");
 const subMenusArr = document.querySelectorAll(".subrotes");
+const subMenuItem = document.querySelectorAll(".subrotes__item");
 
 let menuHandle = false;
 function menuButtonClickHandler() {
@@ -46,3 +47,25 @@ function menuItemClickHandler({target}) {
 };
 
 menu.addEventListener("click", menuItemClickHandler);
+
+//--Hadling array polylines on click to sumbenu----
+
+function removeAllButOnePolyline(type, idx) {
+  polylines.forEach(item => {
+    if (!(item.type === type && item.index === idx)) {
+      item.poly.setMap(null);
+    }
+  });
+}
+//-----------------------
+function subMenuItemClickHandler({target}) {
+  let counter = 0;
+  removeAllButOnePolyline('highwayRoutes', 3);
+  console.log(target.id);
+  polylines.forEach(elem => {
+    console.log(elem);
+    counter += 1;
+  });
+};
+subMenuItem.forEach(item => item.addEventListener("click", subMenuItemClickHandler));
+  // console.log(allRecreationRoutes);

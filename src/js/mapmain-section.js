@@ -3,7 +3,7 @@ const arrayParkingMarkers = [];
 const arrayCafeMarkers = [];
 const arraySightMarkers = [];
 const arrayGeotagMarkers = [];
-
+const polylines = [];
 //---------------------Function add markers on map--------------------
 function addMarker(coordinate, arrayMarkers, icon) {
   const marker = new google.maps.Marker({
@@ -120,7 +120,7 @@ function initMap() {
   //---------------------Click listeners END--------------------
 
   //---------------------Added polylines--------------------
-  const polylines = [];
+  // const polylines = [];
 
   for (let key in routes) {
     routes[key].coords.forEach((item, idx) => {
@@ -152,7 +152,6 @@ function initMap() {
       item.poly.setMap(map);
     });
   }
-
   //---------------------function for test------------------------------------
   // document.getElementById('hide').addEventListener('click', () => {
   //   if (polylinesHidden) {
@@ -165,3 +164,4 @@ function initMap() {
 
   // })
 }
+// console.log(polylines);
