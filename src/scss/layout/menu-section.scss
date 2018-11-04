@@ -76,8 +76,8 @@
   padding-top: 72px;
   left: 0;
   z-index: 9;
-  width: 240px;
-  font-size: $title-middle-font-size;
+  width: 180px;
+  font-size: $text-font-size-small;
   list-style: none;
   background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
   animation: fadeInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -86,7 +86,6 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
-    font-size: $button-font-size;
     background-color: $white-color;
     // padding: 2px 28px 12px;
     padding: 4px 21px 4px 4px;
@@ -147,7 +146,7 @@
   left: 104%;
   top: -5px;
   padding: 6px 6px;
-  width: 240px;
+  width: 160px;
   max-height: 600px;
   background: $main-worm-color;
   animation: fadeInLeft 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -322,6 +321,11 @@
 
 @media(min-width: 1169px) {
   .burger-list {
+    width: 330px;
+    font-size: $button-font-size;
+  }
+  
+  .subrotes {
     width: 330px;
   }
 }
