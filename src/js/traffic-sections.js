@@ -1,23 +1,28 @@
+let subrotesId = '';
+
 //---------------------Click open traffic-section listeners--------------------
+const menuSvg = document.querySelector(".ham");
+
 document.getElementById("burger-list").addEventListener("click", event => {
+  
   if (event.target.matches("#trafficcontrol")) {
     document
       .getElementById("control-section")
-      .classList.remove("traffic-section--hidden");
+      .classList.remove("traffic--hidden");
     return;
   }
 
   if (event.target.matches("#trafficaccident")) {
     document
       .getElementById("accident-section")
-      .classList.remove("traffic-section--hidden");
+      .classList.remove("traffic--hidden");
     return;
   }
-
+//Eugene - move show routothercyclists-section in document.getElementById("rout-footer").addEventListener("click", event => {
   if (event.target.matches("#pinePark")) {
     document
-      .getElementById("routothercyclists-section")
-      .classList.remove("traffic-section--hidden");
+      .getElementById("rout-footer")
+      .classList.remove("traffic--hidden");
     return;
   }
 });
@@ -25,18 +30,65 @@ document.getElementById("burger-list").addEventListener("click", event => {
 //---------------------Click close traffic-section listeners--------------------
 document.getElementById("control-close").addEventListener("click", () => {
   document
-    .getElementById("control-section")
-    .classList.add("traffic-section--hidden");
+    .getElementById("co ntrol-section")
+    .classList.add("traffic--hidden");
 });
 
 document.getElementById("accident-close").addEventListener("click", () => {
   document
     .getElementById("accident-section")
-    .classList.add("traffic-section--hidden");
+    .classList.add("traffic--hidden");
 });
 
 document.querySelector(".routothercyclists-section__closebutton").addEventListener("click", () => {
   document
     .getElementById("routothercyclists-section")
-    .classList.add("traffic-section--hidden");
+    .classList.add("traffic--hidden");
 });
+
+//---------------------Get subrotes__item id START--------------------
+document.getElementById("burger-list").addEventListener("click", event => {
+  if (event.target.parentNode.classList.contains("subrotes")) {
+    subrotesId=event.target.id;
+    console.log(subrotesId);
+    // return event.target.id;
+  }
+});
+//---------------------Get subrotes__item id END--------------------
+
+//---------------------Show subrote modal window START--------------------
+
+document.getElementById("rout-footer").addEventListener("click", event => {
+  console.log(subrotesId);
+  // return event.target.id;
+  document
+    .getElementById("routothercyclists-section")//need use subrotesId
+    .classList.remove("traffic--hidden");
+  return;
+
+});
+
+//---------------------Show subrote modak window END--------------------
+
+//---------------------Click open traffic TITLE listeners--------------------
+
+const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
+titleBtns.forEach(btn => btn.addEventListener('click', showText));
+
+
+
+function showText () {
+  console.log(event.target.parentNode.nextSibling);
+  event.target.parentNode.nextSibling.classList.toggle('text--hidden');
+  event.target.classList.toggle('traffic__expanded-button--active');
+}
+//---------------------Click open traffic--inner listeners--------------------
+const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
+innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
+
+console.log(innerBtns)
+
+function showInnerText () {
+  event.target.nextSibling.classList.toggle('text--hidden');
+  event.target.classList.toggle('traffic__expanded-button--active');
+}

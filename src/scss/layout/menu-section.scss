@@ -3,98 +3,81 @@
   background-color: $main-worm-color;
   cursor: pointer;
 }
-
-// .box-shadow-menu:before {
-//   content: '';
-//   position: absolute;
-//   width: 21px;
-//   height: 21px;
-//   // left: 24px;
-//   // top: 1.5em;
-//   // width: 2.5em;
-//   // height: 0.2em;
-//   // background: black;
-//   // box-shadow: 0 0.65em 0 0 black, 0 1.3em 0 0 black;
-// }
 // -----------------------
 .box-shadow-menu--closed {
   position: absolute;
-  background-color: rgba(227, 173, 62, 0.8);
+  background-color: $main-worm-color--08;
   cursor: pointer;
   top: 10px;
   left: 18px;
-  width: 50px;
-  height: 50px;
+  width: 57px;
+  height: 57px;
   border-radius: 35px;
-  padding-left: 30px;
-  background-image: url(../img/menu.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
 }
-// -----------------------
+// ---------Menu button animation-------
+.ham {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-// .box-shadow-menu--open {
-//   position: absolute;
-//   background-color: $main-worm-color;
-//   cursor: pointer;
-//   content: "";
-//   width: 240px;
-//   height: 60px;
-// }
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: $black-color;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+// -----------------------
 
 .menu-section {
   position: absolute;
   top: 0px;
   left: 0px;
-  // color: $black-color;
-  // width: 100%;
   animation: bounceInDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  // outline: 2px solid #000; /* Чёрная рамка */
-  //   &__nav {
-  //     // width: 100px;
-  //     // height: 40px;
-  //     font-family: $title-font;
-  //     font-weight: $regular;
-  //     font-size: $mainmenu-font-size;
-  //     display: flex;
-  //     justify-content: space-between;
-  //     outline: 2px solid #000; /* Чёрная рамка */
-  //   }
-  //   &__nav-item {
-  //     // text-align: center;
-  //     // height: 45px;
-  //     flex-grow: 1;
-  //     padding-bottom: 5px;
-  //     border: 5px solid transparent;
-  //     cursor: pointer;
-  //     outline: 2px solid #000; /* Чёрная рамка */
-  //     &:hover {
-  //       background-color: $main-worm-color;
-  //     }
-  //   }
 }
-// .nav-item {
-//   &__burger {
-//     // width: 40px;
-//     background-image: url(../img/menu.svg);
-//     background-repeat: no-repeat;
-//     background-position: center;
-//   }
-// }
+
 .burger-list {
   font-family: $title-font;
-  // font-size: $mainmenu-font-size;
-  display: none; // UNCOMMIT
+  display: none;
   height: 600px;
   position: absolute;
-  // top: 60px;
-
-  padding-top: 63px;
+  padding-top: 72px;
   left: 0;
+  z-index: 9;
   width: 240px;
-  // min-height: 500px;
-  font-size: $button-font-size;
+  font-size: $title-middle-font-size;
   list-style: none;
   background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
   animation: fadeInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -103,18 +86,20 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
-    font-size: $mainmenu-font-size;
+    font-size: $button-font-size;
     background-color: $white-color;
     // padding: 2px 28px 12px;
-    padding: 1px;
-    padding-left: 4px;
+    padding: 4px 21px 4px 4px;
     margin: 0px 24px 12px;
     position: relative;
     border-radius: 4px;
+    transition-duration: 200ms;
     cursor: pointer;
 
     &:hover {
-      transform: scale(1.08);
+      transform: scale(1.04);
+      box-shadow: 2px 2px 6px 5px rgba(0, 0, 0, 0.25);
+      transition-duration: 200ms;
     }
 
     &--recreation::after {
@@ -130,17 +115,17 @@
     }
   }
 
-  &__item:first-child {
-    margin-bottom: 5px;
-  }
+  // &__item:first-child {
+  //   margin-bottom: 5px;
+  // }
 
-  &__item:nth-child(3) {
-    margin-bottom: 5px;
-  }
+  // &__item:nth-child(3) {
+  //   margin-bottom: 5px;
+  // }
 
-  &__item:nth-child(5) {
-    margin-bottom: 5px;
-  }
+  // &__item:nth-child(5) {
+  //   margin-bottom: 5px;
+  // }
 
   &__item::after {
     display: block;
@@ -152,21 +137,24 @@
     width: 12px;
     height: 12px;
     border-radius: 7px;
-    // background-color: #00ffff;
   }
-  // &__item:hover {
-  // background-color: rgba(255, 251, 0, 0.65);
-  // }
-  // &__link {
-  //   text-transform: uppercase;
-  //   text-decoration: none;
-  //   color: $black-color;
-  //   font-size: $mainmenu-font-size;
-  // }
 }
 
 .subrotes {
   list-style: none;
+  position: absolute;
+  z-index: 8;
+  left: 104%;
+  top: -5px;
+  padding: 6px 6px;
+  width: 240px;
+  max-height: 600px;
+  background: $main-worm-color;
+  animation: fadeInLeft 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  
+  &__item {
+    margin: 0 0 15px;
+  }
 }
 
 // ask Volkov
@@ -183,13 +171,10 @@
   padding: 1px;
 }
 
-.hidden {
+.hidden-menu {
   display: block;
 }
-// .active {
-//   background: $main-worm-color;
-// }
-
+//-------animation keyframes---------
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
@@ -331,5 +316,12 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+//------Media querry----
+
+@media(min-width: 1169px) {
+  .burger-list {
+    width: 330px;
   }
 }
