@@ -1,3 +1,5 @@
+let subrotesId = '';
+
 //---------------------Click open traffic-section listeners--------------------
 const menuSvg = document.querySelector(".ham");
 
@@ -16,10 +18,10 @@ document.getElementById("burger-list").addEventListener("click", event => {
       .classList.remove("traffic--hidden");
     return;
   }
-
+//Eugene - move show routothercyclists-section in document.getElementById("rout-footer").addEventListener("click", event => {
   if (event.target.matches("#pinePark")) {
     document
-      .getElementById("routothercyclists-section")
+      .getElementById("rout-footer")
       .classList.remove("traffic--hidden");
     return;
   }
@@ -47,19 +49,26 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
 //---------------------Get subrotes__item id START--------------------
 document.getElementById("burger-list").addEventListener("click", event => {
   if (event.target.parentNode.classList.contains("subrotes")) {
-    // console.log('event.target.id', event.target.id);  
-    return event.target.id;
+    subrotesId=event.target.id;
+    console.log(subrotesId);
+    // return event.target.id;
   }
 });
-
-
-// document.getElementById("burger-list").addEventListener("click", getSubrotesId());
-
-// function getSubrotesId (event) {
-// console.log(event.target.id);
-// }
-
 //---------------------Get subrotes__item id END--------------------
+
+//---------------------Show subrote modal window START--------------------
+
+document.getElementById("rout-footer").addEventListener("click", event => {
+  console.log(subrotesId);
+  // return event.target.id;
+  document
+    .getElementById("routothercyclists-section")//need use subrotesId
+    .classList.remove("traffic--hidden");
+  return;
+
+});
+
+//---------------------Show subrote modak window END--------------------
 
 //---------------------Click open traffic TITLE listeners--------------------
 
