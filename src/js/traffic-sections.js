@@ -69,7 +69,6 @@ titleBtns.forEach(btn => btn.addEventListener('click', showText));
 
 
 function showText () {
-  console.log(event.target.parentNode.nextSibling);
   event.target.parentNode.nextSibling.classList.toggle('text--hidden');
   event.target.classList.toggle('traffic__expanded-button--active');
 }
@@ -77,7 +76,6 @@ function showText () {
 const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
 innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 
-console.log(innerBtns)
 
 function showInnerText () {
   event.target.nextSibling.classList.toggle('text--hidden');

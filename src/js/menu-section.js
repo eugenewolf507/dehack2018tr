@@ -29,43 +29,50 @@ map.addEventListener("click", mapClickHandlerRemoveMenu);
 //-------------------The appearance and disappearance submenu----------
 
 function menuItemClickHandler({target}) {
-// console.log(target);
 
-  if (target.matches(".subrotes__item")) {
+  if (target.matches(".subrotes__item") || target.matches(".burger-list__item--pdr") || target.matches(".burger-list__item--dtp")) {
     return;
   }
+
   if (!target.firstElementChild.hasAttribute('hidden')) {
-    subMenusArr.forEach(elem => elem.setAttribute('hidden', true))
+  subMenusArr.forEach(elem => elem.setAttribute('hidden', true))
   }
   else {
-    subMenusArr.forEach(elem => elem.setAttribute('hidden', true));
-    target.firstElementChild.removeAttribute('hidden')
+  subMenusArr.forEach(elem => elem.setAttribute('hidden', true));
+  target.firstElementChild.removeAttribute('hidden')
   };
-  if (target.matches("#burger-list")) {
-    return;
-  }
 };
 
 menu.addEventListener("click", menuItemClickHandler);
 
 //--Hadling array polylines on click to sumbenu----
 
+let polylinesHidden = false;
+
 function removeAllButOnePolyline(type, idx) {
   polylines.forEach(item => {
     if (!(item.type === type && item.index === idx)) {
       item.poly.setMap(null);
-    }
+    };
+    polylinesHidden = true;
   });
-}
+};
+
+function showAllPolylines() {
+  if (!polylinesHidden) {
+    return;
+  }
+  polylines.forEach(item => {
+    item.poly.setMap(map);
+  });
+  polylinesHidden = false;
+};
 //-----------------------
 function subMenuItemClickHandler({target}) {
   let counter = 0;
   removeAllButOnePolyline('highwayRoutes', 3);
-  console.log(target.id);
   polylines.forEach(elem => {
-    console.log(elem);
     counter += 1;
   });
 };
 subMenuItem.forEach(item => item.addEventListener("click", subMenuItemClickHandler));
-  // console.log(allRecreationRoutes);
