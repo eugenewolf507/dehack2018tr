@@ -2,12 +2,15 @@
 //-------Click open traffic-section listeners------open section from menu-----
 
 let subrotesId = '';
+console.log("+++");
 
 //---------------------Click open traffic-section listeners--------------------
 
 const menuSvg = document.querySelector(".ham");
 
 document.getElementById("burger-list").addEventListener("click", event => {
+
+  console.log("++");
 
   if (event.target.matches("#trafficcontrol")) {
     document
@@ -24,6 +27,7 @@ document.getElementById("burger-list").addEventListener("click", event => {
   }
 //Eugene - move show routothercyclists-section in document.getElementById("rout-footer").addEventListener("click", event => {
   if (event.target.matches("#pinePark")) {
+    console.log("+");
     document
       .getElementById("rout-footer")
       .classList.remove("traffic--hidden");
@@ -34,7 +38,7 @@ document.getElementById("burger-list").addEventListener("click", event => {
 //-------Click close traffic-section listeners----close section with button----------------
 document.getElementById("control-close").addEventListener("click", () => {
   document
-    .getElementById("co ntrol-section")
+    .getElementById("control-section")
     .classList.add("traffic--hidden");
 });
 
@@ -80,66 +84,66 @@ document.getElementById("rout-footer").addEventListener("click", event => {
 //---------------------Click open traffic TITLE listeners--------------------
 
 
-const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
-titleBtns.forEach(btn => btn.addEventListener('click', showText));
+// const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
+// titleBtns.forEach(btn => btn.addEventListener('click', showText));
 
 
-function showText() {
-  titleBtns.forEach(btn => {
-    if (btn == event.target) {
-      btn.parentNode.nextSibling.classList.toggle('text--hidden');
-      btn.classList.toggle('traffic__expanded-button--active');
-    }
-    else if (btn !== event.target) {
-      btn.parentNode.nextSibling.classList.add('text--hidden');
-      btn.classList.remove('traffic__expanded-button--active');
-    }
-  })
+// function showText() {
+//   titleBtns.forEach(btn => {
+//     if (btn == event.target) {
+//       btn.parentNode.nextSibling.classList.toggle('text--hidden');
+//       btn.classList.toggle('traffic__expanded-button--active');
+//     }
+//     else if (btn !== event.target) {
+//       btn.parentNode.nextSibling.classList.add('text--hidden');
+//       btn.classList.remove('traffic__expanded-button--active');
+//     }
+//   })
 
 
 
-function showText () {
-  event.target.parentNode.nextSibling.classList.toggle('text--hidden');
-  event.target.classList.toggle('traffic__expanded-button--active');
+// function showText () {
+//   event.target.parentNode.nextSibling.classList.toggle('text--hidden');
+//   event.target.classList.toggle('traffic__expanded-button--active');
 
-}
-//---------------------Click open traffic--inner listeners-----open section inner text---------------
+// }
+// //---------------------Click open traffic--inner listeners-----open section inner text---------------
 
-const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
-innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
+// const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
+// innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 
 
-function showInnerText() {
-  innerBtns.forEach(btn => {
+// function showInnerText() {
+//   innerBtns.forEach(btn => {
 
-    if (btn == event.target) {
-      btn.nextSibling.classList.toggle('text--hidden');
-      btn.classList.toggle('traffic__expanded-button--active');
-    }
+//     if (btn == event.target) {
+//       btn.nextSibling.classList.toggle('text--hidden');
+//       btn.classList.toggle('traffic__expanded-button--active');
+//     }
 
-    else if (btn !== event.target) {
-      btn.nextSibling.classList.add('text--hidden');
-      btn.classList.remove('traffic__expanded-button--active');
-    }
-  })
-}
-//================Click open traffic--inner listeners-----open section LOWS inner text=================================
+//     else if (btn !== event.target) {
+//       btn.nextSibling.classList.add('text--hidden');
+//       btn.classList.remove('traffic__expanded-button--active');
+//     }
+//   })
+// }
+// //================Click open traffic--inner listeners-----open section LOWS inner text=================================
 
-const lowBtns = document.querySelectorAll('.traffic__expanded-button--low-js');
-lowBtns.forEach(btn => btn.addEventListener('click', showLowText));
+// const lowBtns = document.querySelectorAll('.traffic__expanded-button--low-js');
+// lowBtns.forEach(btn => btn.addEventListener('click', showLowText));
 
-function showLowText() {
-  lowBtns.forEach(btn => {
-    if (btn == event.target) {
-      btn.parentNode.nextSibling.classList.toggle('text--hidden');
-      btn.classList.toggle('traffic__expanded-button--active');
-    }
-    else if (btn !== event.target) {
-      btn.parentNode.nextSibling.classList.add('text--hidden');
-      btn.classList.remove('traffic__expanded-button--active');
-    }
-  })
-}
+// function showLowText() {
+//   lowBtns.forEach(btn => {
+//     if (btn == event.target) {
+//       btn.parentNode.nextSibling.classList.toggle('text--hidden');
+//       btn.classList.toggle('traffic__expanded-button--active');
+//     }
+//     else if (btn !== event.target) {
+//       btn.parentNode.nextSibling.classList.add('text--hidden');
+//       btn.classList.remove('traffic__expanded-button--active');
+//     }
+//   })
+// }
 
 //==============Check yourself=======================
 // const forms = document.querySelectorAll('.task__form');
