@@ -71,6 +71,7 @@ function showAllPolylines() {
 function subMenuItemClickHandler({target}) {
   let counter = 0;
   removeAllButOnePolyline('highwayRoutes', 3);
+
   polylines.forEach(elem => {
     counter += 1;
   });
