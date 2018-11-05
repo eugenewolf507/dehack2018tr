@@ -89,8 +89,11 @@ document.getElementById("rout-footer").addEventListener("click", event => {
 
 
 // function showText() {
+ 
 //   titleBtns.forEach(btn => {
+//     console.log(btn.parentNode.nextSibling)
 //     if (btn == event.target) {
+      
 //       btn.parentNode.nextSibling.classList.toggle('text--hidden');
 //       btn.classList.toggle('traffic__expanded-button--active');
 //     }
@@ -99,6 +102,7 @@ document.getElementById("rout-footer").addEventListener("click", event => {
 //       btn.classList.remove('traffic__expanded-button--active');
 //     }
 //   })
+// }
 
 
 
