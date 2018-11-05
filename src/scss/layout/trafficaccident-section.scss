@@ -48,6 +48,7 @@
     & p:last-of-type {
       margin-bottom: 0;
     }
+
 //===WHAT DO SECTION====
     &--whatDo {
       & > ul > li {
@@ -67,7 +68,36 @@
         width: 1.2rem;
         height: 1.2rem;
       }
+
+      @include desktop-small{
+        order: -1;
+        width: 50%;
+        padding-right: 1rem;
+        border-right: 2px dotted black;
+      }
     }
+//===WHAT DOcuments SECTION====
+    &--whatDocum {
+      @include desktop-small{
+        padding-left: 2rem;
+        padding-top: 4rem;
+        position: absolute;
+        // top: -25rem;
+        bottom: 10rem;
+        right: 0;
+        width: 50%;
+        border-top: 2px dotted #000;
+      }
+    }
+//===WHAT is SECTION====
+    &--whatIs {
+      @include desktop-small{
+        width: 50%;
+        padding-left: 2rem;
+      }
+     
+    }
+    
   }
 //===HELP BUTTON=====
   &__help-button {
@@ -88,6 +118,10 @@
   
     @include tablet-small{
       margin: 0 auto;
+    }
+
+    @include desktop-small{
+      margin-bottom: 1.5rem;
     }
   
     &:active {
@@ -120,6 +154,10 @@
     right: 1.5rem;
     top: 0.3rem;
     cursor: pointer;
+
+    @include desktop-small{
+      display: none;
+    }
   
     &--active {
       background-image: url(../img/text_vverh.svg);
@@ -134,12 +172,17 @@
       text-align: center;
     }
 
+
     &--underline {
     position: relative;
     font-family: $title-font;
     font-size: $title-big-font-size;
     font-weight: $regular;
     text-transform: uppercase;
+
+    @include desktop-small{
+      font-size: 36px;
+    }
 
     &::after {
       content: '';
@@ -173,13 +216,11 @@
       @include tablet-small{
         text-align: center;
       }
+      @include desktop-small{
+        padding-bottom: 1.5rem;
+      }
     }
-  }
-
-  // &__title3 {
-  //   font-size: $text-font-size;
-  //   font-family: $title-font;
-  // }  
+  }  
 }
 
 .inner__list {
@@ -197,12 +238,34 @@
   // height: 0;
   display: none;
   // overflow: hidden;
+  @include desktop-small{
+   display: block;
+  }
 }
 
 ///REMOVE COMENT
 
 .traffic--hidden {
   display: none;
+}
+
+.flex-wrap {
+  @include desktop-small{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: center;
+    margin: 0 auto;
+    // height: 100px;
+  }
+
+.flex-placeholder {
+    width: 50%;
+    height: 5px;
+  }
 }
 
 //=============ANIMATION=================
