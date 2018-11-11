@@ -106,12 +106,12 @@ function showText() {
 
 
 
-function showText () {
-  event.target.parentNode.nextSibling.classList.toggle('text--hidden');
-  event.target.classList.toggle('traffic__expanded-button--active');
+// function showText () {
+//   event.target.parentNode.nextSibling.classList.toggle('text--hidden');
+//   event.target.classList.toggle('traffic__expanded-button--active');
 
-}
-//---------------------Click open traffic--inner listeners-----open section inner text---------------
+// }
+// //---------------------Click open traffic--inner listeners-----open section inner text---------------
 
 const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
 innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
@@ -131,7 +131,8 @@ function showInnerText() {
     }
   })
 }
-//================Click open traffic--inner listeners-----open section LOWS inner text=================================
+// //================Click open traffic--inner listeners-----open section LOWS inner text=================================
+
 
 const lowBtns = document.querySelectorAll('.traffic__expanded-button--low-js');
 lowBtns.forEach(btn => btn.addEventListener('click', showLowText));
@@ -149,17 +150,18 @@ function showLowText() {
   })
 }
 
-// ==============Check yourself=======================
-const forms = document.querySelectorAll('.task__form');
-forms.forEach(form => form.addEventListener('click', showAnswer));
-forms.forEach(form => form.chilren)
+//==============Check yourself=======================
+// const forms = document.querySelectorAll('.task__form');
+// forms.forEach(form => form.addEventListener('click', showAnswer));
+// forms.forEach(form => form.chilren)
 
 
-function showAnswer() {
-  // console.log(event);
-  if (event.target.nodeName !== 'BUTTON') return
-  else {
-    let answer = forms.forEach(form => console.log(form.children.nodeName))
-    // event.target.parentNode.nextSibling.textContent = ""
-  }
-}
+// function showAnswer() {
+//   // console.log(event);
+//   if (event.target.nodeName !== 'BUTTON') return
+//   else {
+//     let answer = forms.forEach(form => console.log(form.children.nodeName))
+//     // event.target.parentNode.nextSibling.textContent = ""
+//   }
+// }
+
