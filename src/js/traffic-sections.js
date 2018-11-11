@@ -133,6 +133,7 @@ function showInnerText() {
 }
 // //================Click open traffic--inner listeners-----open section LOWS inner text=================================
 
+
 const lowBtns = document.querySelectorAll('.traffic__expanded-button--low-js');
 lowBtns.forEach(btn => btn.addEventListener('click', showLowText));
 
@@ -163,3 +164,4 @@ function showLowText() {
 //     // event.target.parentNode.nextSibling.textContent = ""
 //   }
 // }
+
