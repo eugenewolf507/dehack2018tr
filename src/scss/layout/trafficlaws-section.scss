@@ -1,5 +1,17 @@
 .traffic {
   counter-reset: count-box;
+
+  &__title2-small {
+    font-size: $title-small-font-size;
+  }
+
+  &__title3 {
+    padding: 0.3rem;
+    font-family: $title-font;
+    font-size: calc(#{$title-small-font-size} - 1px);
+    text-indent: 0;
+    font-weight: $regular;
+  }
      
   &--lows {
     // height: 100%;
@@ -18,6 +30,16 @@
       @include desktop-small{       
         width: 40%;
       }
+
+      &--small {
+        width: 50%;
+      }
+
+      &--flex {
+        display: flex;
+        align-items: flex-start;
+        // flex-wrap: wrap;
+      }
     }
   }
 
@@ -35,13 +57,6 @@
   }
 }
 
-.low__sup-title {
-  font-size: $title-middle-font-size;
-  font-family: $title-font;
-  text-transform: uppercase;
-  font-weight: $bold;
-}
-
 .text__numbered {
   text-indent: 0;
   list-style-type: square;
@@ -56,6 +71,15 @@
 
   & span {
     font-weight: $bold;
+  }
+
+  & > li {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+
+  &--nostyle {
+    list-style: none;
   }
 }
 
@@ -89,11 +113,35 @@
       // display: none;
     }
   }
+
+  &--small {
+    width: 100px;
+    height: auto;
+  }
 }
 
 .lows__inner {
+  & > ul {
+    list-style: square;
+    list-style-position: inside;
+  }
   @include desktop-small{
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+.signs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-sign {
+  text-align: center;
+  text-indent: 0;
+}
+
+.sign-border {
+  // display: flex;
+  border: 2px solid black;
 }
