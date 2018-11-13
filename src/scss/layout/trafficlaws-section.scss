@@ -1,101 +1,99 @@
 .traffic {
-    counter-reset: count-box;
-    // position: relative;
+  counter-reset: count-box;
+     
+  &--lows {
+    // height: 100%;
 
-    &--lows {
-        // height: 100%;
+    &__figure {
+      @include mobile-big{
+        display: flex;
+        justify-content: flex-start;
+      }
 
-        &__figure {
-            @include mobile-big{
-                display: flex;
-                justify-content: flex-start;
-              }
+      @include tablet-small{
+        width: 80%;
+        margin: 0 auto;
+      }
 
-              @include tablet-small{
-                width: 80%;
-                margin: 0 auto;
-              }
-
-              @include desktop-small{
-                  
-                  width: 40%;
-              }
-        }
+      @include desktop-small{       
+        width: 40%;
+      }
     }
+  }
 
-    &__top-btn {
-        position: fixed;
-        right: 1rem;
-        bottom: 1rem;
-        width: 3rem;
-        height: 3rem;
-        border: none;
-        border-radius: 50%;
-        background-color: hsla(0, 2%, 22%, 0.288);
-        background-image: url(/img/text_vverh.svg);
-        background-position: 0 0;
-    }
+  &__top-btn {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: hsla(0, 2%, 22%, 0.288);
+    background-image: url(/img/text_vverh.svg);
+    background-position: 0 0;
+  }
 }
+
 .low__sup-title {
-    font-size: $title-middle-font-size;
-    font-family: $title-font;
-    text-transform: uppercase;
-    font-weight: $bold;
+  font-size: $title-middle-font-size;
+  font-family: $title-font;
+  text-transform: uppercase;
+  font-weight: $bold;
 }
 
 .text__numbered {
-    text-indent: 0;
-    list-style-type: square;
-    list-style-position: inside;
+  text-indent: 0;
+  list-style-type: square;
+  list-style-position: inside;
     
-    counter-increment: count-box;
+  counter-increment: count-box;
 
-    &::before {
-        content: counter(count-box) ". ";
-        font-weight: $bold;
-    }
+  &::before {
+    content: counter(count-box) ". ";
+    font-weight: $bold;
+  }
 
-    & span {
-        font-weight: $bold;
-    }
+  & span {
+    font-weight: $bold;
+  }
 }
 
 .text__img {
-    display: block;
-    width: 100%;
-    margin: 0.2rem auto;
+  display: block;
+  width: 100%;
+  margin: 0.2rem auto;
+  height: auto;
+
+  @include mobile-big{
+    width: 240px;
     height: auto;
+    margin: 0.2rem;
+  }
 
+  &--along {
     @include mobile-big{
-        width: 240px;
-        height: auto;
-        margin: 0.2rem;
-    
-      }
-
-    &--along {
-        @include mobile-big{
-            margin: 0.2rem auto;
-          }
+      margin: 0.2rem auto;
     }
+  }
 
-    &--main {
-        @include mobile-big{
-            width: 100%;
-          }
-          @include tablet-small{
-            width: 50%;
-            margin-right: auto;
-          }
-          @include tablet-big{
-            // display: none;
-          }
+  &--main {
+    @include mobile-big{
+      width: 100%;
     }
+    @include tablet-small{
+      width: 50%;
+      margin-right: auto;
+    }
+    @include tablet-big{
+      // display: none;
+    }
+  }
 }
 
 .lows__inner {
-    @include desktop-small{
-        display: flex;
-        flex-wrap: wrap;
-      }
+  @include desktop-small{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
