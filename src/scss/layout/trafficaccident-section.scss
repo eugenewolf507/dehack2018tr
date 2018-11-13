@@ -16,27 +16,27 @@
   @include tablet-small{
     padding: 60px 3% 40px;
   }
-//===CLOSE-BUTTON====
+  //===CLOSE-BUTTON====
   &__cls-btn {
     @extend %cls-button;
     position: absolute;
     top: 10px;
     right: 10px;
   }
-//===A====
+  //===A====
   & a {
     text-decoration: none;
   }
-//===UL=====
+  //===UL=====
   & ul {
     list-style: none;
   }
-//====EXPANDED TEXT====
+  //====EXPANDED TEXT====
   &--expanded {
     text-indent: 1rem;
     // height: 100%;
-    }
-//====inner sections====
+  }
+  //====inner sections====
   &__inner {
     margin-bottom: 0.5rem;
 
@@ -49,7 +49,7 @@
       margin-bottom: 0;
     }
 
-//===WHAT DO SECTION====
+    //===WHAT DO SECTION====
     &--whatDo {
       & > ul > li {
         position: relative;
@@ -76,7 +76,7 @@
         border-right: 2px dotted black;
       }
     }
-//===WHAT DOcuments SECTION====
+    //===WHAT DOcuments SECTION====
     &--whatDocum {
       @include desktop-small{
         padding-left: 2rem;
@@ -89,17 +89,15 @@
         border-top: 2px dotted #000;
       }
     }
-//===WHAT is SECTION====
+    //===WHAT is SECTION====
     &--whatIs {
       @include desktop-small{
         width: 50%;
         padding-left: 2rem;
       }
-     
-    }
-    
+    } 
   }
-//===HELP BUTTON=====
+  //===HELP BUTTON=====
   &__help-button {
     display: block;
     width: 10rem;
@@ -143,7 +141,7 @@
       color: $black-color;
     }
   }
-//====EXPANDED BUTTON=====
+  //====EXPANDED BUTTON=====
   &__expanded-button {
     background-image: url(../img/text_vniz.svg);
     width: 1rem;
@@ -164,7 +162,7 @@
     }
   }
 
-//=====TITLE MAIN=======
+  //=====TITLE MAIN=======
   &__title {
     padding-bottom: 1rem;
 
@@ -172,30 +170,29 @@
       text-align: center;
     }
 
-
     &--underline {
-    position: relative;
-    font-family: $title-font;
-    font-size: $title-big-font-size;
-    font-weight: $regular;
-    text-transform: uppercase;
+      position: relative;
+      font-family: $title-font;
+      font-size: $title-big-font-size;
+      font-weight: $regular;
+      text-transform: uppercase;
 
-    @include desktop-small{
-      font-size: 36px;
-    }
+      @include desktop-small{
+        font-size: 36px;
+      }
 
-    &::after {
-      content: '';
-      width: 100%;
-      height: 2px;
-      position: absolute;
-      bottom: 0rem;
-      left: 0rem;
-      background-color: $black-color;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0rem;
+        left: 0rem;
+        background-color: $black-color;
       }
     }
   }
-//====TITLE 2=====
+  //====TITLE 2=====
   &__title2 {
     font-size: $title-middle-font-size;
     font-family: $title-font;
@@ -225,9 +222,10 @@
 
 .inner__list {
   & > ul {
-  list-style-type: square;
-  list-style-position: inside;
-}
+    list-style-type: square;
+    list-style-position: inside;
+  }
+
   &--small-text {
     font-size: $text-font-size-small;
   }
@@ -239,7 +237,7 @@
   display: none;
   // overflow: hidden;
   @include desktop-small{
-   display: block;
+    display: block;
   }
 }
 
@@ -249,62 +247,64 @@
   display: none;
 }
 
-.flex-wrap {
-  @include desktop-small{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    padding-left: 5%;
-    padding-right: 5%;
-    justify-content: center;
-    margin: 0 auto;
-    // height: 100px;
-  }
+.flex {
+  &-wrap {
+    @include desktop-small{
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      padding-left: 5%;
+      padding-right: 5%;
+      justify-content: center;
+      margin: 0 auto;
+      // height: 100px;
+    }
 
-.flex-placeholder {
-    width: 50%;
-    height: 5px;
+    &-placeholder {
+      width: 50%;
+      height: 5px;
+    }
   }
 }
 
 //=============ANIMATION=================
-@-webkit-keyframes fadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
+// @-webkit-keyframes fadeInDown {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -100%, 0);
+//     transform: translate3d(0, -100%, 0);
+//   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
+// @keyframes fadeInDown {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -100%, 0);
+//     transform: translate3d(0, -100%, 0);
+//   }
 
-  60% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -40%, 0);
-    transform: translate3d(0, -40%, 0);
-  }
+//   60% {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -40%, 0);
+//     transform: translate3d(0, -40%, 0);
+//   }
 
-  75% {
-    opacity: 0.5;
-    -webkit-transform: translate3d(0, -20%, 0);
-    transform: translate3d(0, -20%, 0);
-  }
+//   75% {
+//     opacity: 0.5;
+//     -webkit-transform: translate3d(0, -20%, 0);
+//     transform: translate3d(0, -20%, 0);
+//   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
