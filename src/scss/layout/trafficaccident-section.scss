@@ -153,8 +153,10 @@
     top: 0.3rem;
     cursor: pointer;
 
-    @include desktop-small{
-      display: none;
+    &--accident {
+      @include desktop-small{
+        display: none;
+      }
     }
   
     &--active {
@@ -236,8 +238,11 @@
   // height: 0;
   display: none;
   // overflow: hidden;
-  @include desktop-small{
-    display: block;
+
+  &-accident {
+    @include desktop-small{
+      display: block;
+    }
   }
 }
 
