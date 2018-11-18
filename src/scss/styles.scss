@@ -11,22 +11,14 @@
 @import 'base/animate';
 
 /* Components */
-@import 'components/bg-text';
+
 @import 'components/burger';
-@import 'components/logo';
 @import 'components/cls-button';
-@import 'components/social-link';
+
 
 /* Layout */
-@import 'layout/mapmain-section';
-@import 'layout/menu-section';
-@import 'layout/routmap-section';
-@import 'layout/routaudioguide-section';
-@import 'layout/routstreetview-section';
-@import 'layout/routothercyclists-section';
-@import 'layout/routreviews-section';
-@import 'layout/routsharing-section';
-@import 'layout/proposerout-section';
-@import 'layout/trafficaccident-section';
-@import 'layout/trafficlaws-section';
-@import 'layout/school-section';
+@import 'layout/mainMap';
+@import 'layout/menu';
+@import 'layout/routeInfo';
+@import 'layout/trafficAccidents';
+@import 'layout/trafficRules';

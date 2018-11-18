@@ -1,3 +1,6 @@
+//---------------------Coordinates of the center of the map-----------
+const centerOfTheMap = { lat: 50.3574885, lng: 33.2762039 };
+
 //---------------------Coordinates markers START--------------------
 const coordinatesParkingMarkers = [{ lat: 50.35741736, lng: 33.26821771 }];
 
