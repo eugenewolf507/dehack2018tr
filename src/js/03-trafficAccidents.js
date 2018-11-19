@@ -2,22 +2,6 @@
 
 
 
-// //Eugene - move show routothercyclists-section in document.getElementById("rout-footer").addEventListener("click", event => {
-//   if (event.target.matches("#pinePark")) {
-//     console.log("+");
-//     document
-//       .getElementById("rout-footer")
-//       .classList.remove("traffic--hidden");
-//     return;
-//   }
-// });
-
-//-------Click close traffic-section listeners----close section with button----------------
-document.getElementById("control-close").addEventListener("click", () => {
-  document
-    .getElementById("control-section")
-    .classList.add("traffic--hidden");
-});
 
 document.getElementById("accident-close").addEventListener("click", () => {
   document
@@ -25,38 +9,7 @@ document.getElementById("accident-close").addEventListener("click", () => {
     .classList.add("traffic--hidden");
 });
 
-document.querySelector(".routothercyclists-section__closebutton").addEventListener("click", () => {
-  document
-    .getElementById("routothercyclists-section")
-    .classList.add("traffic--hidden");
-});
 
-//---------------------Click open traffic listeners---open section text-----------------
-
-
-//---------------------Get subrotes__item id START--------------------
-// document.getElementById("burger-list").addEventListener("click", event => {
-//   if (event.target.parentNode.classList.contains("subrotes")) {
-//     subrotesId=event.target.id;
-//     console.log(subrotesId);
-//     // return event.target.id;
-//   }
-// });
-//---------------------Get subrotes__item id END--------------------
-
-//---------------------Show subrote modal window START--------------------
-
-document.getElementById("rout-footer").addEventListener("click", event => {
-  console.log(subrotesId);
-  // return event.target.id;
-  document
-    .getElementById("routothercyclists-section")//need use subrotesId
-    .classList.remove("traffic--hidden");
-  return;
-
-});
-
-//---------------------Show subrote modak window END--------------------
 
 //---------------------Click open traffic TITLE listeners--------------------
 
@@ -65,7 +18,7 @@ const titleBtns = document.querySelectorAll('.traffic__expanded-button--js');
 titleBtns.forEach(btn => btn.addEventListener('click', showText));
 
 
-function showText() {
+function showText(event) {
  
   titleBtns.forEach(btn => {
     console.log(btn.parentNode.nextSibling)
@@ -88,13 +41,13 @@ function showText() {
 //   event.target.classList.toggle('traffic__expanded-button--active');
 
 // }
-// //---------------------Click open traffic--inner listeners-----open section inner text---------------
+//---------------------Click open traffic--inner listeners-----open section inner text---------------
 
 const innerBtns = document.querySelectorAll('.traffic__expanded-button--inner');
 innerBtns.forEach(btn => btn.addEventListener('click', showInnerText));
 
 
-function showInnerText() {
+function showInnerText(event) {
   innerBtns.forEach(btn => {
 
     if (btn == event.target) {
@@ -108,13 +61,13 @@ function showInnerText() {
     }
   })
 }
-// //================Click open traffic--inner listeners-----open section LOWS inner text=================================
+//================Click open traffic--inner listeners-----open section LOWS inner text=================================
 
 
 const lowBtns = document.querySelectorAll('.traffic__expanded-button--low-js');
 lowBtns.forEach(btn => btn.addEventListener('click', showLowText));
 
-function showLowText() {
+function showLowText(event) {
   lowBtns.forEach(btn => {
     if (btn == event.target) {
       btn.parentNode.nextSibling.classList.toggle('text--hidden');
