@@ -3,12 +3,9 @@ const menuSection = document.getElementById('menu');
 menuSection.showButton = menuSection.querySelector('div[data-id="show-button"]');
 menuSection.hamburger = menuSection.querySelector('svg[data-id="hamburger"]');
 menuSection.list = menuSection.querySelector('ul[data-id="list"]');
-menuSection.list.items = [];
-menuSection.list.items[0] = menuSection.list.querySelector('li[data-id="recreation"]');
-menuSection.list.items[1] = menuSection.list.querySelector('li[data-id="magistral"]');
-menuSection.list.items[2] = menuSection.list.querySelector('li[data-id="touristic"]');
-menuSection.list.items[3] = menuSection.list.querySelector('li[data-id="traffic-rules"]');
-menuSection.list.items[4] = menuSection.list.querySelector('li[data-id="traffic-accidents"]');
+menuSection.menuItems = [...menuSection.querySelectorAll('.menu__item')];
+menuSection.menuSubitems = [...menuSection.querySelectorAll('.menu__subitem')];
+menuSection.routesItems = [...menuSection.querySelectorAll('.routes__item')];
 
 //-------------------Create global variables-----------------
 let isMenuShown = false;
@@ -16,15 +13,16 @@ let isMenuShown = false;
 //---------------------Add listeners to the DOM elements--------------------
 
 
-menuSection.showButton.addEventListener('click', handleShowingMenu);
-menuSection.list.addEventListener('click', handleListClick);
-document.body.addEventListener('click', handleClickingOnBody);
+menuSection.showButton.addEventListener('click', handleShowButtonClick);
+menuSection.menuItems.forEach(item => {item.addEventListener('click', handleMenuItemClick)});
+menuSection.routesItems.forEach(item => {item.addEventListener('click', handleRoutesItemClick)})
+document.body.addEventListener('click', handleBodyClick);
 
 
 
 
 
-function handleShowingMenu() {
+function handleShowButtonClick() {
   if (!isMenuShown) {
     menuSection.showButton.classList.remove('menu__show-button--closed');
     menuSection.list.classList.remove('menu__list--hidden');
@@ -32,36 +30,35 @@ function handleShowingMenu() {
     isMenuShown = true;
   } else {
     hideMenu();
+    showAllPolylines();
   }
 }
 
-function handleClickingOnBody( {target} ) {
+function handleBodyClick( {target} ) {
   if (!target.matches('#menu *')) {
     hideMenu();
+    showAllPolylines();
     return;
   }
 }
 
-function handleListClick( {target} ) {
-
-  if(!target.matches('.menu__item')) {
-    return;
-  }
-
-    // If any subitem is opened it is necessary to hide it first
-    hideMenuSubitems();
-
-    const chosenSubitem = target.querySelector('.menu__subitem');
+function handleMenuItemClick( {target} ) {
+  //for those items which have submenu
+  const chosenSubitem = target.querySelector('.menu__subitem')
     if (chosenSubitem){
+      // If any subitem is opened it is necessary to hide it first
+      hideMenuSubitems();
       chosenSubitem.classList.remove('menu__subitem--hidden');
+      leaveOnlyOneTypeOfRoutes(target.getAttribute('data-id'));
       return;
     }
-
+    // for other items
     if (target.matches('li[data-id="traffic-rules"]')){
       document 
       .getElementById("accident-section")
       .classList.remove("traffic--hidden");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       hideMenu();
+      showAllPolylines();
       return;
     }
 
@@ -70,18 +67,18 @@ function handleListClick( {target} ) {
       .getElementById("control-section")
       .classList.remove("traffic--hidden");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       hideMenu();
+      showAllPolylines();
       return;
     }
 
   }
 
+  function handleRoutesItemClick( {target} ) {
+    removeAllButOneRoute(target.getAttribute('data-id'));
+  }
+
   function hideMenuSubitems() {
-    menuSection.list.items.forEach(element => {
-      const subitem = element.querySelector('.menu__subitem');
-      if (subitem) {
-        subitem.classList.add('menu__subitem--hidden');
-      } 
-    });
+    menuSection.menuSubitems.forEach(subitem => {subitem.classList.add('menu__subitem--hidden');});
   }
 
   function hideMenu() {

@@ -35,13 +35,13 @@ document.querySelector(".routothercyclists-section__closebutton").addEventListen
 
 
 //---------------------Get subrotes__item id START--------------------
-document.getElementById("burger-list").addEventListener("click", event => {
-  if (event.target.parentNode.classList.contains("subrotes")) {
-    subrotesId=event.target.id;
-    console.log(subrotesId);
-    // return event.target.id;
-  }
-});
+// document.getElementById("burger-list").addEventListener("click", event => {
+//   if (event.target.parentNode.classList.contains("subrotes")) {
+//     subrotesId=event.target.id;
+//     console.log(subrotesId);
+//     // return event.target.id;
+//   }
+// });
 //---------------------Get subrotes__item id END--------------------
 
 //---------------------Show subrote modal window START--------------------

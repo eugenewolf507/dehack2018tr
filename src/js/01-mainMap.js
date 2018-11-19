@@ -42,16 +42,16 @@ function initMap() {
     ]
   });
   //---------------Create routes and show on the map----------------
-  for (let key in routes) {
-    routes[key].coords.forEach((item, idx) => {
+  for (let key in routesData) {
+    routesData[key].routes.forEach((item) => {
       const polyline = new google.maps.Polyline({
-        path: item,
-        strokeColor: routes[key].color,
+        path: item.coords,
+        strokeColor: routesData[key].color,
         strokeOpacity: 0.7,
         strokeWeight: 3,
         map: map
       });
-      const polylineObj = { type: key, index: idx, polyline };
+      const polylineObj = { type: key, name: item.name, polyline };
       polylines.push(polylineObj);
     });
   }
@@ -166,11 +166,24 @@ function deleteMarkersFromTheMap(arrayMarkers) {
 //---------------------Show/hide polylines----------------------------------
 
 
-function removeAllButOnePolyline(type, idx) {
+function removeAllButOneRoute(name) {
   polylines.forEach(item => {
-    if (!(item.type === type && item.index === idx)) {
+    if (item.name !== name) {
       item.polyline.setMap(null);
-    };
+    } else {
+      item.polyline.setMap(map);
+    }
+    areAllPolylinesShown = false;
+  });
+};
+
+function leaveOnlyOneTypeOfRoutes(type) {
+  polylines.forEach(item => {
+    if (item.type !== type) {
+      item.polyline.setMap(null);
+    } else {
+      item.polyline.setMap(map);
+    }
     areAllPolylinesShown = false;
   });
 };
