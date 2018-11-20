@@ -4009,14 +4009,13 @@ ul {
 
 .traffic__cls-btn {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 5px;
   background-image: url("./../img/X.svg");
-  background-size: 20px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(251, 175, 23, 0.8);
 }
 
 .traffic__cls-btn:hover {
@@ -4293,11 +4292,11 @@ ul {
 
 .route-info__preview-title::after {
   content: '';
-  width: 25px;
-  height: 25px;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   right: 30px;
-  top: 15px;
+  top: 10px;
   background-image: url("./../img/X.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -4416,8 +4415,8 @@ ul {
 
 .traffic__cls-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
 }
 
 .traffic a {
@@ -4602,15 +4601,14 @@ ul {
 
 .traffic__top-btn {
   position: fixed;
-  right: 1rem;
+  right: 20px;
   bottom: 1rem;
   width: 3rem;
   height: 3rem;
   border: none;
   border-radius: 50%;
-  background-color: rgba(57, 55, 55, 0.288);
-  background-image: url(/img/text_vverh.svg);
-  background-position: 0 0;
+  background-image: url(./../img/text_vverh.svg);
+  background-position: center;
 }
 
 .text__numbered {
@@ -4695,13 +4693,6 @@ ul {
     width: 33.3333%;
   }
 
-  .traffic__top-btn {
-    right: 1.5rem;
-    bottom: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-
   .text__img--along {
     margin: 0 auto 0.2rem;
     float: none;
@@ -4765,13 +4756,6 @@ ul {
   .traffic--lows__figure--flex {
     width: 95%;
     box-shadow: none;
-  }
-
-  .traffic__top-btn {
-    right: 2rem;
-    bottom: 2rem;
-    width: 4rem;
-    height: 4rem;
   }
 
   .text__img {
@@ -4876,11 +4860,6 @@ ul {
 
   .traffic--lows__figure--flex {
     width: 95%;
-  }
-
-  .traffic__top-btn {
-    right: 3rem;
-    bottom: 3rem;
   }
 
   .text__img {
