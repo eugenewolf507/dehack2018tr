@@ -8,6 +8,7 @@ function removeAllButOneRoute(name) {
 
       // set center of polyline and init map on this center START
       setTimeout(() => {
+        // set first and last point of polylines and they lat and lng
         const startLatLng = `lat: ${item.polyline.De.bounds.U}, lng: ${
           item.polyline.De.bounds.W
         }`;
@@ -15,6 +16,7 @@ function removeAllButOneRoute(name) {
           item.polyline.De.bounds.Z
         }`;
 
+        // set center of polylines
         let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
         let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
 
