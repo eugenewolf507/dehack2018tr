@@ -9,10 +9,8 @@ function removeAllButOneRoute(name) {
       item.polyline.setMap(map);
     }
     areAllPolylinesShown = false;
-
-    routeInfoSection.classList.remove('route-info--fully-hidden');
-    routeInfoSection.classList.add('route-info--header-shown');
   });
+  showHeaderRouteInfo();
 };
 
 function leaveOnlyOneTypeOfRoutes(type) {

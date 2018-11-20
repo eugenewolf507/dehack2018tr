@@ -12,7 +12,6 @@ let isMenuShown = false;
 
 //---------------------Add listeners to the DOM elements--------------------
 
-
 menuSection.showButton.addEventListener('click', handleShowButtonClick);
 menuSection.menuItems.forEach(item => {item.addEventListener('click', handleMenuItemClick)});
 menuSection.routesItems.forEach(item => {item.addEventListener('click', handleRoutesItemClick)})
@@ -27,17 +26,12 @@ function handleShowButtonClick() {
     isMenuShown = true;
   } else {
     hideMenu();
-    //showAllPolylines();
-    //hideRouteInfo();
   }
 }
 
 function handleBodyClick( {target} ) {
   if (!target.matches('#menu *')) {
     hideMenu();
-    //showAllPolylines();
-    //hideRouteInfo();
-    return;
   }
 }
 
@@ -56,7 +50,7 @@ function handleMenuItemClick( {target} ) {
     if (target.matches('li[data-id="all"]')){
       hideMenuSubitems();
       showAllPolylines();
-      hideRouteInfo();
+      closeRouteInfo();
       return;
     }
 
@@ -66,7 +60,7 @@ function handleMenuItemClick( {target} ) {
       .classList.remove("traffic--hidden");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       hideMenu();
       showAllPolylines();
-      hideRouteInfo();
+      closeRouteInfo();
       return;
     }
 
@@ -76,7 +70,7 @@ function handleMenuItemClick( {target} ) {
       .classList.remove("traffic--hidden");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       hideMenu();
       showAllPolylines();
-      hideRouteInfo();
+      closeRouteInfo();
       return;
     }
 
@@ -85,6 +79,8 @@ function handleMenuItemClick( {target} ) {
   function handleRoutesItemClick( {target} ) {
     removeAllButOneRoute(target.getAttribute('data-id'));
   }
+
+//**************************AUX FUNCTIONS****************************/
 
   function hideMenuSubitems() {
     menuSection.menuSubitems.forEach(subitem => {subitem.classList.add('menu__subitem--hidden');});

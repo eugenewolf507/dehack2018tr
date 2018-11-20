@@ -1,0 +1,43 @@
+.ham {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  width: 80px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+
+  & .top {
+    stroke-dasharray: 40 139;
+  }
+
+  & .bottom {
+    stroke-dasharray: 40 180;
+  }
+
+  .line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: $black-color;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  &.active {
+    transform: rotate(45deg);
+
+    & .top {
+      stroke-dashoffset: -98px;
+    }
+
+    & .bottom {
+      stroke-dashoffset: -138px;
+    }
+  }
+}
