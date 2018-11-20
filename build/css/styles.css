@@ -4493,7 +4493,7 @@ ul {
   color: #000;
 }
 
-.traffic__help-button a {
+.traffic__help-button--contact {
   color: #000;
 }
 
@@ -4609,6 +4609,7 @@ ul {
   border-radius: 50%;
   background-image: url(./../img/text_vverh.svg);
   background-position: center;
+  background-size: contain;
 }
 
 .text__numbered {
@@ -4887,6 +4888,6 @@ ul {
 
 @media (min-width: 1440px) {
   .traffic--lows__figure--small {
-    width: calc(100%/6);
+    width: calc(100% / 6);
   }
 }

@@ -12,24 +12,24 @@
     text-indent: 0;
     font-weight: $regular;
   }
-     
+
   &--lows {
     // height: 100%;
 
     &__figure {
-      @include tablet-small{
+      @include tablet-small {
         width: 95%;
         margin: 0 auto;
         padding: 0.5rem;
-        box-shadow: 4px 4px 15px -3px rgba(0,0,0,0.75);
+        box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.75);
       }
 
-      @include tablet-big{
+      @include tablet-big {
         width: 90%;
         margin: 0 auto;
       }
 
-      @include desktop-small{       
+      @include desktop-small {
         width: 50%;
         display: flex;
         align-items: flex-start;
@@ -39,29 +39,29 @@
       &--small {
         width: 50%;
 
-        @include mobile-big{
+        @include mobile-big {
           width: 33.3333%;
         }
 
-        @include tablet-small{
+        @include tablet-small {
           width: 33.3333%;
           padding-bottom: 0.5rem;
           box-shadow: none;
         }
 
-        @include tablet-big{
+        @include tablet-big {
           width: 25%;
           padding-bottom: 1rem;
         }
 
-        @include desktop-small{       
+        @include desktop-small {
           width: 25%;
           display: block;
           align-items: flex-start;
         }
 
-        @include desktop-big{       
-          width: calc(100%/6);
+        @include desktop-big {
+          width: calc(100% / 6);
         }
       }
 
@@ -69,12 +69,12 @@
         display: flex;
         align-items: flex-start;
 
-        @include tablet-small{       
+        @include tablet-small {
           width: 95%;
           box-shadow: none;
         }
 
-        @include desktop-small{       
+        @include desktop-small {
           width: 95%;
         }
       }
@@ -91,23 +91,23 @@
     border-radius: 50%;
     background-image: url(./../img/text_vverh.svg);
     background-position: center;
+    background-size: contain;
 
-
-    @include mobile-big{
+    @include mobile-big {
       // right: 1.5rem;
       // bottom: 1.5rem;
       // width: 3.5rem;
       // height: 3.5rem;
     }
 
-    @include tablet-small{
+    @include tablet-small {
       // right: 2rem;
       // bottom: 2rem;
       // width: 4rem;
       // height: 4rem;
     }
 
-    @include desktop-small{
+    @include desktop-small {
       // right: 3rem;
       // bottom: 3rem;
     }
@@ -118,7 +118,7 @@
   text-indent: 0;
   list-style-type: square;
   list-style-position: inside;
-    
+
   counter-increment: count-box;
 
   &::before {
@@ -146,33 +146,33 @@
   margin: 0 auto 0.2rem;
   height: auto;
 
-  @include tablet-small{
+  @include tablet-small {
     float: left;
     width: 50%;
     height: auto;
     margin: 0 0.2rem 0.2rem 0;
   }
 
-  @include desktop-small{
+  @include desktop-small {
     float: none;
   }
 
   &--along {
-    @include mobile-big{
+    @include mobile-big {
       margin: 0 auto 0.2rem;
       float: none;
     }
   }
 
   &--main {
-    @include mobile-big{
+    @include mobile-big {
       width: 100%;
     }
-    @include tablet-small{
+    @include tablet-small {
       width: 50%;
       margin-right: auto;
     }
-    @include tablet-big{
+    @include tablet-big {
       // display: none;
     }
   }
@@ -198,7 +198,7 @@
   & > p {
     width: 100%;
   }
-  @include desktop-small{
+  @include desktop-small {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -220,7 +220,7 @@
   // display: flex;
   border: 2px solid black;
 
-  @include tablet-small{
+  @include tablet-small {
     width: 60%;
   }
 }
@@ -228,7 +228,7 @@
 .title--center {
   text-align: center;
 
-  @include tablet-small{
+  @include tablet-small {
     padding-bottom: 0.8rem;
   }
 }

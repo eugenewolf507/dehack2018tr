@@ -23,12 +23,9 @@
   //===CLOSE-BUTTON====
   &__cls-btn {
     @extend %cls-button;
-    // background-color: transparent;
     position: absolute;
     top: 20px;
     right: 20px;
-    // width: 4rem;
-    // height: 4rem;
   }
   //===A====
   & a {
@@ -143,8 +140,8 @@
         color: $black-color;
       }
     }
-  
-    & a {
+
+    &--contact {
       color: $black-color;
     }
   }
