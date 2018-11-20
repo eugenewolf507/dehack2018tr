@@ -26,13 +26,15 @@ let areCafeMarkersShown = false;
 
 let areAllPolylinesShown = false;
 
+let zoomMap = 12;
+
 //****************************INIT MAP******************************
 
 function initMap() {
   //---------------Init a new map----------------
   map = new google.maps.Map(document.getElementById("map"), {
     center: centerOfTheMap, // center of map
-    zoom: 12,
+    zoom: zoomMap,
     disableDefaultUI: true,
     styles: [
       {
