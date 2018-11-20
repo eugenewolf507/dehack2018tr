@@ -7,6 +7,8 @@ menuSection.menuItems = [...menuSection.querySelectorAll('.menu__item')];
 menuSection.menuSubitems = [...menuSection.querySelectorAll('.menu__subitem')];
 menuSection.routesItems = [...menuSection.querySelectorAll('.routes__item')];
 
+
+
 //-------------------Create global variables-----------------
 let isMenuShown = false;
 
@@ -24,6 +26,10 @@ function handleShowButtonClick() {
     menuSection.list.classList.remove('menu__list--hidden');
     menuSection.hamburger.classList.add('active');
     isMenuShown = true;
+
+      // reset color menuItems on click menu button
+    menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
+
   } else {
     hideMenu();
   }
@@ -35,12 +41,21 @@ function handleBodyClick( {target} ) {
   }
 }
 
-function handleMenuItemClick( {target} ) {
+// function handleMenuItemClick( {target} ) {
+function handleMenuItemClick( event ) {
+const target = event.target;
+
   //for those items which have submenu
   const chosenSubitem = menuSection.menuSubitems.find(subitem => subitem.getAttribute('data-id') === target.getAttribute('data-id'));
     if (chosenSubitem){
       // If any subitem is opened it is necessary to hide it first
       hideMenuSubitems();
+
+      // change color on click menuItems
+      menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
+      target.style.background = "#c6dd9a"
+      menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
+
       chosenSubitem.classList.remove('menu__subitem--hidden');
       leaveOnlyOneTypeOfRoutes(target.getAttribute('data-id'));
       return;
@@ -51,6 +66,12 @@ function handleMenuItemClick( {target} ) {
       hideMenuSubitems();
       showAllPolylines();
       closeRouteInfo();
+
+// change color on click menuItems
+menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
+target.style.background = "#c6dd9a"
+menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
+
       return;
     }
 
@@ -76,8 +97,17 @@ function handleMenuItemClick( {target} ) {
 
   }
 
-  function handleRoutesItemClick( {target} ) {
+  function handleRoutesItemClick( event) {
+    const target = event.target;
     removeAllButOneRoute(target.getAttribute('data-id'));
+
+    menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
+    target.style.background = "#c6dd9a"
+
+      // write routeInfoPreviewTitle
+      const routeInfoPreviewTitle = document.querySelector('.route-info__preview-title');
+      routeInfoPreviewTitle.textContent = `Що цікавого на маршруті ${target.innerHTML}?`;
+
   }
 
 //**************************AUX FUNCTIONS****************************/
