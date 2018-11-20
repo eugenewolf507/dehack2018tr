@@ -7,8 +7,6 @@ menuSection.menuItems = [...menuSection.querySelectorAll('.menu__item')];
 menuSection.menuSubitems = [...menuSection.querySelectorAll('.menu__subitem')];
 menuSection.routesItems = [...menuSection.querySelectorAll('.routes__item')];
 
-
-
 //-------------------Create global variables-----------------
 let isMenuShown = false;
 
@@ -18,7 +16,6 @@ menuSection.showButton.addEventListener('click', handleShowButtonClick);
 menuSection.menuItems.forEach(item => {item.addEventListener('click', handleMenuItemClick)});
 menuSection.routesItems.forEach(item => {item.addEventListener('click', handleRoutesItemClick)})
 document.body.addEventListener('click', handleBodyClick);
-
 
 function handleShowButtonClick() {
   if (!isMenuShown) {
@@ -41,23 +38,16 @@ function handleBodyClick( {target} ) {
   }
 }
 
-// function handleMenuItemClick( {target} ) {
 function handleMenuItemClick( event ) {
 const target = event.target;
-
   //for those items which have submenu
   const chosenSubitem = menuSection.menuSubitems.find(subitem => subitem.getAttribute('data-id') === target.getAttribute('data-id'));
     if (chosenSubitem){
       // If any subitem is opened it is necessary to hide it first
       hideMenuSubitems();
-
-      // change color on click menuItems
-      menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
-      target.style.background = "#c6dd9a"
-      menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
-
       chosenSubitem.classList.remove('menu__subitem--hidden');
       leaveOnlyOneTypeOfRoutes(target.getAttribute('data-id'));
+      changeColorBackgroundOnClickMenuItems(event);
       return;
     }
     // for other items
@@ -66,12 +56,7 @@ const target = event.target;
       hideMenuSubitems();
       showAllPolylines();
       closeRouteInfo();
-
-// change color on click menuItems
-menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
-target.style.background = "#c6dd9a"
-menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
-
+      changeColorBackgroundOnClickMenuItems(event);
       return;
     }
 
@@ -99,10 +84,13 @@ menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
 
   function handleRoutesItemClick( event) {
     const target = event.target;
+    // console.log('event: ', event);
     removeAllButOneRoute(target.getAttribute('data-id'));
 
+    // change color background routesItems
     menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
     target.style.background = "#c6dd9a"
+    
 
       // write routeInfoPreviewTitle
       const routeInfoPreviewTitle = document.querySelector('.route-info__preview-title');
@@ -124,3 +112,8 @@ menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
     isMenuShown = false;
   }
 
+function changeColorBackgroundOnClickMenuItems(event) {
+menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
+event.target.style.background = "#c6dd9a"
+menuSection.routesItems.forEach(item => {item.style.background = "#ffffff"})
+}
