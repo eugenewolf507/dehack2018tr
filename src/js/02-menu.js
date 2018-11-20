@@ -26,7 +26,6 @@ function handleShowButtonClick() {
 
       // reset color menuItems on click menu button
     menuSection.menuItems.forEach(item => {item.style.background = "#ffffff"})
-
   } else {
     hideMenu();
   }
@@ -48,6 +47,7 @@ const target = event.target;
       chosenSubitem.classList.remove('menu__subitem--hidden');
       leaveOnlyOneTypeOfRoutes(target.getAttribute('data-id'));
       changeColorBackgroundOnClickMenuItems(event);
+      closeRouteInfo();
       return;
     }
     // for other items
