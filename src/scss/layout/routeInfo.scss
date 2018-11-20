@@ -70,7 +70,7 @@
   }
 
   &--header-shown &__preview-title::after {
-    background-image: url('./../img/menu.svg');
+    background-image: url('./../img/text_vniz.svg');
   }
 
   &__main {
@@ -91,7 +91,7 @@
     }
 
     &--underline {
-      position: relative;    
+      position: relative;
 
       &::after {
         content: '';
@@ -111,6 +111,9 @@
     padding-bottom: 0.3rem;
     text-transform: uppercase;
     font-weight: $regular;
+    width: 100%;
+    height: auto;
+    text-align: center;
 
     &--expanded {
       padding-bottom: 0;

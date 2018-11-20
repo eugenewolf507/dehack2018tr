@@ -4304,7 +4304,7 @@ ul {
 }
 
 .route-info--header-shown .route-info__preview-title::after {
-  background-image: url("./../img/menu.svg");
+  background-image: url("./../img/text_vniz.svg");
 }
 
 .route-info__main {
@@ -4341,6 +4341,9 @@ ul {
   padding-bottom: 0.3rem;
   text-transform: uppercase;
   font-weight: 400;
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
 
 .route-info__subtitle--expanded {
