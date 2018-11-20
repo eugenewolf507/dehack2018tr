@@ -11,14 +11,14 @@
   top: 0;
   right: 0;
   width: 100%;
-  padding: 50px 2.1% 10px;
+  // padding: 50px 2.1% 10px;
   background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
   font-family: $text-font;
   font-size: $text-font-size;
   line-height: 1.5;
   
   @include tablet-small{
-    padding: 60px 3% 40px;
+    // padding: 60px 3% 40px;
   }
   //===CLOSE-BUTTON====
   &__cls-btn {

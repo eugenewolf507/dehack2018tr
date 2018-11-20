@@ -4406,7 +4406,6 @@ ul {
   top: 0;
   right: 0;
   width: 100%;
-  padding: 50px 2.1% 10px;
   background: linear-gradient(#fbae17, #fffff5);
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -4723,10 +4722,6 @@ ul {
 
   .route-info__button {
     margin: 0 auto;
-  }
-
-  .traffic {
-    padding: 60px 3% 40px;
   }
 
   .traffic__help-button {
