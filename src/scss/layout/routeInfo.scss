@@ -63,14 +63,14 @@
       position: absolute;
       right: 30px;
       top: 15px;
-      background-image: url('../img/x.svg');
+      background-image: url('./../img/X.svg');
       background-size: contain;
       background-repeat: no-repeat;
     }
   }
 
   &--header-shown &__preview-title::after {
-    background-image: url('../img/menu.svg');
+    background-image: url('./../img/menu.svg');
   }
 
   &__main {
