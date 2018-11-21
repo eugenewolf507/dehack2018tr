@@ -1,6 +1,8 @@
 //-------------------Take DOM nodes---------------------
-const routeInfoSection = document.getElementById('route-info');
-routeInfoSection.header = routeInfoSection.querySelector('div[data-id="header"]');
+const routeInfoSection = document.getElementById("route-info");
+routeInfoSection.header = routeInfoSection.querySelector(
+  'div[data-id="header"]'
+);
 
 //-------------------Create global variables-----------------
 
@@ -27,21 +29,17 @@ function handleHeaderClick() {
 }
 
 function showHeaderRouteInfo() {
-  routeInfoSection.classList.add('route-info--header-shown');
-  routeInfoSection.classList.remove('route-info--fully-hidden');
-
+  routeInfoSection.classList.add("route-info--header-shown");
+  routeInfoSection.classList.remove("route-info--fully-hidden");
   routeInfoSectionState = routeInfoSectionStates.headerShown;
 }
 
 function openRouteInfo() {
-  routeInfoSection.classList.remove('route-info--header-shown');
-
+  routeInfoSection.classList.remove("route-info--header-shown");
   routeInfoSectionState = routeInfoSectionStates.fullyShown;
 }
 function closeRouteInfo() {
-  routeInfoSection.classList.remove('route-info--header-shown');
-  routeInfoSection.classList.add('route-info--fully-hidden');
-
+  routeInfoSection.classList.remove("route-info--header-shown");
+  routeInfoSection.classList.add("route-info--fully-hidden");
   routeInfoSectionState = routeInfoSectionStates.closed;
 }
-

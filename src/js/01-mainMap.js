@@ -108,7 +108,7 @@ function initMap() {
       const handlePolyline = item.polyline;
       let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
       let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
-      arrayPolylineInfoWindowMarkers.map(item => item.setMap(null));
+      deleteMarkersFromTheMap(arrayPolylineInfoWindowMarkers);
       var contentString = `
       <div style="width: 193px;"><span style="font-weight: 700;">${
         handlePolyline.nameRus
@@ -124,7 +124,7 @@ function initMap() {
         icon: {
           scaledSize: new google.maps.Size(1, 1), // scaled size icon 1px( it is delete icon)
           url: "./img/point.svg"
-        },
+        }
       });
       arrayPolylineInfoWindowMarkers.push(marker);
       infowindow.open(map, marker);
@@ -134,9 +134,10 @@ function initMap() {
   // when "mouseout" polyline delete InfoWindow
   polylines.map(item =>
     google.maps.event.addListener(item.polyline, "mouseout", function() {
-      arrayPolylineInfoWindowMarkers.map(item => item.setMap(null));
+      deleteMarkersFromTheMap(arrayPolylineInfoWindowMarkers);
     })
   );
+
   //---------------------Add listeners to polyline END--------------------
 }
 
@@ -235,7 +236,5 @@ function addMarkerToTheMap(coordinate, arrayMarkers, icon) {
 
 //---------------------Function delete markers from the map--------------------
 function deleteMarkersFromTheMap(arrayMarkers) {
-  for (let i = 0; i < arrayMarkers.length; i++) {
-    arrayMarkers[i].setMap(null);
-  }
+  arrayMarkers.map(item => item.setMap(null));
 }

@@ -200,7 +200,8 @@ const routesData = {
         ],
       },
       {
-        name: "name1",
+        name: "roseAlley",
+        nameRus: 'Алея роз',
         coords: [
         { lat: 50.3733319, lng: 33.3813787 },
         { lat: 50.3740572, lng: 33.3815289 },
@@ -315,7 +316,8 @@ const routesData = {
         { lat: 50.3710054, lng: 33.2987452 }
       ],},
       {
-        name: "name2",
+        name: "chrysanthemumsAlley",
+        nameRus: 'Алея Хризантем',
         coords: [
         { lat: 50.2547512, lng: 33.1373835 },
         { lat: 50.2535988, lng: 33.1381989 },
@@ -386,7 +388,8 @@ const routesData = {
         ],
       },
       {
-        name: "name3",
+        name: "blueStone",
+        nameRus: 'Синій камінь',
         coords: [
         { lat: 50.3696778, lng: 33.2623959 },
         { lat: 50.3694246, lng: 33.2629216 },
@@ -401,7 +404,8 @@ const routesData = {
         { lat: 50.3598773, lng: 33.2720304 }
       ],},
       {
-        name: "name4",
+        name: "orangeStone",
+        nameRus: 'Помаранчевий камінь',
         coords: 
         [
         { lat: 50.3747825, lng: 33.2546604 },
@@ -413,7 +417,8 @@ const routesData = {
         { lat: 50.3696778, lng: 33.2623959 }
       ],},
       {
-        name: "name5",
+        name: "pinkStone",
+        nameRus: 'Рожевий камінь',
         coords:
       [
         { lat: 50.3740675, lng: 33.2699972 },
@@ -427,7 +432,8 @@ const routesData = {
         { lat: 50.3672826, lng: 33.2717407 }
       ],},
       {
-        name: "name6",
+        name: "redStone",
+        nameRus: 'Червоний камінь',
         coords:
       [
         { lat: 50.3577982, lng: 33.2883033 },
@@ -444,7 +450,8 @@ const routesData = {
         { lat: 50.3590491, lng: 33.2803237 }
       ],},
       {
-        name: "name7",
+        name: "yellowStone",
+        nameRus: 'Жовтий камінь',
         coords:
       [
         { lat: 50.3491746, lng: 33.2856613 },
@@ -461,7 +468,8 @@ const routesData = {
         { lat: 50.3590286, lng: 33.2765365 }
       ],},
       {
-        name: "name8",
+        name: "whiteStone",
+        nameRus: 'Білий камінь',
         coords:
       [
         { lat: 50.3639702, lng: 33.271848 },
@@ -478,7 +486,8 @@ const routesData = {
         { lat: 50.3624337, lng: 33.2853287 }
       ],},
       {
-        name: "name9",
+        name: "greyStone",
+        nameRus: 'Сірий камінь',
         coords:
       [
         { lat: 50.3590714, lng: 33.2708207 },
@@ -500,7 +509,8 @@ const routesData = {
         { lat: 50.3589533, lng: 33.2569242 }
       ],},
       {
-        name: "name10",
+        name: "purpleStone",
+        nameRus: 'Фіолетовий камінь',
         coords:
       [
         { lat: 50.3601289, lng: 33.2653061 },
@@ -527,7 +537,8 @@ const routesData = {
         { lat: 50.3696744, lng: 33.2609797 }
       ],},
       {
-        name: "name11",
+        name: "goldStone",
+        nameRus: 'Золотий камінь',
         coords:
       [
         { lat: 50.3696778, lng: 33.2623959 },
@@ -544,7 +555,8 @@ const routesData = {
         { lat: 50.3705161, lng: 33.2521766 }
       ],},
       {
-        name: "name12",
+        name: "brownStone",
+        nameRus: 'Коричневий камінь',
         coords:
       [
         { lat: 50.3491232, lng: 33.275308 },
@@ -575,7 +587,8 @@ const routesData = {
         { lat: 50.3590868, lng: 33.2752168 }
       ],},
       {
-        name: "name13",
+        name: "limeStone",
+        nameRus: 'Лайм камінь',
         coords:
       [
         { lat: 50.3552912, lng: 33.2416034 },
@@ -585,7 +598,8 @@ const routesData = {
         { lat: 50.3503076, lng: 33.2508945 }
       ],},
       {
-        name: "name14",
+        name: "khakiStone",
+        nameRus: 'Хакі камінь',
         coords:
       [
         { lat: 50.3703912, lng: 33.2561584 },
@@ -638,7 +652,8 @@ const routesData = {
         { lat: 50.3557635, lng: 33.2598907 }
       ],},
       {
-        name: "name15",
+        name: "aquaStone",
+        nameRus: 'Морський камінь',
         coords:
       [
         { lat: 50.3595351, lng: 33.2424295 },

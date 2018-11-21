@@ -74,7 +74,7 @@ function handleMenuItemClick(event) {
   if (target.matches('li[data-id="traffic-rules"]')) {
     document
       .getElementById("control-section")
-      .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!
     hideMenu();
     showAllPolylines();
     closeRouteInfo();
@@ -84,7 +84,7 @@ function handleMenuItemClick(event) {
   if (target.matches('li[data-id="traffic-accidents"]')) {
     document
       .getElementById("accident-section")
-      .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!
     hideMenu();
     showAllPolylines();
     closeRouteInfo();
@@ -95,31 +95,17 @@ function handleMenuItemClick(event) {
 function handleRoutesItemClick(event) {
   const target = event.target;
   removeAllButOneRoute(target.getAttribute("data-id"));
-
   // change color background routesItems
   menuSection.routesItems.forEach(item => {
     item.style.background = "#ffffff";
   });
   target.style.background = "#c6dd9a";
-
   // write routeInfoPreviewTitle
   const routeInfoPreviewTitle = document.querySelector(
     ".route-info__preview-title"
   );
   routeInfoPreviewTitle.textContent = `Що цікавого на маршруті ${
     target.innerHTML
-  }?`;
-}
-
-function handlePolylineRoutesItemClick(handlePolyline) {
-  removeAllButOneRoute(handlePolyline.name);
-
-  // write routeInfoPreviewTitle
-  const routeInfoPreviewTitle = document.querySelector(
-    ".route-info__preview-title"
-  );
-  routeInfoPreviewTitle.textContent = `Що цікавого на маршруті ${
-    handlePolyline.nameRus
   }?`;
 }
 
