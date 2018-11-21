@@ -1,13 +1,11 @@
 //-------------------Take DOM nodes---------------------
-const mainMapSection = document.getElementById('main-map');
+const mainMapSection = document.getElementById("main-map");
 mainMapSection.zoomin = mainMapSection.querySelector('div[data-id="zoomin"]');
 mainMapSection.zoomout = mainMapSection.querySelector('div[data-id="zoomout"]');
 mainMapSection.geotag = mainMapSection.querySelector('div[data-id="geotag"]');
 mainMapSection.parking = mainMapSection.querySelector('div[data-id="parking"]');
 mainMapSection.cafe = mainMapSection.querySelector('div[data-id="cafe"]');
 mainMapSection.sight = mainMapSection.querySelector('div[data-id="sight"]');
-
-
 
 //---------------------Create empty arrays--------------------
 const arrayParkingMarkers = [];
@@ -45,13 +43,16 @@ function initMap() {
   });
   //---------------Create routes and show on the map----------------
   for (let key in routesData) {
-    routesData[key].routes.forEach((item) => {
+    routesData[key].routes.forEach(item => {
       const polyline = new google.maps.Polyline({
         path: item.coords,
         strokeColor: routesData[key].color,
         strokeOpacity: 0.7,
-        strokeWeight: 3,
-        map: map
+        strokeWeight: 7,
+        map: map,
+        name: item.name,
+        type: key,
+        nameRus: item.nameRus
       });
       const polylineObj = { type: key, name: item.name, polyline };
       polylines.push(polylineObj);
@@ -60,12 +61,83 @@ function initMap() {
   areAllPolylinesShown = true;
 
   //---------------------Add click listeners to buttons--------------------
-  google.maps.event.addDomListener(mainMapSection.zoomin, "click", handleZoomInMap);
-  google.maps.event.addDomListener(mainMapSection.zoomout, "click", handleZoomOutMap);
-  google.maps.event.addDomListener(mainMapSection.geotag, "click", handleShowingGeotagMarker);
-  google.maps.event.addDomListener(mainMapSection.parking, "click", handleShowingParkingMarkers);
-  google.maps.event.addDomListener(mainMapSection.cafe, "click", handleShowingCafeMarkers);
-  google.maps.event.addDomListener(mainMapSection.sight, "click", handleShowingSightMarkers);
+  google.maps.event.addDomListener(
+    mainMapSection.zoomin,
+    "click",
+    handleZoomInMap
+  );
+  google.maps.event.addDomListener(
+    mainMapSection.zoomout,
+    "click",
+    handleZoomOutMap
+  );
+  google.maps.event.addDomListener(
+    mainMapSection.geotag,
+    "click",
+    handleShowingGeotagMarker
+  );
+  google.maps.event.addDomListener(
+    mainMapSection.parking,
+    "click",
+    handleShowingParkingMarkers
+  );
+  google.maps.event.addDomListener(
+    mainMapSection.cafe,
+    "click",
+    handleShowingCafeMarkers
+  );
+  google.maps.event.addDomListener(
+    mainMapSection.sight,
+    "click",
+    handleShowingSightMarkers
+  );
+
+  //---------------------Add listeners to polyline START--------------------
+  // when "click" polyline open routeinfo title
+  polylines.map(item =>
+    google.maps.event.addListener(item.polyline, "click", function() {
+      const handlePolyline = item.polyline;
+      handlePolylineRoutesItemClick(handlePolyline);
+    })
+  );
+
+  const arrayPolylineInfoWindowMarkers = [];
+  // when "mouseover" polyline open InfoWindow
+  polylines.map(item =>
+    google.maps.event.addListener(item.polyline, "mouseover", function() {
+      const handlePolyline = item.polyline;
+      let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
+      let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
+      arrayPolylineInfoWindowMarkers.map(item => item.setMap(null));
+      var contentString = `
+      <div style="width: 193px;"><span style="font-weight: 700;">${
+        handlePolyline.nameRus
+      }</span>.<div style="display: flex; juctify-content: center;"><div>Кликай на линию маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./../img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
+      console.log("handlePolyline: ", handlePolyline);
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var marker = new google.maps.Marker({
+        position: { lat, lng },
+        map: map,
+        title: handlePolyline.nameRus,
+        icon: {
+          scaledSize: new google.maps.Size(1, 1), // scaled size icon 1px( it is delete icon)
+          url: "./img/point.svg"
+        },
+      });
+      arrayPolylineInfoWindowMarkers.push(marker);
+      infowindow.open(map, marker);
+    })
+  );
+
+  // when "mouseout" polyline delete InfoWindow
+  polylines.map(item =>
+    google.maps.event.addListener(item.polyline, "mouseout", function() {
+      arrayPolylineInfoWindowMarkers.map(item => item.setMap(null));
+    })
+  );
+  //---------------------Add listeners to polyline END--------------------
 }
 
 //**************************AUX FUNCTIONS****************************/
@@ -90,7 +162,11 @@ function handleShowingGeotagMarker() {
       scaledSize: new google.maps.Size(30, 30), // scaled size icon
       url: "./img/yourlocation_on_map.svg"
     };
-    addMarkerToTheMap({ lat: 50.3574885, lng: 33.2762039 }, arrayGeotagMarkers, icon);
+    addMarkerToTheMap(
+      { lat: 50.3574885, lng: 33.2762039 },
+      arrayGeotagMarkers,
+      icon
+    );
     isGeotagMarkerShown = true;
     map.panTo({ lat: 50.3574885, lng: 33.2762039 });
   } else {
@@ -146,7 +222,6 @@ function handleShowingSightMarkers() {
     areSightMarkersShown = false;
   }
 }
-
 
 //---------------------Function add markers on the map--------------------
 function addMarkerToTheMap(coordinate, arrayMarkers, icon) {

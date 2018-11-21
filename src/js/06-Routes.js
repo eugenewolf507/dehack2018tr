@@ -33,7 +33,7 @@ function removeAllButOneRoute(name) {
           ]
         });
         item.polyline.setMap(map);
-      }, 100);
+      }, 0);
       // set center of polyline and init map on this center END
     }
     areAllPolylinesShown = false;
@@ -66,6 +66,8 @@ function showAllPolylines() {
   }
   polylines.forEach(item => {
     item.polyline.setMap(map);
+
+
   });
   areAllPolylinesShown = true;
 }
@@ -84,3 +86,5 @@ function zoomMapAndRebuild() {
     ]
   });
 }
+
+
