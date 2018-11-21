@@ -33,6 +33,7 @@ const routesData = {
     routes: [
       {
         name: "pinePark",
+        nameRus: 'Сосновый парк',
         coords: [
         { lat: 50.3753984, lng: 33.3846617 },
         { lat: 50.3750152, lng: 33.3844042 },
@@ -68,6 +69,7 @@ const routesData = {
       },
       {
         name: "waterfallBeaver",
+        nameRus: 'Водоспад "Бобер"',
         coords:[
         { lat: 50.3308884, lng: 33.2395649 },
         { lat: 50.3369972, lng: 33.2340288 },
@@ -83,6 +85,7 @@ const routesData = {
       },
       {
         name: "oldCastle",
+        nameRus: 'Старовинний замок',
         coords:[
           { lat: 50.3740675, lng: 33.2699972 },
           { lat: 50.37741, lng: 33.267417 },
@@ -137,6 +140,7 @@ const routesData = {
     routes: [
       {
         name: "birchAlley",
+        nameRus: 'Березова алея',
         coords: [
         { lat: 50.3658831, lng: 33.2717568 },
         { lat: 50.3667146, lng: 33.2699972 },
@@ -179,6 +183,7 @@ const routesData = {
       },
       {
         name: "lindenAlley",
+        nameRus: 'Липова алея',
         coords: [
         { lat: 50.3498421, lng: 33.2664943 },
         { lat: 50.350513, lng: 33.2661939 },
@@ -342,6 +347,7 @@ const routesData = {
     routes: [
       {
         name: "blackStone",
+        nameRus: 'Чорний камінь',
         coords:[
         { lat: 50.3503076, lng: 33.2508945 },
         { lat: 50.3513756, lng: 33.2528901 },
@@ -362,6 +368,7 @@ const routesData = {
       },
       {
         name: "greenStone",
+        nameRus: 'Зелений камінь',
         coords:[
         { lat: 50.365712, lng: 33.2901353 },
         { lat: 50.3653835, lng: 33.2893521 },

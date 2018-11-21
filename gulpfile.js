@@ -120,11 +120,13 @@ gulp.task("serve", ["styles"], () =>
   })
 );
 
-gulp.task("del:build", () => del("./build"));
+gulp.task("del-build", () => del("./build"));
+
+gulp.task('prepare', () => del(['**/.gitkeep']));
 
 gulp.task("build", cb =>
   sequence(
-    "del:build",
+    "del-build",
     "svg-sprite",
     "images",
     "fonts",
