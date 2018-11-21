@@ -5,7 +5,6 @@ function removeAllButOneRoute(name) {
       item.polyline.setMap(null);
     } else {
       item.polyline.setMap(map);
-
       // set center of polyline and init map on this center START
       setTimeout(() => {
         // set first and last point of polylines and they lat and lng
@@ -15,7 +14,6 @@ function removeAllButOneRoute(name) {
         const endLatLng = `lat: ${item.polyline.De.bounds.Y}, lng: ${
           item.polyline.De.bounds.Z
         }`;
-
         // set center of polylines
         let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
         let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
@@ -45,7 +43,6 @@ function leaveOnlyOneTypeOfRoutes(type) {
   if (zoomMap === 14) {
     zoomMapAndRebuild();
   }
-
   polylines.forEach(item => {
     if (item.type !== type) {
       item.polyline.setMap(null);
@@ -60,14 +57,11 @@ function showAllPolylines() {
   if (zoomMap === 14) {
     zoomMapAndRebuild();
   }
-
   if (areAllPolylinesShown) {
     return;
   }
   polylines.forEach(item => {
     item.polyline.setMap(map);
-
-
   });
   areAllPolylinesShown = true;
 }
@@ -87,4 +81,13 @@ function zoomMapAndRebuild() {
   });
 }
 
-
+function handlePolylineRoutesItemClick(handlePolyline) {
+  removeAllButOneRoute(handlePolyline.name);
+  // write routeInfoPreviewTitle
+  const routeInfoPreviewTitle = document.querySelector(
+    ".route-info__preview-title"
+  );
+  routeInfoPreviewTitle.textContent = `Що цікавого на маршруті ${
+    handlePolyline.nameRus
+  }?`;
+}
