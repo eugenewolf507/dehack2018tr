@@ -2,13 +2,7 @@
   <div class="route-info__header" data-id="header">
     <p class="route-info__preview-title">Що цікавого на маршруті?</p>
   </div>
-
   <div class="route-info__main">
-    <!-- <h2 class="route-info__main-title">
-      <span class="route-info__main-title--underline">
-        Що цікавого на маршруті Сосновий парк?
-      </span>
-    </h2> -->
     <img
       class="route-info__photo"
       src="./img/route-info_way.jpg"
@@ -72,16 +66,79 @@
 
     <h3 class="route-info__subtitle">Аудіогід</h3>
     <button class="route-info__button">Благовіщенська церква</button>
-    <p>00:05:42</p>
+    <p class="route-info__text">00:05:42</p>
     <button class="route-info__button">Краєзнавчий музей</button>
-    <p>01:05:01</p>
+    <p class="route-info__text">01:05:01</p>
     <button class="route-info__button">Сосновий парк</button>
     <h3 class="route-info__subtitle">Відгуки</h3>
-    <p>Чи поїдете цим маршрутом ще?</p>
-    <button class="route-info__button">Так</button>
-    <button class="route-info__button">ні</button>
-    <button class="route-info__button">Поїхали разом!</button>
-    <div>Ваші враження чи зауваження</div>
-    <button class="route-info__button">Поділитись</button>
+    <p class="route-info__text">Чи поїдете цим маршрутом ще?</p>
+    <div class="route-info__wrapper-button">
+      <button class="route-info__button">Так</button>
+      <button class="route-info__button">ні</button>
+      <button class="route-info__button">Поїхали разом!</button>
+    </div>
+    
+    <div class="route-info__text">Ваші враження чи зауваження</div>
+
+    <div class="disqusComments" id="disqus_thread"></div>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://onrover.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <!-- <button class="route-info__button route-info__button--share">
+      Поділитись
+    </button> -->
+    <!-- <div class="share-button" id="share-buttons"> -->
+      <!-- Facebook -->
+      <!-- <a
+        href="http://www.facebook.com/sharer.php?u=https://eugenewolf507.github.io/dehack2018tr/build/"
+        target="_blank"
+        class="share-button__link"
+      >
+        <img
+          src="./img/facebook.svg"
+          alt="Facebook"
+          class="share-button__img"
+        />
+      </a> -->
+      <!-- Twitter -->
+      <!-- <a
+        href="https://twitter.com/share?url=ttps://eugenewolf507.github.io/dehack2018tr/build/&amp;text=onRover - cycle maps https://eugenewolf507.github.io/dehack2018tr/build/"
+        target="_blank"
+        class="share-button__link"
+      >
+        <img src="./img/twitter.svg" alt="Twitter" class="share-button__img" />
+      </a> -->
+      <!-- Email -->
+      <!-- <a
+        href="mailto:?Subject=onRover - cycle maps&amp;Body=onRover - cycle maps https://eugenewolf507.github.io/dehack2018tr/build/"
+        class="share-button__link"
+      >
+        <img src="./img/email.svg" alt="Email" class="share-button__img" />
+      </a> -->
+      <!-- Print -->
+      <!-- <a
+        href="javascript:;"
+        onclick="window.print()"
+        class="share-button__link"
+      >
+        <img src="./img/print.svg" alt="Print" class="share-button__img" />
+      </a>
+    </div> -->
   </div>
 </section>

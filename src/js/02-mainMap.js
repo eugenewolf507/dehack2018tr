@@ -237,7 +237,8 @@ function deleteMarkersFromTheMap(arrayMarkers) {
 
 //---------------------Function create Listener and InfoWindow of markers --------------------
 function createListenerAndInfoWindowOfMarker(coordinate, marker) {
-  marker.addListener("click", function(event) {
+  marker.addListener("click", function() {
+    if(!coordinate.nameRus){return};
     let name = coordinate.nameRus;
     let pictureUrl = coordinate.picture;
     let contentInfoWindow = `<div1 class="Heading">${name}</div><img style="max-width: 100px;"src="${pictureUrl}" alt="${name}">`;
