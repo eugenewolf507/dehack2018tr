@@ -16,14 +16,11 @@ const polylines = [];
 
 //-------------------Create global variables-----------------
 let map;
-
 let isGeotagMarkerShown = false;
 let areParkingMarkersShown = false;
 let areSightMarkersShown = false;
 let areCafeMarkersShown = false;
-
 let areAllPolylinesShown = false;
-
 let zoomMap = 12;
 
 //****************************INIT MAP******************************
@@ -113,7 +110,6 @@ function initMap() {
       <div style="width: 193px;"><span style="font-weight: 700;">${
         handlePolyline.nameRus
       }</span>.<div style="display: flex; juctify-content: center;"><div>Кликай на линию маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./../img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
-      console.log("handlePolyline: ", handlePolyline);
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
@@ -142,7 +138,6 @@ function initMap() {
 }
 
 //**************************AUX FUNCTIONS****************************/
-
 function handleZoomInMap() {
   let currentZoomLevel = map.getZoom();
   if (currentZoomLevel != 0) {
@@ -232,9 +227,23 @@ function addMarkerToTheMap(coordinate, arrayMarkers, icon) {
     icon: icon
   });
   arrayMarkers.push(marker);
+  createListenerAndInfoWindowOfMarker(coordinate, marker);
 }
 
 //---------------------Function delete markers from the map--------------------
 function deleteMarkersFromTheMap(arrayMarkers) {
   arrayMarkers.map(item => item.setMap(null));
+}
+
+//---------------------Function create Listener and InfoWindow of markers --------------------
+function createListenerAndInfoWindowOfMarker(coordinate, marker) {
+  marker.addListener("click", function(event) {
+    let name = coordinate.nameRus;
+    let pictureUrl = coordinate.picture;
+    let contentInfoWindow = `<div1 class="Heading">${name}</div><img style="max-width: 100px;"src="${pictureUrl}" alt="${name}">`;
+    let infowindow = new google.maps.InfoWindow({
+      content: contentInfoWindow
+    });
+    infowindow.open(map, marker);
+  });
 }
