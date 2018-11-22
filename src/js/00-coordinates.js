@@ -2,26 +2,26 @@
 const centerOfTheMap = { lat: 50.3574885, lng: 33.2762039 };
 
 //---------------------Coordinates markers START--------------------
-const coordinatesParkingMarkers = [{ lat: 50.35741736, lng: 33.26821771 }];
+const coordinatesParkingMarkers = [{ lat: 50.35741736, lng: 33.26821771, name: 'veloparking', nameRus: 'Велопарковка', picture: 'http://velogor.ru/images/blog/umnaya-veloparkovka/umnaya-veloparkovka-3.jpg' }];
 
 const coordinatesCafeMarkers = [
-  { lat: 50.36136372, lng: 33.27227418 },
-  { lat: 50.35961153, lng: 33.27658718 }
+  { lat: 50.36136372, lng: 33.27227418, name: 'cafe1', nameRus: 'У Наталки', picture: 'https://images.spasibovsem.ru/catalog/original/otzyvy-kafe-natalka-ukraina-mariupol-pr-t-lenina-631-1406278690.jpg'},
+  { lat: 50.35961153, lng: 33.27658718, name: 'cafe2', nameRus: 'У Петра', picture: 'https://media-cdn.tripadvisor.com/media/photo-s/09/0f/2d/44/caption.jpg'}
 ];
 
 const coordinatesSightMarkers = [
-  { lat: 50.35958415, lng: 33.2721669 },
-  { lat: 50.35731167, lng: 33.2637984 },
-  { lat: 50.35999483, lng: 33.26744621 },
-  { lat: 50.35095911, lng: 33.26538627 },
-  { lat: 50.38446476, lng: 33.28152244 },
-  { lat: 50.32647189, lng: 33.22792118 },
-  { lat: 50.28744158, lng: 33.22174137 },
-  { lat: 50.25068435, lng: 33.14037387 },
-  { lat: 50.36218504, lng: 33.27109401 },
-  { lat: 50.35810869, lng: 33.28208473 },
-  { lat: 50.36211447, lng: 33.2846553 },
-  { lat: 50.3529033, lng: 33.25626676 }
+  { lat: 50.35958415, lng: 33.2721669, name: 'sightName1', nameRus: 'Собор', picture: 'https://i.ptmap.ru/original/20768.jpg' },
+  { lat: 50.35731167, lng: 33.2637984, name: 'sightName2', nameRus: 'Церква', picture: 'http://7chudes.in.ua/wp-content/uploads/2015/01/cerkva.jpg'},
+  { lat: 50.35999483, lng: 33.26744621, name: 'sightName3', nameRus: 'Могила', picture: 'http://photos.wikimapia.org/p/00/00/45/85/07_big.jpg'},
+  { lat: 50.35095911, lng: 33.26538627, name: 'sightName4', nameRus: 'Курган', picture: 'https://vetliva.ru/upload/resize_cache/iblock/bc1/1170_640_2ad00f77cb8d50abfaeeae09efd4a5122/bc1a92274d8b25e87472eefe59b4371b.jpg'},
+  { lat: 50.38446476, lng: 33.28152244, name: 'sightName5', nameRus: 'Парк', picture: 'https://dpchas.com.ua/sites/default/files/u49087/01-1-1024x666.jpg'},
+  { lat: 50.32647189, lng: 33.22792118, name: 'sightName6', nameRus: 'Озеро', picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE.%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D1%8C%D0%B5_%D0%B2_%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D0%B5.jpg/1200px-%D0%9E%D0%B7%D0%B5%D1%80%D0%BE.%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D1%8C%D0%B5_%D0%B2_%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D0%B5.jpg'},
+  { lat: 50.28744158, lng: 33.22174137, name: 'sightName7', nameRus: 'Садиба', picture: 'https://i.arts.in.ua/i/2221/f_51349.jpg'},
+  { lat: 50.25068435, lng: 33.14037387, name: 'sightName8', nameRus: `Пам'ятник`, picture: 'https://upload.wikimedia.org/wikipedia/uk/5/5b/%D0%9F%D0%B0%D0%BC%27%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D1%83_%D0%B2_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%94%D0%B2%D1%96.gif'},
+  { lat: 50.36218504, lng: 33.27109401, name: 'sightName9', nameRus: 'Статуя', picture: 'http://lifeglobe.net/x/entry/414/112.jpg'},
+  { lat: 50.35810869, lng: 33.28208473, name: 'sightName10', nameRus: 'Колона', picture: 'http://1.bp.blogspot.com/-FL1QqD61P14/VpdqzlK_czI/AAAAAAAABEY/2LHN41JAZo8/s640/trajan-column.jpg'},
+  { lat: 50.36211447, lng: 33.2846553, name: 'sightName11', nameRus: 'Музей', picture: 'https://dp.informator.ua/wp-content/uploads/2017/12/42.jpg'},
+  { lat: 50.3529033, lng: 33.25626676, name: 'sightName12', nameRus: 'Пасiка дiда Панаса', picture: 'http://твгород.рф/media/k2/items/cache/ba1b4bb5341d75b54cf251eaa0b07cbc_XL.jpg'}
 ];
 //---------------------Coordinates markers END--------------------
 

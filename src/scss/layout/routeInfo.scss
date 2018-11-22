@@ -48,6 +48,8 @@
     font-family: $title-font;
     font-size: $text-font-size;
     background: $main-worm-color--09;
+    text-align: center;
+    padding-right: 30px;
 
     @include tablet-small{
       font-size: $title-middle-font-size;
@@ -58,11 +60,16 @@
       width: 2rem;
       height: 2rem;
       position: absolute;
-      right: 30px;
+      right: 3px;
       top: 10px;
       background-image: url('./../img/X.svg');
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include tablet-small{
+        right: 30px;
+        top: 10px;
+      }
     }
   }
 
