@@ -53,7 +53,7 @@
       font-size: $title-middle-font-size;
     }
 
-    &::after {
+    &::before {
       content: "";
       width: 2rem;
       height: 2rem;
@@ -63,16 +63,23 @@
       background-image: url("./../img/X.svg");
       background-size: contain;
       background-repeat: no-repeat;
-
+      
       @include tablet-small {
         right: 30px;
         top: 10px;
       }
     }
+
+    &:hover::before {
+      transform: rotate(90deg);
+      transition: all 0.5s;
+    }
   }
 
-  &--header-shown &__preview-title::after {
+  &--header-shown &__preview-title::before {
     background-image: url("./../img/text_vniz.svg");
+    transform: none;
+
   }
 
   &__main {
@@ -141,6 +148,11 @@
     max-width: 800px;
   }
 
+  &__comments {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
   &__wrapper-button {
     display: flex;
     justify-content: center;
@@ -206,9 +218,4 @@
     display: inline;
   }
   
-}
-
-.disqusComments {
-  max-width: 500px;
-  margin: 0 auto;;
 }

@@ -1,8 +1,7 @@
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Сделать по образу и подобию mainMap, menu и пр.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-document.getElementById("accident-close").addEventListener("click", () => {
+document.querySelector("#accident-close").addEventListener("click", () => {
   document.getElementById("accident-section").classList.add("traffic--hidden");
 });
 
@@ -13,7 +12,6 @@ titleBtns.forEach(btn => btn.addEventListener("click", showText));
 
 function showText(event) {
   titleBtns.forEach(btn => {
-    console.log(btn.parentNode.nextSibling);
     if (btn == event.target) {
       btn.parentNode.nextSibling.classList.toggle("text--hidden");
       btn.classList.toggle("traffic__expanded-button--active");
