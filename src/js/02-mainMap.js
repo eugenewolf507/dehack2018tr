@@ -109,7 +109,7 @@ function initMap() {
       var contentString = `
       <div style="width: 193px;"><span style="font-weight: 700;">${
         handlePolyline.nameRus
-      }</span>.<div style="display: flex; juctify-content: center;"><div>Кликай на линию маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./../img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
+      }</span>.<div style="display: flex; juctify-content: center;"><div>Кликай на линию маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
