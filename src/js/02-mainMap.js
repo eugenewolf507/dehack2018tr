@@ -49,7 +49,9 @@ function initMap() {
         map: map,
         name: item.name,
         type: key,
-        nameRus: item.nameRus
+        nameRus: item.nameRus,
+        route: routesData[key].routes.filter(elem => elem.name === item.name)[0]
+          .coords
       });
       const polylineObj = { type: key, name: item.name, polyline };
       polylines.push(polylineObj);
@@ -97,19 +99,39 @@ function initMap() {
       handlePolylineRoutesItemClick(handlePolyline);
     })
   );
-
-  const arrayPolylineInfoWindowMarkers = [];
   // when "mouseover" polyline open InfoWindow
+  const arrayPolylineInfoWindowMarkers = [];
+  let j = 0;
+  let arrayDistance = [];
+  let distance = 0;
   polylines.map(item =>
     google.maps.event.addListener(item.polyline, "mouseover", function() {
+      j = 0;
+      arrayDistance = [];
       const handlePolyline = item.polyline;
       let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
       let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
+      // calculation of distance route
+      for (let i = 0; i < item.polyline.route.length; i += 1) {
+        j = j + 1;
+        if (j < item.polyline.route.length) {
+          let fromLat = item.polyline.route[i].lat;
+          let fromLng = item.polyline.route[i].lng;
+          let toLat = item.polyline.route[j].lat;
+          let toLng = item.polyline.route[j].lng;
+          let routeDistance = (
+            calcDistance(fromLat, fromLng, toLat, toLng) / 1000
+          ).toFixed(4);
+          arrayDistance.push(+routeDistance);
+          distance = arrayDistance.reduce((acc, value) => acc + value, 0);
+          distance = distance.toFixed(2);
+        }
+      }
       deleteMarkersFromTheMap(arrayPolylineInfoWindowMarkers);
       var contentString = `
       <div style="width: 193px;"><span style="font-weight: 700;">${
         handlePolyline.nameRus
-      }</span>.<div style="display: flex; juctify-content: center;"><div>Кликай на линию маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
+      }</span>.<div>Довжина маршрута: ${distance}км.</div><div style="display: flex; juctify-content: center;"><div>Клiкай на лiнiю маршрута</div><img style="display: block; margin-left: 5px; width: 20px; height: 20px;"src="./img/clicker.svg" alt="Кликай на линию маршрута"></div></div>`;
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
@@ -126,18 +148,23 @@ function initMap() {
       infowindow.open(map, marker);
     })
   );
-
   // when "mouseout" polyline delete InfoWindow
   polylines.map(item =>
     google.maps.event.addListener(item.polyline, "mouseout", function() {
       deleteMarkersFromTheMap(arrayPolylineInfoWindowMarkers);
     })
   );
-
   //---------------------Add listeners to polyline END--------------------
 }
 
 //**************************AUX FUNCTIONS****************************/
+function calcDistance(fromLat, fromLng, toLat, toLng) {
+  return google.maps.geometry.spherical.computeDistanceBetween(
+    new google.maps.LatLng(fromLat, fromLng),
+    new google.maps.LatLng(toLat, toLng)
+  );
+}
+
 function handleZoomInMap() {
   let currentZoomLevel = map.getZoom();
   if (currentZoomLevel != 0) {
@@ -238,7 +265,9 @@ function deleteMarkersFromTheMap(arrayMarkers) {
 //---------------------Function create Listener and InfoWindow of markers --------------------
 function createListenerAndInfoWindowOfMarker(coordinate, marker) {
   marker.addListener("click", function() {
-    if(!coordinate.nameRus){return};
+    if (!coordinate.nameRus) {
+      return;
+    }
     let name = coordinate.nameRus;
     let pictureUrl = coordinate.picture;
     let contentInfoWindow = `<div1 class="Heading">${name}</div><img style="max-width: 100px;"src="${pictureUrl}" alt="${name}">`;
