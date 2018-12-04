@@ -24,9 +24,15 @@
   &__cls-btn {
     @extend %cls-button;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
+
+    @include tablet-small{
+      top: 20px;
+      right: 20px;
+    }
   }
+  
   //===A====
   & a {
     text-decoration: none;
@@ -117,6 +123,7 @@
     background-color: #fff;
     border: 1px solid transparent;
     border-radius: 0.3rem;
+    text-align: center;
   
     @include tablet-small{
       margin: 0 auto;

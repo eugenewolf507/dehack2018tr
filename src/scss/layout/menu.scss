@@ -52,11 +52,10 @@
   }
   
   &__item {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
     background-color: $white-color;
-
     padding: 4px 21px 4px 4px;
     margin-bottom: 12px;
     position: relative;
@@ -106,12 +105,18 @@
     transform: translate3d(0, 0, 0);
     transition: transform 1s, opacity 0.7s;
     pointer-events: all;
+    max-width: 135px;
 
     &--hidden{
       opacity: 0.0;
       -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
       pointer-events: none;
+    }
+
+    @include tablet-small{
+      max-width: 100%;
+
     }
   }
 }
@@ -133,7 +138,7 @@
   }
 
   &__item {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: none;
     color: $black-color;
     background-color: $white-color;
@@ -141,9 +146,11 @@
     margin-bottom: 10px;
     background-color: $white-color;
     border-radius: 4px;
-    padding: 1px;  
+    padding: 2px;
+    padding-left: 5px;
     cursor: pointer;
     transition: transform 0.2s;
+    // max-width: 100px;
     
     &:last-child {
       margin-bottom: 0;
