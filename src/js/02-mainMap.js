@@ -109,8 +109,9 @@ function initMap() {
       j = 0;
       arrayDistance = [];
       const handlePolyline = item.polyline;
-      let lat = (item.polyline.De.bounds.U + item.polyline.De.bounds.Y) / 2;
-      let lng = (item.polyline.De.bounds.W + item.polyline.De.bounds.Z) / 2;
+      let polylineNumberPoints = item.polyline.route.length-1;
+        let lat = (item.polyline.route[0].lat + item.polyline.route[polylineNumberPoints].lat) / 2;
+        let lng = (item.polyline.route[0].lng + item.polyline.route[polylineNumberPoints].lng) / 2;
       // calculation of distance route
       for (let i = 0; i < item.polyline.route.length; i += 1) {
         j = j + 1;
