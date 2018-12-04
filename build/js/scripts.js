@@ -6312,7 +6312,6 @@ function removeAllButOneRoute(name) {
       item.polyline.setMap(null);
     } else {
       item.polyline.setMap(map);
-      console.log('item.polyline.route: ', item.polyline.route.length - 1);
       var polylineNumberPoints = item.polyline.route.length - 1; // set center of polyline and init map on this center START
 
       setTimeout(function () {
