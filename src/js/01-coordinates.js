@@ -29,7 +29,7 @@ const coordinatesSightMarkers = [
 const routesData = {
   //---------------------Coordinates recreational routes START--------------------
   recreational: {
-    color: "#22cc00",//#22cc00 #336600
+    color: "#00bc66",//#22cc00 #336600
     routes: [
       {
         name: "pinePark",
@@ -136,7 +136,7 @@ const routesData = {
 
   //---------------------Coordinates highway routes START--------------------
   magistral: {
-    color: "#0000cc", //#0000cc
+    color: "#0099dd", //#0000cc
     routes: [
       {
         name: "birchAlley",
@@ -345,7 +345,7 @@ const routesData = {
 
   //---------------------Coordinates tourist routes START--------------------
   touristic: {
-    color: "#cc00cc", //#cc00cc
+    color: "#eb8853", //#cc00cc
     routes: [
       {
         name: "blackStone",

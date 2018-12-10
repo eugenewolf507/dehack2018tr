@@ -44,14 +44,3 @@ function closeRouteInfo() {
   routeInfoSectionState = routeInfoSectionStates.closed;
 }
 
-$(document).ready(function() {
-  $("a.scrollto").click(function() {
-     $(".traffic").animate({
-        scrollTop: $($(this).attr("href")).offset().top
-     }, {
-        duration: 1000,
-        easing: "swing"
-     });
-     return false;
-  });
-});

@@ -11,7 +11,6 @@ menuSection.routesItems = [...menuSection.querySelectorAll(".routes__item")];
 
 //-------------------Create global variables-----------------
 let isMenuShown = false;
-
 //---------------------Add listeners to the DOM elements--------------------
 
 menuSection.showButton.addEventListener("click", handleShowButtonClick);

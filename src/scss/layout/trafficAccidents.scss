@@ -12,6 +12,7 @@
   right: 0;
   width: 100%;
   // padding: 50px 2.1% 10px;
+  padding: 10px;
   background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
   font-family: $text-font;
   font-size: $text-font-size;
@@ -141,6 +142,8 @@
     &--fb {
       background-color: $main-worm-color;
       color: $white-color;
+      margin: 0 auto;
+
   
       &:active {
         border: 1px solid $black-color;
@@ -150,6 +153,7 @@
 
     &--contact {
       color: $black-color;
+      margin: 0 auto;
     }
   }
   //====EXPANDED BUTTON=====
@@ -212,6 +216,7 @@
     padding-bottom: 0.3rem;
     text-transform: uppercase;
     font-weight: $regular;
+    text-align: center;
 
     &--expanded {
       padding-bottom: 0;
