@@ -1,34 +1,38 @@
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Сделать по образу и подобию mainMap, menu и пр.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.querySelector("#accident-close").addEventListener("click", () => {
+//-------------------Take DOM nodes---------------------
+const accidentCloseBtn = document.querySelector("#accident-close");
+
+const accidentBtns = document.querySelectorAll(".traffic__expanded-button--js");
+
+const accidentInnerBtns = document.querySelectorAll(".traffic__expanded-button--inner");
+
+//---------------------Add listeners to the DOM elements--------------------
+accidentCloseBtn.addEventListener("click", () => {
   document.getElementById("accident-section").classList.add("traffic--hidden");
 });
 
-//---------------------Click open traffic TITLE listeners--------------------
+accidentBtns.forEach(btn => 
+  btn.addEventListener("click", showTextAccident));
 
-const titleBtns = document.querySelectorAll(".traffic__expanded-button--js");
-titleBtns.forEach(btn => btn.addEventListener("click", showText));
+accidentInnerBtns.forEach(btn => 
+  btn.addEventListener("click", showInnerTextAccident));
 
-function showText(event) {
-  titleBtns.forEach(btn => {
-    if (btn == event.target) {
-      btn.parentNode.nextSibling.classList.toggle("text--hidden");
-      btn.classList.toggle("traffic__expanded-button--active");
+//---------------------HANDLERS--------------------
+
+function showTextAccident(event) {
+  
+  accidentBtns.forEach(btn => {
+    if (btn === event.target) {
+      this.nextSibling.classList.toggle("text--hidden");
+      this.classList.toggle("traffic__expanded-button--active");
     } else if (btn !== event.target) {
-      btn.parentNode.nextSibling.classList.add("text--hidden");
+      btn.nextSibling.classList.add("text--hidden");
       btn.classList.remove("traffic__expanded-button--active");
     }
   });
 }
 
-//---------------------Click open traffic--inner listeners-----open section inner text---------------
-
-const innerBtns = document.querySelectorAll(".traffic__expanded-button--inner");
-innerBtns.forEach(btn => btn.addEventListener("click", showInnerText));
-
-function showInnerText(event) {
-  innerBtns.forEach(btn => {
+function showInnerTextAccident(event) {
+  accidentInnerBtns.forEach(btn => {
     if (btn == event.target) {
       btn.nextSibling.classList.toggle("text--hidden");
       btn.classList.toggle("traffic__expanded-button--active");
@@ -38,22 +42,7 @@ function showInnerText(event) {
     }
   });
 }
-//================Click open traffic--inner listeners-----open section LOWS inner text=================================
 
-const lowBtns = document.querySelectorAll(".traffic__expanded-button--low-js");
-lowBtns.forEach(btn => btn.addEventListener("click", showLowText));
-
-function showLowText(event) {
-  lowBtns.forEach(btn => {
-    if (btn == event.target) {
-      btn.parentNode.nextSibling.classList.toggle("text--hidden");
-      btn.classList.toggle("traffic__expanded-button--active");
-    } else if (btn !== event.target) {
-      btn.parentNode.nextSibling.classList.add("text--hidden");
-      btn.classList.remove("traffic__expanded-button--active");
-    }
-  });
-}
 
 //================Smooth scroll to anchor link START=================================
 $(document).ready(function() {
@@ -68,3 +57,4 @@ $(document).ready(function() {
   });
 });
 //================Smooth scroll to anchor link END=================================
+
