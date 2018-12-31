@@ -87,6 +87,8 @@
     &--fb {
       background-color: $main-worm-color;
       color: $white-color;
+      margin: 0 auto;
+
   
       &:active {
         border: 1px solid $black-color;
@@ -97,6 +99,7 @@
     &--contact {
       background-color: #fff;
       color: $black-color;
+      margin: 0 auto;
     }
   }
   //====EXPANDED BUTTON=====
@@ -110,6 +113,7 @@
 
   //====TITLE 2=====
   &__title2 {
+
     &--lowercase {
       text-transform: lowercase;
     }

@@ -42,3 +42,19 @@ function showInnerTextAccident(event) {
     }
   });
 }
+
+
+//================Smooth scroll to anchor link START=================================
+$(document).ready(function() {
+  $("a.scrollto").click(function() {
+     $(".traffic").animate({
+        scrollTop: $($(this).attr("href")).offset().top
+     }, {
+        duration: 1000,
+        easing: "swing"
+     });
+     return false;
+  });
+});
+//================Smooth scroll to anchor link END=================================
+
