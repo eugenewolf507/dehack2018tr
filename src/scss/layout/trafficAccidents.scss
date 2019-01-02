@@ -113,7 +113,6 @@
 
   //====TITLE 2=====
   &__title2 {
-
     &--lowercase {
       text-transform: lowercase;
     }
@@ -178,6 +177,7 @@
 
 .text--hidden {
   &-accident {
+
     @include desktop-small{
       display: block;
     }
