@@ -21,24 +21,21 @@ accidentInnerBtns.forEach(btn =>
 function showTextAccident(event) {
   
   accidentBtns.forEach(btn => {
-    if (btn === event.target) {
-      this.nextSibling.classList.toggle("text--hidden");
-      this.classList.toggle("traffic__expanded-button--active");
-    } else if (btn !== event.target) {
-      btn.nextSibling.classList.add("text--hidden");
-      btn.classList.remove("traffic__expanded-button--active");
+    if (btn === event.currentTarget) {
+      $(btn).toggleClass("traffic__expanded-button--active").next().slideToggle(); 
+    } else if (btn !== event.currentTarget) {
+      $(btn).removeClass("traffic__expanded-button--active").next().slideUp();
     }
   });
 }
 
 function showInnerTextAccident(event) {
+
   accidentInnerBtns.forEach(btn => {
-    if (btn == event.target) {
-      btn.nextSibling.classList.toggle("text--hidden");
-      btn.classList.toggle("traffic__expanded-button--active");
-    } else if (btn !== event.target) {
-      btn.nextSibling.classList.add("text--hidden");
-      btn.classList.remove("traffic__expanded-button--active");
+    if (btn === event.currentTarget) {
+      $(btn).toggleClass("traffic__expanded-button--active").next().slideToggle(); 
+    } else if (btn !== event.currentTarget) {
+      $(btn).removeClass("traffic__expanded-button--active").next().slideUp();
     }
   });
 }
