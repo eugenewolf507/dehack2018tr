@@ -4,7 +4,7 @@
 
   &__map {
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   &__button {
@@ -18,7 +18,6 @@
     border-radius: 8px;
     border: 5px solid transparent;
     right: 10px;
-
     animation: bounceInRight 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 
     &:hover {

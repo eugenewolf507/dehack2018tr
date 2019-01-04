@@ -1,5 +1,5 @@
 //-------------------Take DOM nodes---------------------
-const menuSection = document.getElementById("menu");
+const menuSection = document.querySelector("#menu");
 menuSection.showButton = menuSection.querySelector(
   'div[data-id="show-button"]'
 );
