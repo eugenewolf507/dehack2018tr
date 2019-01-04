@@ -1,0 +1,331 @@
+//===PAGE====
+.traffic {
+  height: 100vh;
+  overflow: auto;
+
+
+  position: absolute;
+  display: block;
+  // height: 100%;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  width: 100%;
+  // padding: 50px 2.1% 10px;
+  padding: 10px;
+  background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
+  font-family: $text-font;
+  font-size: $text-font-size;
+  line-height: 1.5;
+  
+  @include tablet-small{
+    // padding: 60px 3% 40px;
+  }
+  //===CLOSE-BUTTON====
+  &__cls-btn {
+    @extend %cls-button;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    @include tablet-small{
+      top: 20px;
+      right: 20px;
+    }
+  }
+  
+  //===A====
+  & a {
+    text-decoration: none;
+  }
+  //===UL=====
+  & ul {
+    list-style: none;
+  }
+  //====EXPANDED TEXT====
+  &--expanded {
+    text-indent: 1rem;
+    // height: 100%;
+  }
+  //====inner sections====
+  &__inner {
+    margin-bottom: 0.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 1rem;
+    }
+
+    & p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    //===WHAT DO SECTION====
+    &--whatDo {
+      & > ul > li {
+        position: relative;
+        margin-bottom: 0.3rem;
+        padding-left: 1.9rem;
+
+        & i {
+          display: block;
+        }
+      }
+    
+      & > ul > li::before {
+        content: url(../img/checkbox.svg);
+        position: absolute;
+        left: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      @include desktop-small{
+        order: -1;
+        width: 50%;
+        padding-right: 1rem;
+        border-right: 2px dotted black;
+      }
+    }
+    //===WHAT DOcuments SECTION====
+    &--whatDocum {
+      @include desktop-small{
+        padding-left: 2rem;
+        padding-top: 4rem;
+        position: absolute;
+        // top: -25rem;
+        bottom: 10rem;
+        right: 0;
+        width: 50%;
+        border-top: 2px dotted #000;
+      }
+    }
+    //===WHAT is SECTION====
+    &--whatIs {
+      @include desktop-small{
+        width: 50%;
+        padding-left: 2rem;
+      }
+    } 
+  }
+  //===HELP BUTTON=====
+  &__help-button {
+    display: block;
+    width: 10rem;
+    padding: 0.2rem 0.2rem;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: $button-font-size;
+    font-family: $title-font;
+    font-weight: $bold;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    text-align: center;
+  
+    @include tablet-small{
+      margin: 0 auto;
+    }
+
+    @include desktop-small{
+      margin-bottom: 1.5rem;
+    }
+  
+    &:active {
+      border: 1px solid $black-color;
+  
+    }
+  
+    &--fb {
+      background-color: $main-worm-color;
+      color: $white-color;
+      margin: 0 auto;
+
+  
+      &:active {
+        border: 1px solid $black-color;
+        color: $black-color;
+      }
+    }
+
+    &--contact {
+      color: $black-color;
+      margin: 0 auto;
+    }
+  }
+  //====EXPANDED BUTTON=====
+  &__expanded-button {
+    background-image: url(../img/text_vniz.svg);
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    right: 1.5rem;
+    top: 0.3rem;
+    cursor: pointer;
+
+    &--accident {
+      @include desktop-small{
+        display: none;
+      }
+    }
+  
+    &--active {
+      background-image: url(../img/text_vverh.svg);
+    }
+  }
+
+  //=====TITLE MAIN=======
+  &__title {
+    padding-bottom: 1rem;
+
+    @include tablet-small{
+      text-align: center;
+    }
+
+    &--underline {
+      position: relative;
+      font-family: $title-font;
+      font-size: $title-big-font-size;
+      font-weight: $regular;
+      text-transform: uppercase;
+
+      @include desktop-small{
+        font-size: 36px;
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0rem;
+        left: 0rem;
+        background-color: $black-color;
+      }
+    }
+  }
+  //====TITLE 2=====
+  &__title2 {
+    font-size: $title-middle-font-size;
+    font-family: $title-font;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    font-weight: $regular;
+    text-align: center;
+
+    &--expanded {
+      padding-bottom: 0;
+      cursor: pointer;
+    }
+
+    &--lowercase {
+      text-transform: lowercase;
+    }
+
+    &--help {
+      @include tablet-small{
+        text-align: center;
+      }
+      @include desktop-small{
+        padding-bottom: 1.5rem;
+      }
+    }
+  }  
+}
+
+.inner__list {
+  & > ul {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+
+  &--small-text {
+    font-size: $text-font-size-small;
+  }
+}
+
+
+.text--hidden {
+  // height: 0;
+  display: none;
+  // overflow: hidden;
+
+  &-accident {
+    @include desktop-small{
+      display: block;
+    }
+  }
+}
+
+///REMOVE COMENT
+
+.traffic--hidden {
+  display: none;
+}
+
+.flex {
+  &-wrap {
+    @include desktop-small{
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      padding-left: 5%;
+      padding-right: 5%;
+      justify-content: center;
+      margin: 0 auto;
+      // height: 100px;
+    }
+
+    &-placeholder {
+      width: 50%;
+      height: 5px;
+    }
+  }
+}
+
+//=============ANIMATION=================
+// @-webkit-keyframes fadeInDown {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -100%, 0);
+//     transform: translate3d(0, -100%, 0);
+//   }
+
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
+
+// @keyframes fadeInDown {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -100%, 0);
+//     transform: translate3d(0, -100%, 0);
+//   }
+
+//   60% {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, -40%, 0);
+//     transform: translate3d(0, -40%, 0);
+//   }
+
+//   75% {
+//     opacity: 0.5;
+//     -webkit-transform: translate3d(0, -20%, 0);
+//     transform: translate3d(0, -20%, 0);
+//   }
+
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }

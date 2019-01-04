@@ -1,0 +1,246 @@
+.traffic {
+  counter-reset: count-box;
+
+  &__title2-small {
+    font-size: $title-small-font-size;
+    text-align: center;
+  }
+
+  &__title3 {
+    padding: 0.3rem;
+    font-family: $title-font;
+    font-size: calc(#{$title-small-font-size} - 1px);
+    text-indent: 0;
+    font-weight: $regular;
+    text-align: center;
+  }
+
+  &__title--newline {
+    display: block;
+  }
+
+  &--lows {
+    // height: 100%;
+
+    &__figure {
+      @include tablet-small {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0.5rem;
+        // box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 1px 1px 0 rgba(32,33,36,0.28);
+        margin: 5px;
+      }
+
+      @include tablet-big {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      @include desktop-small {
+        width: 49%;
+        display: flex;
+        align-items: flex-start;
+        margin: 0 0 0.5rem;
+        margin: 5px;
+      }
+
+      &--small {
+        width: 50%;
+
+        @include mobile-big {
+          width: 33.3333%;
+        }
+
+        @include tablet-small {
+          width: 33.3333%;
+          padding-bottom: 0.5rem;
+          box-shadow: none;
+        }
+
+        @include tablet-big {
+          width: 25%;
+          padding-bottom: 1rem;
+        }
+
+        @include desktop-small {
+          width: 25%;
+          display: block;
+          align-items: flex-start;
+        }
+
+        @include desktop-big {
+          width: calc(100% / 6);
+        }
+      }
+
+      &--flex {
+        display: flex;
+        align-items: flex-start;
+
+        @include tablet-small {
+          width: 95%;
+          box-shadow: none;
+        }
+
+        @include desktop-small {
+          width: 95%;
+        }
+      }
+    }
+  }
+
+  &__top-btn {
+    position: fixed;
+    right: 5px;
+    bottom: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-image: url(./../img/text_vverh.svg);
+    background-position: center;
+    background-size: contain;
+
+    @include mobile-big {
+    }
+
+    @include tablet-small {
+      right: 18px;
+      bottom: 1rem;
+    }
+
+    @include desktop-small {
+    }
+  }
+}
+
+.text__numbered {
+  text-indent: 0;
+  list-style-type: square;
+  list-style-position: inside;
+
+  counter-increment: count-box;
+
+  &::before {
+    content: counter(count-box) ". ";
+    font-weight: $bold;
+  }
+
+  & span {
+    font-weight: $bold;
+  }
+
+  & > li {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+
+  &--nostyle {
+    list-style: none;
+  }
+}
+
+.text__img {
+  display: block;
+  width: 100%;
+  // margin: 0 auto 0.2rem;
+  height: auto;
+
+  @include tablet-small {
+    // float: left;
+    max-width: 50%;
+    height: auto;
+    // margin: 0 0.2rem 0.2rem 0;
+  }
+
+  @include desktop-small {
+    float: none;
+  }
+
+  &--along {
+
+    @include mobile-big {
+      margin: 0 auto;
+      float: none;
+    }
+  }
+
+  &--main {
+    @include mobile-big {
+      width: 100%;
+    }
+    @include tablet-small {
+      width: 50%;
+      margin-right: auto;
+    }
+    @include tablet-big {
+      // display: none;
+    }
+  }
+
+  &--small {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &--left {
+    margin-left: 0;
+  }
+}
+
+.lows__inner {
+  & > ul {
+    list-style: square;
+    list-style-position: inside;
+    width: 100%;
+  }
+
+  & > p {
+    width: 100%;
+  }
+  @include desktop-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.signs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.text-sign {
+  text-align: center;
+  text-indent: 0;
+}
+
+.sign-border {
+  // display: flex;
+  border: 2px solid black;
+
+  @include tablet-small {
+    // width: 60%;
+  }
+}
+
+.title--center {
+  text-align: center;
+
+  @include tablet-small {
+    padding-bottom: 0.8rem;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+figcaption {
+  padding: 10px;
+}
