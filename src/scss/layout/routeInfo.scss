@@ -7,27 +7,32 @@
   width: 100%;
   height: 100vh;
   // padding: 5px;
-
   background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
   font-family: $text-font;
   font-size: $text-font-size;
   line-height: 1.5;
   //animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  // -webkit-transform: translate3d(0, 0, 0);
+  // transform: translate3d(0, 0, 0);
   transition: transform 1s, opacity 0.7s;
 
   &--fully-hidden {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100vh, 0);
-    transform: translate3d(0, 100vh, 0);
+    // opacity: 0;
+    -webkit-transform: translateY(100vh);
+    // transform: translate3d(0, 100vh, 0);
+    transform: translateY(100vh);
   }
 
   &--header-shown {
-    opacity: 1;
-    -webkit-transform: translate3d(0, calc(100vh - 50px), 0);
-    transform: translate3d(0, calc(100vh - 50px), 0);
+    // opacity: 1;
+    -webkit-transform: translateY(calc(100vh - 130px));
+    transform: translateY(calc(100vh - 130px));
+
+    @include mobile-big {
+      -webkit-transform: translateY(calc(100vh - 50px));
+      transform: translateY(calc(100vh - 50px));
+    }
   }
 
   &__header {
@@ -39,7 +44,7 @@
     padding: 5px;
     cursor: pointer;
     width: 100%;
-    background: rgba(251, 175, 23, 0.9);
+    // background: #FBAE16;
 
     @include tablet-small {
       justify-content: center;
@@ -49,7 +54,7 @@
   &__preview-title {
     font-family: $title-font;
     font-size: $text-font-size;
-    background: $main-worm-color--09;
+    // background: $main-worm-color--09;
     text-align: center;
     padding-right: 30px;
     // padding-bottom: 30px;
