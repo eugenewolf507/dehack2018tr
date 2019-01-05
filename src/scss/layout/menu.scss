@@ -30,7 +30,6 @@
     width: 180px;
     max-height: 100vh;
     overflow-y: auto;
-    font-size: $text-font-size-small;
     background: linear-gradient($main-worm-color 40%, rgba(255, 255, 105, 0));
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -38,7 +37,6 @@
 
     @media (min-width: 1169px) {
       width: 330px;
-      font-size: $button-font-size;
     }
 
     &--hidden {
@@ -67,15 +65,15 @@
     }
 
     &--recreational::after {
-      background-color: $rout-arterial;
+      background-color: #00bc66;
     }
 
     &--magistral::after {
-      background-color: $rout-access;
+      background-color: #0099dd;
     }
 
     &--touristic::after {
-      background-color: $rout-recreation;
+      background-color: #eb8853;
     }
 
     &::after {

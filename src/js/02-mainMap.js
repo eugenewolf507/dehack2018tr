@@ -422,7 +422,6 @@ function initMap() {
       j = 0;
       arrayDistance = [];
       const handlePolyline = item.polyline;
-      let polylineNumberPoints = item.polyline.route.length - 1;
       let lat = item.polyline.route[1].lat;
       let lng = item.polyline.route[1].lng;
       // calculation of distance route
@@ -450,7 +449,6 @@ function initMap() {
         content: contentString
       });
       var marker = new google.maps.Marker({
-        // position: { lat, lng },
         position: { lat, lng },
         map: map,
         title: handlePolyline.nameRus,

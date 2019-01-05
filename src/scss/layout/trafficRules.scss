@@ -27,8 +27,7 @@
         width: 95%;
         margin: 0 auto;
         padding: 0.5rem;
-        // box-shadow: 4px 4px 15px -3px rgba(0, 0, 0, 0.75);
-        box-shadow: 0 1px 1px 0 rgba(32,33,36,0.28);
+        box-shadow: 0 1px 1px 0 rgba(32, 33, 36, 0.28);
         margin: 5px;
       }
 
@@ -144,14 +143,11 @@
 .text__img {
   display: block;
   width: 100%;
-  // margin: 0 auto 0.2rem;
   height: auto;
 
   @include tablet-small {
-    // float: left;
     max-width: 50%;
     height: auto;
-    // margin: 0 0.2rem 0.2rem 0;
   }
 
   @include desktop-small {
@@ -159,7 +155,6 @@
   }
 
   &--along {
-
     @include mobile-big {
       margin: 0 auto;
       float: none;
@@ -175,7 +170,6 @@
       margin-right: auto;
     }
     @include tablet-big {
-      // display: none;
     }
   }
 
@@ -219,11 +213,9 @@
 }
 
 .sign-border {
-  // display: flex;
   border: 2px solid black;
 
   @include tablet-small {
-    // width: 60%;
   }
 }
 
