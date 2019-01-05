@@ -1,5 +1,5 @@
 //-------------------Take DOM nodes---------------------
-const menuSection = document.getElementById("menu");
+const menuSection = document.querySelector("#menu");
 menuSection.showButton = menuSection.querySelector(
   'div[data-id="show-button"]'
 );
@@ -11,7 +11,6 @@ menuSection.routesItems = [...menuSection.querySelectorAll(".routes__item")];
 
 //-------------------Create global variables-----------------
 let isMenuShown = false;
-
 //---------------------Add listeners to the DOM elements--------------------
 
 menuSection.showButton.addEventListener("click", handleShowButtonClick);

@@ -1,29 +1,29 @@
-@mixin mobile-big{
-  @media (min-width: $phone-big-break-point){
+@mixin mobile-big {
+  @media (min-width: $phone-big-break-point) {
     @content;
   }
 }
 
-@mixin tablet-small{
-  @media (min-width: $tablet-small-break-point){
+@mixin tablet-small {
+  @media (min-width: $tablet-small-break-point) {
     @content;
   }
 }
 
-@mixin tablet-big{
-  @media (min-width: $tablet-big-break-point){
+@mixin tablet-big {
+  @media (min-width: $tablet-big-break-point) {
     @content;
   }
 }
 
-@mixin desktop-small{
-  @media (min-width: $desktop-small-break-point){
+@mixin desktop-small {
+  @media (min-width: $desktop-small-break-point) {
     @content;
   }
 }
 
-@mixin desktop-big{
-  @media (min-width: $desktop-big-break-point){
+@mixin desktop-big {
+  @media (min-width: $desktop-big-break-point) {
     @content;
   }
 }
@@ -45,4 +45,3 @@
   color: $color;
   background-color: $bgcolor;
 }
-

@@ -24,12 +24,7 @@ function removeAllButOneRoute(name) {
           center: { lat, lng }, // center of map
           zoom: zoomMap,
           disableDefaultUI: true,
-          styles: [
-            {
-              featureType: "poi",
-              stylers: [{ visibility: "off" }]
-            }
-          ]
+          styles: mapStyles
         });
         item.polyline.setMap(map);
       }, 0);
@@ -55,6 +50,7 @@ function leaveOnlyOneTypeOfRoutes(type) {
 }
 
 function showAllPolylines() {
+
   if (zoomMap === 14) {
     zoomMapAndRebuild();
   }
@@ -68,17 +64,12 @@ function showAllPolylines() {
 }
 
 function zoomMapAndRebuild() {
-  zoomMap = 12;
+  zoomMap = 12.9;
   map = new google.maps.Map(document.getElementById("map"), {
     center: centerOfTheMap, // center of map
     zoom: zoomMap,
     disableDefaultUI: true,
-    styles: [
-      {
-        featureType: "poi",
-        stylers: [{ visibility: "off" }]
-      }
-    ]
+    styles: mapStyles
   });
 }
 

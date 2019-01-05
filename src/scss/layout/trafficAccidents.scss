@@ -2,23 +2,19 @@
 .traffic {
   height: 100vh;
   overflow: auto;
-
-
   position: absolute;
   display: block;
-  // height: 100%;
   z-index: 9;
   top: 0;
   right: 0;
   width: 100%;
-  // padding: 50px 2.1% 10px;
+  padding: 10px;
   background: linear-gradient($main-worm-color, rgba(255, 255, 245, 1));
   font-family: $text-font;
   font-size: $text-font-size;
   line-height: 1.5;
-  
-  @include tablet-small{
-    // padding: 60px 3% 40px;
+
+  @include tablet-small {
   }
   //===CLOSE-BUTTON====
   &__cls-btn {
@@ -27,12 +23,12 @@
     top: 10px;
     right: 10px;
 
-    @include tablet-small{
+    @include tablet-small {
       top: 20px;
       right: 20px;
     }
   }
-  
+
   //===A====
   & a {
     text-decoration: none;
@@ -70,7 +66,7 @@
           display: block;
         }
       }
-    
+
       & > ul > li::before {
         content: url(../img/checkbox.svg);
         position: absolute;
@@ -79,7 +75,7 @@
         height: 1.2rem;
       }
 
-      @include desktop-small{
+      @include desktop-small {
         order: -1;
         width: 50%;
         padding-right: 1rem;
@@ -88,7 +84,7 @@
     }
     //===WHAT DOcuments SECTION====
     &--whatDocum {
-      @include desktop-small{
+      @include desktop-small {
         padding-left: 2rem;
         padding-top: 4rem;
         position: absolute;
@@ -101,11 +97,11 @@
     }
     //===WHAT is SECTION====
     &--whatIs {
-      @include desktop-small{
+      @include desktop-small {
         width: 50%;
         padding-left: 2rem;
       }
-    } 
+    }
   }
   //===HELP BUTTON=====
   &__help-button {
@@ -124,24 +120,24 @@
     border: 1px solid transparent;
     border-radius: 0.3rem;
     text-align: center;
-  
-    @include tablet-small{
+
+    @include tablet-small {
       margin: 0 auto;
     }
 
-    @include desktop-small{
+    @include desktop-small {
       margin-bottom: 1.5rem;
     }
-  
+
     &:active {
       border: 1px solid $black-color;
-  
     }
-  
+
     &--fb {
       background-color: $main-worm-color;
       color: $white-color;
-  
+      margin: 0 auto;
+
       &:active {
         border: 1px solid $black-color;
         color: $black-color;
@@ -150,6 +146,7 @@
 
     &--contact {
       color: $black-color;
+      margin: 0 auto;
     }
   }
   //====EXPANDED BUTTON=====
@@ -165,11 +162,11 @@
     cursor: pointer;
 
     &--accident {
-      @include desktop-small{
+      @include desktop-small {
         display: none;
       }
     }
-  
+
     &--active {
       background-image: url(../img/text_vverh.svg);
     }
@@ -179,7 +176,7 @@
   &__title {
     padding-bottom: 1rem;
 
-    @include tablet-small{
+    @include tablet-small {
       text-align: center;
     }
 
@@ -190,12 +187,12 @@
       font-weight: $regular;
       text-transform: uppercase;
 
-      @include desktop-small{
+      @include desktop-small {
         font-size: 36px;
       }
 
       &::after {
-        content: '';
+        content: "";
         width: 100%;
         height: 2px;
         position: absolute;
@@ -212,6 +209,7 @@
     padding-bottom: 0.3rem;
     text-transform: uppercase;
     font-weight: $regular;
+    text-align: center;
 
     &--expanded {
       padding-bottom: 0;
@@ -223,14 +221,14 @@
     }
 
     &--help {
-      @include tablet-small{
+      @include tablet-small {
         text-align: center;
       }
-      @include desktop-small{
+      @include desktop-small {
         padding-bottom: 1.5rem;
       }
     }
-  }  
+  }
 }
 
 .inner__list {
@@ -244,28 +242,24 @@
   }
 }
 
-
 .text--hidden {
-  // height: 0;
   display: none;
-  // overflow: hidden;
 
   &-accident {
-    @include desktop-small{
+    @include desktop-small {
       display: block;
     }
   }
 }
 
 ///REMOVE COMENT
-
 .traffic--hidden {
   display: none;
 }
 
 .flex {
   &-wrap {
-    @include desktop-small{
+    @include desktop-small {
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -274,7 +268,6 @@
       padding-right: 5%;
       justify-content: center;
       margin: 0 auto;
-      // height: 100px;
     }
 
     &-placeholder {
