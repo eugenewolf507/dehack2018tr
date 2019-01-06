@@ -6263,9 +6263,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 //-------------------Take DOM nodes---------------------
 var menuSection = document.querySelector("#menu");
-menuSection.showButton = menuSection.querySelector('div[data-id="show-button"]');
-menuSection.hamburger = menuSection.querySelector('svg[data-id="hamburger"]');
-menuSection.list = menuSection.querySelector('ul[data-id="list"]');
+menuSection.showButton = menuSection.querySelector('.menu__show-button');
+menuSection.hamburger = menuSection.querySelector('.ham');
+menuSection.list = menuSection.querySelector('.menu__list');
 menuSection.menuItems = _toConsumableArray(menuSection.querySelectorAll(".menu__item"));
 menuSection.menuSubitems = _toConsumableArray(menuSection.querySelectorAll(".menu__subitem"));
 menuSection.routesItems = _toConsumableArray(menuSection.querySelectorAll(".routes__item")); //-------------------Create global variables-----------------

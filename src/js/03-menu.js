@@ -1,10 +1,8 @@
 //-------------------Take DOM nodes---------------------
 const menuSection = document.querySelector("#menu");
-menuSection.showButton = menuSection.querySelector(
-  'div[data-id="show-button"]'
-);
-menuSection.hamburger = menuSection.querySelector('svg[data-id="hamburger"]');
-menuSection.list = menuSection.querySelector('ul[data-id="list"]');
+menuSection.showButton = menuSection.querySelector('.menu__show-button');
+menuSection.hamburger = menuSection.querySelector('.ham');
+menuSection.list = menuSection.querySelector('.menu__list');
 menuSection.menuItems = [...menuSection.querySelectorAll(".menu__item")];
 menuSection.menuSubitems = [...menuSection.querySelectorAll(".menu__subitem")];
 menuSection.routesItems = [...menuSection.querySelectorAll(".routes__item")];
