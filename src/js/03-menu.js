@@ -1,16 +1,18 @@
 //-------------------Take DOM nodes---------------------
 const menuSection = document.querySelector("#menu");
-menuSection.showButton = menuSection.querySelector('.menu__show-button');
-menuSection.hamburger = menuSection.querySelector('.ham');
-menuSection.list = menuSection.querySelector('.menu__list');
-menuSection.menuItems = [...menuSection.querySelectorAll(".menu__item")];
-menuSection.menuSubitems = [...menuSection.querySelectorAll(".menu__subitem")];
-menuSection.routesItems = [...menuSection.querySelectorAll(".routes__item")];
-
+menuSection.showButton = menuSection.querySelector(".menu__show-button");
+menuSection.hamburger = menuSection.querySelector(".ham");
+menuSection.list = menuSection.querySelector(".menu__list");
+menuSection.menuItems = Array.from(menuSection.querySelectorAll(".menu__item"));
+menuSection.menuSubitems = Array.from(
+  menuSection.querySelectorAll(".menu__subitem")
+);
+menuSection.routesItems = Array.from(
+  menuSection.querySelectorAll(".routes__item")
+);
 //-------------------Create global variables-----------------
 let isMenuShown = false;
 //---------------------Add listeners to the DOM elements--------------------
-
 menuSection.showButton.addEventListener("click", handleShowButtonClick);
 menuSection.menuItems.forEach(item => {
   item.addEventListener("click", handleMenuItemClick);
@@ -59,7 +61,6 @@ function handleMenuItemClick(event) {
     return;
   }
   // for other items
-
   if (target.matches('li[data-id="all"]')) {
     hideMenuSubitems();
     showAllPolylines();

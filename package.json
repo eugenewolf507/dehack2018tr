@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/axZerk/gulp-starter-kit#readme",
   "browserslist": [
-    "last 50 version",
     "> 0.1%"
   ],
   "devDependencies": {

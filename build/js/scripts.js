@@ -6253,22 +6253,14 @@ function createListenerAndInfoWindowOfMarker(coordinate, marker) {
 }
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 //-------------------Take DOM nodes---------------------
 var menuSection = document.querySelector("#menu");
-menuSection.showButton = menuSection.querySelector('.menu__show-button');
-menuSection.hamburger = menuSection.querySelector('.ham');
-menuSection.list = menuSection.querySelector('.menu__list');
-menuSection.menuItems = _toConsumableArray(menuSection.querySelectorAll(".menu__item"));
-menuSection.menuSubitems = _toConsumableArray(menuSection.querySelectorAll(".menu__subitem"));
-menuSection.routesItems = _toConsumableArray(menuSection.querySelectorAll(".routes__item")); //-------------------Create global variables-----------------
+menuSection.showButton = menuSection.querySelector(".menu__show-button");
+menuSection.hamburger = menuSection.querySelector(".ham");
+menuSection.list = menuSection.querySelector(".menu__list");
+menuSection.menuItems = Array.from(menuSection.querySelectorAll(".menu__item"));
+menuSection.menuSubitems = Array.from(menuSection.querySelectorAll(".menu__subitem"));
+menuSection.routesItems = Array.from(menuSection.querySelectorAll(".routes__item")); //-------------------Create global variables-----------------
 
 var isMenuShown = false; //---------------------Add listeners to the DOM elements--------------------
 
@@ -6465,9 +6457,11 @@ $(document).ready(function () {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Сделать по образу и подобию mainMap, menu и пр.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.getElementById("control-close").addEventListener("click", function () {
-  document.getElementById("control-section").classList.add("traffic--hidden");
-});
+document.querySelector("#traffic-control-close").addEventListener("click", closeTrafficRules);
+
+function closeTrafficRules() {
+  document.querySelector(".traffic--lows").classList.add("traffic--hidden");
+}
 "use strict";
 
 //-------------------Take DOM nodes---------------------
