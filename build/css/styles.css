@@ -4065,7 +4065,8 @@ ul {
   stroke-dashoffset: -138px;
 }
 
-.traffic__cls-btn {
+.traffic__cls-btn,
+.traffic__cls-btn2 {
   display: block;
   cursor: pointer;
   width: 2rem;
@@ -4078,7 +4079,8 @@ ul {
   background-position: center;
 }
 
-.traffic__cls-btn:hover {
+.traffic__cls-btn:hover,
+.traffic__cls-btn2:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4516,13 +4518,12 @@ ul {
 
 .traffic {
   height: 100vh;
+  width: 100%;
   overflow: auto;
   position: absolute;
-  display: block;
   z-index: 9;
   top: 0;
   right: 0;
-  width: 100%;
   padding: 10px;
   background: -webkit-linear-gradient(#fbae17, #fffff5);
   background: linear-gradient(#fbae17, #fffff5);
@@ -4531,7 +4532,8 @@ ul {
   line-height: 1.5;
 }
 
-.traffic__cls-btn {
+.traffic__cls-btn,
+.traffic__cls-btn2 {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -4888,7 +4890,8 @@ figcaption {
     flex-direction: row;
   }
 
-  .traffic__cls-btn {
+  .traffic__cls-btn,
+  .traffic__cls-btn2 {
     top: 20px;
     right: 20px;
   }

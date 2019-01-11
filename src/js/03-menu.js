@@ -61,7 +61,7 @@ function handleMenuItemClick(event) {
     return;
   }
   // for other items
-  if (target.matches('li[data-id="all"]')) {
+  if (target.matches('[data-id="all"]')) {
     hideMenuSubitems();
     showAllPolylines();
     closeRouteInfo();
@@ -69,7 +69,7 @@ function handleMenuItemClick(event) {
     return;
   }
 
-  if (target.matches('li[data-id="traffic-rules"]')) {
+  if (target.matches('[data-id="traffic-rules"]')) {
     document
       .getElementById("control-section")
       .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -79,7 +79,7 @@ function handleMenuItemClick(event) {
     return;
   }
 
-  if (target.matches('li[data-id="traffic-accidents"]')) {
+  if (target.matches('[data-id="traffic-accidents"]')) {
     document
       .getElementById("accident-section")
       .classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!

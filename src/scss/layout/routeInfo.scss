@@ -12,10 +12,12 @@
   transition: transform 1s, opacity 0.7s;
 
   &--fully-hidden {
+    // display: none;
     transform: translateY(100vh);
   }
 
   &--header-shown {
+    // display: block;
     transform: translateY(calc(100vh - 124px)); // fix for iphone5
 
     @include desktop-small {

@@ -6314,7 +6314,7 @@ function handleMenuItemClick(event) {
   } // for other items
 
 
-  if (target.matches('li[data-id="all"]')) {
+  if (target.matches('[data-id="all"]')) {
     hideMenuSubitems();
     showAllPolylines();
     closeRouteInfo();
@@ -6322,7 +6322,7 @@ function handleMenuItemClick(event) {
     return;
   }
 
-  if (target.matches('li[data-id="traffic-rules"]')) {
+  if (target.matches('[data-id="traffic-rules"]')) {
     document.getElementById("control-section").classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     hideMenu();
@@ -6331,7 +6331,7 @@ function handleMenuItemClick(event) {
     return;
   }
 
-  if (target.matches('li[data-id="traffic-accidents"]')) {
+  if (target.matches('[data-id="traffic-accidents"]')) {
     document.getElementById("accident-section").classList.remove("traffic--hidden"); //!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     hideMenu();
@@ -6457,11 +6457,13 @@ $(document).ready(function () {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Сделать по образу и подобию mainMap, menu и пр.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.querySelector("#traffic-control-close").addEventListener("click", closeTrafficRules);
-
-function closeTrafficRules() {
-  document.querySelector(".traffic--lows").classList.add("traffic--hidden");
-}
+// document.getElementById("traffic-control-close").addEventListener("click", closeTrafficRules);
+// function closeTrafficRules() {
+//   document.getElementById("control-section").classList.add("traffic--hidden");
+// }
+document.querySelector("#traffic-control-close").addEventListener("click", function () {
+  document.getElementById("control-section").classList.add("traffic--hidden");
+});
 "use strict";
 
 //-------------------Take DOM nodes---------------------
