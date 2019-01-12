@@ -1,6 +1,6 @@
 Won 2 place in Dehack2018<br>
 Our work on Dehack2018 in Trostjanets with AVK <a href="https://eugenewolf507.github.io/dehack2018tr/build/" target="_blank">https://eugenewolf507.github.io/dehack2018tr/build/</a><br>
-<img width="500" height="auto" src="./build/img/photoapp.png" alt="photo app"><br>
+<img width="500" height="auto" src="https://eugenewolf507.github.io/dehack2018tr/build/img/photoapp.png" alt="photo app"><br>
 Dehack2018 site <a href="https://dehack.today/" target="_blank">https://dehack.today/</a><br>
 Video about DeHack 2018: Trostyanets <a href="https://www.youtube.com/watch?time_continue=147&v=1YAgd2R45TE" target="_blank">https://www.youtube.com/watch?time_continue=147&v=1YAgd2R45TE</a><br>
 Dehack facebook group <a href="https://www.facebook.com/dehackukraine/" target="_blank">https://www.facebook.com/dehackukraine/</a><br>
