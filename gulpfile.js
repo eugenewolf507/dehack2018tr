@@ -18,6 +18,7 @@ const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const rename = require("gulp-rename");
 const browserSync = require("browser-sync").create();
+require('focus-visible')
 
 gulp.task("html", () => {
   return gulp

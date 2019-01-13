@@ -1,11 +1,11 @@
 //-------------------Take DOM nodes---------------------
 const mainMapSection = document.getElementById("main-map");
-mainMapSection.zoomin = mainMapSection.querySelector('div[data-id="zoomin"]');
-mainMapSection.zoomout = mainMapSection.querySelector('div[data-id="zoomout"]');
-mainMapSection.geotag = mainMapSection.querySelector('div[data-id="geotag"]');
-mainMapSection.parking = mainMapSection.querySelector('div[data-id="parking"]');
-mainMapSection.cafe = mainMapSection.querySelector('div[data-id="cafe"]');
-mainMapSection.sight = mainMapSection.querySelector('div[data-id="sight"]');
+mainMapSection.zoomin = mainMapSection.querySelector('[data-id="zoomin"]');
+mainMapSection.zoomout = mainMapSection.querySelector('[data-id="zoomout"]');
+mainMapSection.geotag = mainMapSection.querySelector('[data-id="geotag"]');
+mainMapSection.parking = mainMapSection.querySelector('[data-id="parking"]');
+mainMapSection.cafe = mainMapSection.querySelector('[data-id="cafe"]');
+mainMapSection.sight = mainMapSection.querySelector('[data-id="sight"]');
 
 //---------------------Create empty arrays--------------------
 const arrayParkingMarkers = [];
