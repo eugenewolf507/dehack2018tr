@@ -5,19 +5,25 @@ function removeAllButOneRoute(name) {
       item.polyline.setMap(null);
     } else {
       item.polyline.setMap(map);
-      let polylineNumberPoints = item.polyline.route.length-1;
+      let polylineNumberPoints = item.polyline.route.length - 1;
       // set center of polyline and init map on this center START
       setTimeout(() => {
         // set first and last point of polylines and they lat and lng
         const startLatLng = `lat: ${item.polyline.route[0].lat}, lng: ${
           item.polyline.route[0].lng
         }`;
-        const endLatLng = `lat: ${item.polyline.route[polylineNumberPoints].lat}, lng: ${
-          item.polyline.route[polylineNumberPoints].lng
-        }`;
+        const endLatLng = `lat: ${
+          item.polyline.route[polylineNumberPoints].lat
+        }, lng: ${item.polyline.route[polylineNumberPoints].lng}`;
         // set center of polylines
-        let lat = (item.polyline.route[0].lat + item.polyline.route[polylineNumberPoints].lat) / 2;
-        let lng = (item.polyline.route[0].lng + item.polyline.route[polylineNumberPoints].lng) / 2;
+        let lat =
+          (item.polyline.route[0].lat +
+            item.polyline.route[polylineNumberPoints].lat) /
+          2;
+        let lng =
+          (item.polyline.route[0].lng +
+            item.polyline.route[polylineNumberPoints].lng) /
+          2;
 
         zoomMap = 14;
         map = new google.maps.Map(document.getElementById("map"), {
@@ -50,7 +56,6 @@ function leaveOnlyOneTypeOfRoutes(type) {
 }
 
 function showAllPolylines() {
-
   if (zoomMap === 14) {
     zoomMapAndRebuild();
   }

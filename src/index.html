@@ -193,6 +193,12 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!-- add version for css file(clean cache)-->
+    <script>
+      const css = document.querySelector('[rel="stylesheet"]');
+      css.href = `./css/styles.css?ver${Date.now()}`;
+    </script>
+
     <!-- === for facebook analytics START === -->
     <script>
       window.fbAsyncInit = function() {

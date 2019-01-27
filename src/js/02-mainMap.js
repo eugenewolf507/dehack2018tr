@@ -590,3 +590,7 @@ function createListenerAndInfoWindowOfMarker(coordinate, marker) {
     infowindow.open(map, marker);
   });
 }
+
+console.log("%c Made with love ❤️", 'background: green; color: white; padding: 0 10px; font-size: 14px; line-height: 40px;')
+
+
