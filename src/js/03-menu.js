@@ -3,6 +3,11 @@ const menuSection = document.querySelector("#menu");
 menuSection.showButton = menuSection.querySelector(".menu__show-button");
 menuSection.hamburger = menuSection.querySelector(".ham");
 menuSection.list = menuSection.querySelector(".menu__list");
+
+const wrapperMenuSubitem = document.querySelector(".wrapper-menu__subitem");
+const menuSubitem = document.querySelectorAll(".menu__subitem");
+const menuSubitemHidden = document.querySelectorAll(".menu__subitem--hidden");
+
 menuSection.menuItems = Array.from(menuSection.querySelectorAll(".menu__item"));
 menuSection.menuSubitems = Array.from(
   menuSection.querySelectorAll(".menu__subitem")
@@ -13,6 +18,12 @@ menuSection.routesItems = Array.from(
 //-------------------Create global variables-----------------
 let isMenuShown = false;
 //---------------------Add listeners to the DOM elements--------------------
+
+// document.body.addEventListener("keydown", handleBodysClick);
+// function handleBodysClick(event) {
+//   console.log('event: ', event.target);
+// }
+
 menuSection.showButton.addEventListener("click", handleShowButtonClick);
 menuSection.menuItems.forEach(item => {
   item.addEventListener("click", handleMenuItemClick);
@@ -54,6 +65,15 @@ function handleMenuItemClick(event) {
   if (chosenSubitem) {
     // If any subitem is opened it is necessary to hide it first
     hideMenuSubitems();
+
+    menuSection.menuSubitems.forEach(subitem => {
+      subitem.classList.remove("menu__subitem--display-none");
+    });
+
+    menuSubitem.forEach(item => {
+      item.style.position = "absolute";
+    });
+    wrapperMenuSubitem.classList.remove("wrapper-menu__subitem--absolute");
     chosenSubitem.classList.remove("menu__subitem--hidden");
     leaveOnlyOneTypeOfRoutes(target.getAttribute("data-id"));
     changeColorBackgroundOnClickMenuItems(event);
@@ -64,6 +84,7 @@ function handleMenuItemClick(event) {
   if (target.matches('[data-id="all"]')) {
     hideMenuSubitems();
     showAllPolylines();
+    showAllRoutesSubitemInMenu();
     closeRouteInfo();
     changeColorBackgroundOnClickMenuItems(event);
     return;
@@ -88,6 +109,16 @@ function handleMenuItemClick(event) {
     closeRouteInfo();
     return;
   }
+}
+
+function showAllRoutesSubitemInMenu() {
+  menuSubitem.forEach(item => {
+    item.classList.remove("menu__subitem--hidden");
+  });
+  wrapperMenuSubitem.classList.add("wrapper-menu__subitem--absolute");
+  menuSubitem.forEach(item => {
+    item.style.position = "static";
+  });
 }
 
 function handleRoutesItemClick(event) {
