@@ -11,7 +11,6 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    padding: 10px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: $main-worm-color--08;
@@ -19,6 +18,7 @@
     border: 5px solid transparent;
     right: 10px;
     animation: bounceInRight 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    background-size: 30px 30px;
 
     &:hover {
       background-color: $main-worm-color--09;
@@ -27,11 +27,13 @@
     &--zoomin {
       background-image: url(../img/minus.svg);
       top: 10px;
+      background-size: 24px 24px;
     }
 
     &--zoomout {
       background-image: url(../img/plus.svg);
       top: 60px;
+      background-size: 24px 24px;
     }
 
     &--geotag {
